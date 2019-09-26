@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npx shx rm -rf dist && parcel src/index.html",
-    "build": "npx shx rm -rf dist && parcel build src/index.html --no-source-maps"
+    "build": "npx shx rm -rf dist && parcel build src/index.html --no-source-maps",
+    "deploy": "npm run build && firebase deploy"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
