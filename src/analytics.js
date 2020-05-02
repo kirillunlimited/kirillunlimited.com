@@ -7,8 +7,12 @@ const initAnalytics = function() {
   }
 
   /** Validate GA tracking ID */
-  if (!parseInt(GA_ID.substring(3))) {
+  if (!GA_ID) {
     console.error('GA tracking ID is missing');
+    return;
+  }
+  if (!parseInt(GA_ID.substring(3))) {
+    console.error(`GA tracking ID is invalid: "${GA_ID}"`);
     return;
   }
 
