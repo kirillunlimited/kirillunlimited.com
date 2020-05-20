@@ -1,7 +1,9 @@
+@import './fontello.css';
+
 @font-face {
   font-family: 'Rubik';
-  src: url('./fonts/Rubik-Light.woff2') format('woff2'),
-    url('./fonts/Rubik-Light.woff') format('woff');
+  src: url('./../fonts/Rubik-Light.woff2') format('woff2'),
+    url('./../fonts/Rubik-Light.woff') format('woff');
   font-style: normal;
   font-weight: normal;
   font-display: fallback;
@@ -9,8 +11,8 @@
 
 @font-face {
   font-family: 'Rubik';
-  src: url('./fonts/Rubik-Medium.woff2') format('woff2'),
-    url('./fonts/Rubik-Medium.woff') format('woff');
+  src: url('./../fonts/Rubik-Medium.woff2') format('woff2'),
+    url('./../fonts/Rubik-Medium.woff') format('woff');
   font-style: normal;
   font-weight: bold;
   font-display: fallback;
@@ -120,35 +122,73 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
+  font-size: 1.5em;
   line-height: .8em;
   list-style-type: none;
-  margin-bottom: -1em;
 
   li {
-    display: inline-block;
-    margin: 0 1em 0 0;
-    width: 1.5em;
-    height: 1.5em;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5em 0 0;
   }
 
   a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75em;
+    height: 1.75em;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    border-radius: 50%;
     transition: .05s linear transform;
 
     &:hover {
       transform: scale(1.4);
     }
+
+    &.vk {
+      background-color: #5181B8;
+    }
+    &.facebook {
+      background-color: #4868ad;
+    }
+    &.twitter {
+      background-color: #3299ff;
+    }
+    &.instagram {
+      background: radial-gradient(circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%)
+    }
+    &.github {
+      background-color: #4e545a;
+    }
+    &.linkedin {
+      background-color: #0077ba;
+    }
+    &.telegram {
+      background-color: #0088CC;
+    }
+  }
+  
+  .icon {
+    display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  footer {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    border-style: none;
+  .social {
+    font-size: 1.75em;
+    margin-bottom: -.25em;
+
+    li {
+      margin-bottom: .25em;
+    }
   }
 }
