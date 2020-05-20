@@ -3,7 +3,7 @@
   src: url('./fonts/Rubik-Light.woff2') format('woff2'),
     url('./fonts/Rubik-Light.woff') format('woff');
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   font-display: fallback;
 }
 
@@ -12,7 +12,7 @@
   src: url('./fonts/Rubik-Medium.woff2') format('woff2'),
     url('./fonts/Rubik-Medium.woff') format('woff');
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-display: fallback;
 }
 
@@ -27,6 +27,7 @@ html {
   box-sizing: border-box;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -35,8 +36,11 @@ html {
 }
 
 body {
+  max-width: 50em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 6% 8%;
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   font-size: 16px; /* fallback */
   font-size: calc(10px + .6vw);
@@ -46,8 +50,8 @@ body {
 }
 
 .main {
-  display: block;
-  max-width: 40em;
+  padding: 8% 10% 0;
+  flex: 1 0 auto;
 }
 
 .profile {
@@ -77,26 +81,26 @@ body {
 h1 {
   margin: 0;
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 h2 {
   margin: 0;
   font-size: 1.25em;
-  font-weight: 300;
+  font-weight: normal;
   color: var(--text-sub-color);
 }
 
 p {
   margin: 1em 0;
   font-size: 1.25em;
-  font-weight: 300;
   line-height: 1.4;
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
+  font-weight: bold;
   background-color: transparent;
 
   &:hover {
@@ -104,6 +108,11 @@ a {
     outline: 0;
     text-decoration: underline;
   }
+}
+
+footer {
+  padding: 0 10% 8%;
+  flex-shrink: 0;
 }
 
 .social {
@@ -117,7 +126,7 @@ a {
 
   li {
     display: inline-block;
-    margin: 0 1em 1em 0;
+    margin: 0 1em 0 0;
     width: 1.5em;
     height: 1.5em;
 
