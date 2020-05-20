@@ -24,8 +24,7 @@
   font-variant: normal;
   text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
+  line-height: inherit;
 
   /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
@@ -33,7 +32,7 @@
 }
 
 .fontello-twitter:before { content: '\f099'; } /* '' */
-.fontello-facebook:before { content: '\f09a'; line-height: .8em; } /* '' */
+.fontello-facebook:before { content: '\f09a'; } /* '' */
 .fontello-github:before { content: '\f09b'; } /* '' */
 .fontello-linkedin:before { content: '\f0e1'; } /* '' */
 .fontello-instagram:before { content: '\f16d'; } /* '' */
