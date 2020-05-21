@@ -34,4 +34,4 @@ const initAnalytics = function() {
   });
 };
 
-initAnalytics();
+export default initAnalytics;

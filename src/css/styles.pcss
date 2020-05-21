@@ -1,4 +1,5 @@
 @import './fontello.css';
+@import './dark-theme.pcss';
 
 @font-face {
   font-family: 'Rubik';
@@ -23,11 +24,6 @@
   --text-color: #263238;
   --link-color: #1976D2;
   --link-hover-color: #EF6C00;
-
-  --background-color--dark: #181818;
-  --text-color--dark: #dadfe1;
-  --link-color--dark: #00deff;
-  --link-hover-color--dark: #9eff00;
 }
 
 html {
@@ -43,7 +39,6 @@ html {
 }
 
 body {
-  max-width: 50em;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -55,11 +50,19 @@ body {
   color: var(--text-color);
   text-align: left;
   background-color: var(--background-color);
+  transition: .1s linear background-color, .1s linear color;
 }
 
-.main {
-  padding: 8% 10% 0;
+.wrapper {
   flex: 1 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4% 6% 0;
 }
 
 .profile {
@@ -98,6 +101,36 @@ h2 {
   font-weight: normal;
 }
 
+.switch {
+  cursor: pointer;
+
+  .checkbox {
+    position: absolute;
+    height: 0;
+    opacity: 0;
+
+    &:focus + .icon:before,
+    &:hover + .icon:before {
+      text-shadow: 0 0 .4em var(--text-color);
+    }
+  }
+
+  .icon {
+    display: block;
+    font-size: 2em;
+
+    &:before {
+      content: '🌚';
+      transition: .1s linear text-shadow;
+    }
+  }
+}
+
+.main {
+  max-width: 52em;
+  padding: 0 6%;
+}
+
 p {
   margin: 1em 0;
   font-size: 1.25em;
@@ -109,6 +142,7 @@ a {
   text-decoration: none;
   font-weight: bold;
   background-color: transparent;
+  transition: .1s linear color;
 
   &:hover {
     color: var(--link-hover-color);
@@ -118,7 +152,7 @@ a {
 }
 
 footer {
-  padding: 0 10% 8%;
+  padding: 0 6% 4%;
   flex-shrink: 0;
 }
 
@@ -151,6 +185,7 @@ footer {
     transition: .05s linear transform;
 
     &:hover {
+      color: #fff;
       transform: scale(1.4);
     }
 
@@ -181,27 +216,6 @@ footer {
 
     li {
       margin-bottom: .25em;
-    }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: var(--text-color--dark);
-    background-color: var(--background-color--dark);
-  }
-
-  a {
-    color: var(--link-color--dark);
-
-    &:hover {
-      color: var(--link-hover-color--dark);
-    }
-  }
-
-  .social {
-    a {
-      color: #fff;
     }
   }
 }

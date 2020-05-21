@@ -1,0 +1,35 @@
+:root {
+  --background-color--dark: #181818;
+  --text-color--dark: #dadfe1;
+  --link-color--dark: #00deff;
+  --link-hover-color--dark: #9eff00;
+}
+
+.dark {
+  body {
+    color: var(--text-color--dark);
+    background-color: var(--background-color--dark);
+  }
+
+  .switch {
+    .checkbox {
+      &:focus + .icon:before {
+        text-shadow: 0 0 .4em var(--text-color--dark);
+      }
+    }
+
+    .icon {
+      &:before {
+        content: '🌞';
+      }
+    }
+  }
+
+  a {
+    color: var(--link-color--dark);
+
+    &:hover {
+      color: var(--link-hover-color--dark);
+    }
+  }
+}
