@@ -1,11 +1,6 @@
-const GA_ID = process.env.GA_ID;
+const GA_ID = 'UA-66919152-4';
 
 const initAnalytics = function() {
-  if (process.env.NODE_ENV !== 'production') {
-    console.warn('GA was not initialized: the current environment is not production');
-    return;
-  }
-
   /** Validate GA tracking ID */
   if (!GA_ID) {
     console.error('GA tracking ID is missing');
