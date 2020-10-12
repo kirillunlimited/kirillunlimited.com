@@ -22,8 +22,7 @@
 :root {
   --background-color: #fff;
   --text-color: #263238;
-  --link-color: #1976D2;
-  --link-hover-color: #EF6C00;
+  --link-color: #32d9ffd1;
 }
 
 html {
@@ -135,19 +134,27 @@ p {
   margin: 1em 0;
   font-size: 1.25em;
   line-height: 1.4;
-}
 
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: bold;
-  background-color: transparent;
-  transition: .1s linear color;
+  a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
 
-  &:hover {
-    color: var(--link-hover-color);
-    outline: 0;
-    text-decoration: underline;
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 70%;
+      left: -0.1em;
+      right: -0.1em;
+      bottom: 0;
+      transition: top .1s linear, background .1s linear;
+      background-color: var(--link-color);
+    }
+
+    &:hover:after {
+      top: 0;
+    }
   }
 }
 
