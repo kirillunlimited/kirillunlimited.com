@@ -1,8 +1,7 @@
 :root {
   --background-color--dark: #181818;
   --text-color--dark: #dadfe1;
-  --link-color--dark: #00deff;
-  --link-hover-color--dark: #9eff00;
+  --link-color--dark: #4c49fdc9;
 }
 
 .dark {
@@ -25,11 +24,11 @@
     }
   }
 
-  a {
-    color: var(--link-color--dark);
-
-    &:hover {
-      color: var(--link-hover-color--dark);
+  p {
+    a {
+      &:after {
+        background-color: var(--link-color--dark);
+      }
     }
   }
 }
