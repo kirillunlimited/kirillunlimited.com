@@ -22,7 +22,7 @@
 :root {
   --background-color: #fff;
   --text-color: #263238;
-  --link-color: #32d9ffd1;
+  --link-color: #32d9ffb5;
 }
 
 html {
@@ -136,18 +136,20 @@ p {
   line-height: 1.4;
 
   a {
+    display: inline-block;
     position: relative;
     text-decoration: none;
     color: inherit;
+    line-height: 1.2;
 
     &:after {
       content: "";
       position: absolute;
       z-index: -1;
       top: 70%;
+      bottom: 0;
       left: -0.1em;
       right: -0.1em;
-      bottom: 0;
       transition: top .1s linear, background .1s linear;
       background-color: var(--link-color);
     }
