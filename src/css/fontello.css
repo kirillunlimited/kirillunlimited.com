@@ -9,6 +9,7 @@
     url('../fonts/fontello/fontello.svg?44658292#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 [class^='fontello-']:before,
