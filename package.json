@@ -9,11 +9,7 @@
   "author": "Kirill Ivanov",
   "devDependencies": {
     "autoprefixer": "^9.5.1",
-    "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.3",
-    "postcss-css-variables": "^0.12.0",
-    "postcss-modules": "^1.4.1",
-    "postcss-nested": "^4.1.2",
     "posthtml-include": "^1.2.0",
     "prettier": "^2.3.1"
   },

@@ -1,0 +1,22 @@
+:root {
+  --background-color--dark: #181818;
+  --text-color--dark: #dadfe1;
+  --link-color--dark: #4c49fdc9;
+}
+
+.dark body {
+  color: var(--text-color--dark);
+  background-color: var(--background-color--dark);
+}
+
+.dark .switch .checkbox:focus + .icon:before {
+  text-shadow: 0 0 0.4em var(--text-color--dark);
+}
+
+.dark .switch .icon:before {
+  content: '🌞';
+}
+
+.dark p a:after {
+  background-color: var(--link-color--dark);
+}
