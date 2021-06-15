@@ -1,15 +1,14 @@
 module.exports = function (config) {
-  config.addPassthroughCopy('./src/css')
+  /* Styles */
   config.addWatchTarget('./src/css')
-
+  /* Scripts */
+  config.addWatchTarget('./src/js')
+  /* Images */
   config.addPassthroughCopy('./src/img')
   config.addWatchTarget('./src/img')
-
+  /* Fonts */
   config.addPassthroughCopy('./src/fonts')
   config.addWatchTarget('./src/fonts')
-
-  config.addPassthroughCopy('./src/js')
-  config.addWatchTarget('./src/js')
 
   return {
     dir: {
