@@ -1,0 +1,28 @@
+.switch {
+  cursor: pointer;
+}
+
+.switch .checkbox {
+  position: absolute;
+  height: 0;
+  opacity: 0;
+}
+
+.switch .checkbox:focus + .icon:before,
+.switch .checkbox:hover + .icon:before {
+  text-shadow: 0 0 0.4em var(--text-color);
+}
+
+.switch .icon {
+  display: block;
+  font-size: 2em;
+}
+
+.switch .icon:before {
+  content: '🌚';
+  transition: 0.1s linear text-shadow;
+}
+
+.dark .switch .icon:before {
+  content: '🌞';
+}

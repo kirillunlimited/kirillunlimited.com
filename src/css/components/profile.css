@@ -1,0 +1,37 @@
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile .portrait {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  margin-right: 1em;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.05s linear transform;
+  cursor: zoom-in;
+}
+
+.profile .portrait:hover {
+  transform: scale(1.4);
+}
+
+.profile .portrait .photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.profile h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.profile h2 {
+  margin: 0;
+  font-size: 1.25em;
+  font-weight: normal;
+}

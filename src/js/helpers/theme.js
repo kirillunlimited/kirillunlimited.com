@@ -16,7 +16,7 @@ const THEME_ATTRIBUTES = {
   },
 }
 
-function setTheme(themeName) {
+const setTheme = (themeName) => {
   localStorage.setItem('theme', themeName)
   document.documentElement.className = themeName
   metaThemeColor.setAttribute('content', THEME_ATTRIBUTES[themeName].barColor)
@@ -26,11 +26,11 @@ function setTheme(themeName) {
   }
 }
 
-export const initTheme = function () {
+export const initTheme = () => {
   const localStorageTheme = localStorage.getItem('theme')
 
   if (!localStorageTheme) {
-    /** If theme was never switched check device's dark mode */
+    /** Check device's dark mode if theme has never been switched */
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme(THEMES.DARK)
     }
@@ -43,7 +43,7 @@ export const initTheme = function () {
   }
 }
 
-export const initThemeListener = function () {
+export const initThemeListener = () => {
   const theme = localStorage.getItem('theme') || THEMES.LIGHT
   themeSwitch.checked = theme === THEMES.DARK
   themeSwitchLabel.title = THEME_ATTRIBUTES[theme].switchTitle

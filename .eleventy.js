@@ -10,10 +10,19 @@ module.exports = function (config) {
   config.addPassthroughCopy('./src/fonts')
   config.addWatchTarget('./src/fonts')
 
+  config.addPassthroughCopy('./src/favicon.ico')
+
   return {
     dir: {
       input: 'src',
       output: 'dist',
+      includes: 'includes',
+      layouts: 'layouts',
     },
+    dataTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk',
+    passthroughFileCopy: true,
+    templateFormats: ['md', 'njk'],
   }
 }

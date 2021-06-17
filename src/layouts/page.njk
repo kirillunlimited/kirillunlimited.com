@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Кирилл Иванов</title>
+    <meta
+      name="description"
+      content="Персональная страница веб-разработчика."
+    />
+    <meta
+      name="keywords"
+      content="Kirill Ivanov, Кирилл Иванов, frontend, фронтенд, developer, разработчик, javascript, программист"
+    />
+    <link rel="canonical" href="http://kirillunlimited.ru" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#1976D2" />
+    <script src="./js/init.js"></script>
+  </head>
+  <body>
+    {% include 'header.njk' %}
+    <main class="main">
+      {{content | safe}}
+    </main>
+    {% include 'footer.njk' %}
+    <script src="./js/app.js" async></script>
+  </body>
+</html>
