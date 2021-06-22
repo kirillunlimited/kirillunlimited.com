@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Rubik', Helvetica, Arial, sans-serif;
+  font-size: 16px; /* fallback */
+  font-size: calc(10px + 0.6vw);
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+  text-align: left;
+  background-color: var(--background-color);
+  transition: 0.1s linear background-color, 0.1s linear color;
+}

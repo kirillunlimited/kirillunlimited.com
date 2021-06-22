@@ -1,0 +1,35 @@
+.main {
+  flex: 1 0 auto;
+  max-width: 54em;
+  padding: 0 6%;
+}
+
+.main p {
+  margin: 1em 0;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+.main p a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.2;
+}
+
+.main p a:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 70%;
+  bottom: 0;
+  left: -0.1em;
+  right: -0.1em;
+  transition: top 0.1s linear, background 0.1s linear;
+  background-color: var(--link-color);
+}
+
+.main p a:hover:after {
+  top: 0;
+}

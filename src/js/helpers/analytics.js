@@ -1,6 +1,6 @@
 const GA_ID = 'UA-66919152-4'
 
-const initAnalytics = function () {
+export const initAnalytics = () => {
   /** Validate GA tracking ID */
   if (!GA_ID) {
     console.error('GA tracking ID is missing')
@@ -43,5 +43,3 @@ const initAnalytics = function () {
     }
   })
 }
-
-export default initAnalytics

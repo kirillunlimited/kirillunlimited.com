@@ -1,0 +1,11 @@
+:root {
+  --background-color: #fff;
+  --text-color: #263238;
+  --link-color: #32d9ffb5;
+}
+
+html.dark {
+  --background-color: #181818;
+  --text-color: #dadfe1;
+  --link-color: #4c49fdc9;
+}

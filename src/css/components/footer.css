@@ -1,0 +1,10 @@
+footer {
+  padding: 0 6% 4%;
+  flex-shrink: 0;
+}
+
+@media (orientation: portrait) {
+  footer {
+    margin: 0 auto;
+  }
+}
