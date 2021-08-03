@@ -1,32 +1,34 @@
 module.exports = function (config) {
   /* Markdown */
-  let markdownIt = require('markdown-it')
-  let markdownItAttrs = require('markdown-it-attrs')
-  let options = { html: true }
-  config.setLibrary('md', markdownIt(options).use(markdownItAttrs))
+  let markdownIt = require('markdown-it');
+  let markdownItAttrs = require('markdown-it-attrs');
+  let options = { html: true };
+  config.setLibrary('md', markdownIt(options).use(markdownItAttrs));
 
   /* Styles */
-  config.addWatchTarget('./src/css')
+  config.addPassthroughCopy('./src/css');
+  config.addWatchTarget('./src/css');
 
   /* Scripts */
-  config.addWatchTarget('./src/js')
+  config.addPassthroughCopy('./src/js');
+  config.addWatchTarget('./src/js');
 
   /* Images */
-  config.addPassthroughCopy('./src/img')
-  config.addWatchTarget('./src/img')
+  config.addPassthroughCopy('./src/img');
+  config.addWatchTarget('./src/img');
 
   /* Fonts */
-  config.addPassthroughCopy('./src/fonts')
-  config.addWatchTarget('./src/fonts')
+  config.addPassthroughCopy('./src/fonts');
+  config.addWatchTarget('./src/fonts');
 
-  config.addPassthroughCopy('./src/favicon.ico')
+  config.addPassthroughCopy('./src/favicon.ico');
 
   return {
     dir: {
       input: 'src',
-      output: 'dist',
+      output: 'dist/11ty',
       includes: 'includes',
       layouts: 'layouts',
     },
-  }
-}
+  };
+};
