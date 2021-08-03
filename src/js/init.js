@@ -1,3 +1,3 @@
-import { initTheme } from './helpers/theme'
+import { initTheme } from './helpers/theme';
 
-initTheme()
+initTheme();
