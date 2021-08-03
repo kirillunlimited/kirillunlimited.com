@@ -24,5 +24,21 @@ body {
   color: var(--text-color);
   text-align: left;
   background-color: var(--background-color);
-  transition: 0.1s linear background-color, 0.1s linear color;
+  transition: 0.1s ease background-color, 0.1s ease color;
+}
+
+a {
+  outline-offset: 0.1em;
+}
+
+@supports (contain: none) {
+  a:focus-visible {
+    outline: 2px dashed var(--outline-color);
+  }
+}
+
+@supports not (contain: none) {
+  a:focus {
+    outline: 2px dashed var(--outline-color);
+  }
 }

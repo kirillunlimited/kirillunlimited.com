@@ -8,19 +8,33 @@
   opacity: 0;
 }
 
-.switch .checkbox:focus + .icon:before,
 .switch .checkbox:hover + .icon:before {
-  text-shadow: 0 0 0.4em var(--text-color);
+  font-size: 1.4em;
+}
+
+@supports (contain: none) {
+  .switch .checkbox:focus-visible + .icon:before {
+    outline: 2px dashed var(--outline-color);
+  }
+}
+
+@supports not (contain: none) {
+  .switch .checkbox:focus + .icon:before {
+    outline: 2px dashed var(--outline-color);
+  }
 }
 
 .switch .icon {
   display: block;
+  width: 1.4em;
   font-size: 2em;
+  text-align: center;
 }
 
 .switch .icon:before {
   content: '🌚';
-  transition: 0.1s linear text-shadow;
+  transition: 0.1s ease font-size;
+  outline-offset: 0.1em;
 }
 
 .dark .switch .icon:before {
