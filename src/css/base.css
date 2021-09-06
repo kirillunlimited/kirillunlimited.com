@@ -27,7 +27,8 @@ body {
   transition: 0.1s ease background-color, 0.1s ease color;
 }
 
-a {
+a,
+button {
   outline-offset: 0.1em;
 }
 
