@@ -32,13 +32,15 @@ a {
 }
 
 @supports (contain: none) {
-  a:focus-visible {
+  a:focus-visible,
+  button:focus-visible {
     outline: 2px dashed var(--outline-color);
   }
 }
 
 @supports not (contain: none) {
-  a:focus {
+  a:focus,
+  button:focus-visible {
     outline: 2px dashed var(--outline-color);
   }
 }

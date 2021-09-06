@@ -7,7 +7,6 @@
 /* Components */
 @import './components/header.css';
 @import './components/profile.css';
-@import './components/theme-switch.css';
 @import './components/main.css';
 @import './components/footer.css';
 @import './components/social.css';

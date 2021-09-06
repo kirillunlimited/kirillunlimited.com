@@ -8,3 +8,8 @@ footer {
     margin: 0 auto;
   }
 }
+
+.theme-select {
+  margin-top: 1em;
+  text-align: center;
+}
