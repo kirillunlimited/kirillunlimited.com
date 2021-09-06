@@ -5,7 +5,7 @@
     "clean": "npx shx rm -rf dist",
     "dev": "npm-run-all clean --parallel dev:*",
     "dev:eleventy": "eleventy --serve --quiet",
-    "dev:parcel": "parcel src/**/*.js src/css/styles.css -d dist/public",
+    "dev:parcel": "parcel dist/11ty/*.html -d dist/public",
     "build": "npm-run-all clean build:*",
     "build:eleventy": "eleventy",
     "build:parcel": "parcel build dist/11ty/*.html -d dist/public",
