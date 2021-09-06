@@ -1,67 +1,75 @@
+const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-theme="light"]');
+const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme="dark"]');
+const themeSelect = document.querySelector('.theme-select');
 const THEMES = {
   LIGHT: 'light',
   AUTO: 'auto',
   DARK: 'dark',
 };
-
-const themeSelector = document.querySelector('.theme-select');
-const THEME_BUTTONS = {
-  [THEMES.LIGHT]: document.querySelector(`[data-theme=${THEMES.LIGHT}`),
-  [THEMES.AUTO]: document.querySelector(`[data-theme=${THEMES.AUTO}`),
-  [THEMES.DARK]: document.querySelector(`[data-theme=${THEMES.DARK}`),
-};
+const LOCAL_STORAGE_KEY = 'theme';
 const ACTIVE_BUTTON_CLASS = 'active';
-
-const metaThemeColor = document.querySelector('meta[name=theme-color]');
-const THEME_ATTRIBUTES = {
-  [THEMES.LIGHT]: {
-    barColor: '#1976D2',
-  },
-  [THEMES.DARK]: {
-    barColor: '#181818',
-  },
-};
-
-const setTheme = (themeName) => {
-  localStorage.setItem('theme', themeName);
-  document.documentElement.className = themeName;
-  THEME_ATTRIBUTES[themeName] &&
-    metaThemeColor.setAttribute(
-      'content',
-      THEME_ATTRIBUTES[themeName].barColor
-    );
+const THEME_BUTTONS = {
+  [THEMES.LIGHT]: themeSelect?.querySelector(`button[data-theme=${THEMES.LIGHT}`),
+  [THEMES.AUTO]: themeSelect?.querySelector(`button[data-theme=${THEMES.AUTO}`),
+  [THEMES.DARK]: themeSelect?.querySelector(`button[data-theme=${THEMES.DARK}`),
 };
 
 export const initTheme = () => {
-  const localStorageTheme = localStorage.getItem('theme');
-
-  if (!localStorageTheme || localStorageTheme === THEMES.AUTO) {
-    /** Check device's dark mode if theme has never been switched */
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme(THEMES.DARK);
-    }
-  } else {
-    if (localStorage.getItem('theme') === THEMES.DARK) {
-      setTheme(THEMES.DARK);
-    } else {
-      setTheme(THEMES.LIGHT);
-    }
-  }
+  const savedTheme = getSavedTheme();
+  switchMedia(savedTheme);
 };
 
-export const initThemeListener = () => {
-  const theme = localStorage.getItem('theme') || THEMES.AUTO;
-  THEME_BUTTONS[theme].classList.add(ACTIVE_BUTTON_CLASS);
+const setTheme = (theme) => {
+  switchMedia(theme);
 
-  themeSelector.addEventListener('click', ({ target }) => {
+  if (theme === THEMES.AUTO) {
+    clearSavedTheme();
+    return;
+  }
+
+  saveTheme(theme);
+};
+
+const switchMedia = (theme) => {
+  let lightMedia;
+  let darkMedia;
+
+  if (theme === THEMES.AUTO) {
+    lightMedia = '(prefers-color-scheme: light)';
+    darkMedia = '(prefers-color-scheme: dark)';
+  } else {
+    lightMedia = theme === THEMES.LIGHT ? 'all' : 'not all';
+    darkMedia = theme === THEMES.DARK ? 'all' : 'not all';
+  }
+
+  [...lightStyles].forEach((link) => {
+    link.media = lightMedia;
+  });
+
+  [...darkStyles].forEach((link) => {
+    link.media = darkMedia;
+  });
+};
+
+export const setupTheme = () => {
+  const savedTheme = getSavedTheme();
+  savedTheme && THEME_BUTTONS[savedTheme].classList.add(ACTIVE_BUTTON_CLASS);
+  themeSelect.addEventListener('click', ({ target }) => {
     const theme = target.getAttribute('data-theme');
     if (theme) {
-      const activeThemeButton = themeSelector.querySelector(
-        `.${ACTIVE_BUTTON_CLASS}`
-      );
+      setTheme(theme);
+
+      const activeThemeButton = themeSelect.querySelector(`.${ACTIVE_BUTTON_CLASS}`);
       activeThemeButton.classList.remove(ACTIVE_BUTTON_CLASS);
       THEME_BUTTONS[theme].classList.add(ACTIVE_BUTTON_CLASS);
-      setTheme(theme);
     }
   });
+};
+
+const getSavedTheme = () => localStorage.getItem(LOCAL_STORAGE_KEY) || THEMES.AUTO;
+const saveTheme = (theme) => {
+  localStorage.setItem(LOCAL_STORAGE_KEY, theme);
+};
+const clearSavedTheme = () => {
+  localStorage.removeItem(LOCAL_STORAGE_KEY);
 };
