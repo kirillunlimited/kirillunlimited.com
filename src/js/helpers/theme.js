@@ -1,5 +1,7 @@
-const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-theme="light"]');
-const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-theme="dark"]');
+const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
+const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="dark"]');
+const lightThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=light]');
+const darkThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=dark]');
 const themeSelect = document.querySelector('.theme-select');
 const THEMES = {
   LIGHT: 'light',
@@ -31,8 +33,7 @@ const setTheme = (theme) => {
 };
 
 const switchMedia = (theme) => {
-  let lightMedia;
-  let darkMedia;
+  let lightMedia, darkMedia;
 
   if (theme === THEMES.AUTO) {
     lightMedia = '(prefers-color-scheme: light)';
@@ -42,12 +43,12 @@ const switchMedia = (theme) => {
     darkMedia = theme === THEMES.DARK ? 'all' : 'not all';
   }
 
-  [...lightStyles].forEach((link) => {
-    link.media = lightMedia;
+  [...lightStyles, ...lightThemeColor].forEach((element) => {
+    element.media = lightMedia;
   });
 
-  [...darkStyles].forEach((link) => {
-    link.media = darkMedia;
+  [...darkStyles, ...darkThemeColor].forEach((element) => {
+    element.media = darkMedia;
   });
 };
 
