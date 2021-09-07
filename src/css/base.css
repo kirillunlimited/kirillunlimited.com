@@ -35,13 +35,13 @@ button {
 @supports (contain: none) {
   a:focus-visible,
   button:focus-visible {
-    outline: 2px dashed var(--outline-color);
+    outline: 2px dotted var(--text-color);
   }
 }
 
 @supports not (contain: none) {
   a:focus,
   button:focus-visible {
-    outline: 2px dashed var(--outline-color);
+    outline: 2px dotted var(--text-color);
   }
 }

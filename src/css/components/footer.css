@@ -16,6 +16,9 @@ footer {
 
 .theme-select {
   text-align: center;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-width: 1px;
 }
 
 @media (orientation: portrait) {
