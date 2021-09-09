@@ -1,5 +1,5 @@
-import { initThemeListener } from './helpers/theme';
+import { setupScheme } from './helpers/scheme';
 import { initAnalytics } from './helpers/analytics';
 
-initThemeListener();
+setupScheme();
 initAnalytics();

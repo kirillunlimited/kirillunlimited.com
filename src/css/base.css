@@ -27,18 +27,21 @@ body {
   transition: 0.1s ease background-color, 0.1s ease color;
 }
 
-a {
+a,
+button {
   outline-offset: 0.1em;
 }
 
 @supports (contain: none) {
-  a:focus-visible {
-    outline: 2px dashed var(--outline-color);
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px dotted var(--text-color);
   }
 }
 
 @supports not (contain: none) {
-  a:focus {
-    outline: 2px dashed var(--outline-color);
+  a:focus,
+  button:focus-visible {
+    outline: 2px dotted var(--text-color);
   }
 }
