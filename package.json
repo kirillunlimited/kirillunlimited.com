@@ -4,11 +4,12 @@
   "scripts": {
     "clean": "npx shx rm -rf dist",
     "dev": "npm-run-all clean --parallel dev:*",
-    "dev:eleventy": "eleventy --serve --quiet",
-    "dev:parcel": "parcel dist/11ty/*.html -d dist/public",
+    "dev:eleventy": "eleventy --watch --quiet",
+    "dev:parcel": "parcel watch dist/tmp/**/*.html -d dist/public",
+    "dev:firebase": "firebase emulators:start",
     "build": "npm-run-all clean build:*",
     "build:eleventy": "eleventy",
-    "build:parcel": "parcel build dist/11ty/*.html -d dist/public",
+    "build:parcel": "parcel build dist/tmp/**/*.html -d dist/public",
     "deploy": "npm-run-all build deploy:*",
     "deploy:firebase": "firebase deploy"
   },
