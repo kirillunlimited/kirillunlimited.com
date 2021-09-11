@@ -3,6 +3,7 @@
 .idea
 .env
 .firebase
+firebase-debug.log
 dist
 node_modules
 yarn-error.log
