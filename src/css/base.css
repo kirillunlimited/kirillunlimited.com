@@ -32,6 +32,34 @@ button {
   outline-offset: 0.1em;
 }
 
+a:not([class]),
+button {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  box-shadow: inset 0 -0.4em 0 0 var(--link-color);
+  transition: box-shadow 0.1s ease;
+}
+
+a:not([class]):hover,
+button:hover {
+  box-shadow: inset 0 -1.2em 0 0 var(--link-color);
+}
+
+button {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button.active {
+  box-shadow: inset 0 -1.2em 0 0 var(--link-color);
+  pointer-events: none;
+}
+
 @supports (contain: none) {
   a:focus-visible,
   button:focus-visible {
