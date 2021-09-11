@@ -26,7 +26,7 @@ module.exports = function (config) {
   return {
     dir: {
       input: 'src',
-      output: 'dist/11ty',
+      output: 'dist/tmp',
       includes: 'includes',
       layouts: 'layouts',
     },
