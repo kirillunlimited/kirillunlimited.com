@@ -1,5 +1,6 @@
 ---
 layout: page.njk
+permalink: index.html
 ---
 
 Занимаюсь веб-разработкой с 2015 года. В настоящее время занят разработкой интерфейсов в крупном [маркетплейсе](https://www.ozon.ru){target="\_blank" rel="noreferrer" title="Ozon"}.
