@@ -1,0 +1,11 @@
+<ol class="timeline">
+  {%- for element in collections.timeline -%}
+    <li class="item">
+      <div class="content">
+        <h3 class="title">{{element.data.title}}</h3>
+        <p class="description">{{element.templateContent | safe}}</p>
+      </div>
+      <time class="time">{{element.data.time}}</time>
+    </li>
+  {%- endfor -%}
+</ol>
