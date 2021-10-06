@@ -1,8 +1,9 @@
 ---
-title: Test 1
-time: 2019
-date: 2019-01
+title: ANOTHER
+from: 2018-01
+to: 2021-01
+date: 2020-01
 ---
 
-<ol><li>Test test test</li></ol>
-
+* Test 1
+* Test 2

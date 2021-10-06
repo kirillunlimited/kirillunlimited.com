@@ -49,9 +49,9 @@
   color: grey;
 }
 
-.timeline time {
+.timeline .period {
   text-align: end;
-  flex: 0 0 100px;
+  flex: 0 0 10em;
   min-width: 0;
   overflow-wrap: break-word;
   padding-bottom: 1em;

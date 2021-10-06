@@ -2,15 +2,15 @@
   "name": "kirillunlimited.ru",
   "version": "1.0.0",
   "scripts": {
-    "clean": "npx shx rm -rf dist",
     "dev": "npm-run-all clean --parallel dev:*",
+    "build": "npm-run-all clean build:*",
+    "deploy": "npm-run-all build deploy:*",
+    "clean": "npx shx rm -rf dist",
     "dev:eleventy": "eleventy --watch --quiet",
     "dev:parcel": "parcel watch dist/tmp/**/*.html -d dist/public",
     "dev:firebase": "firebase emulators:start",
-    "build": "npm-run-all clean build:*",
     "build:eleventy": "eleventy",
     "build:parcel": "parcel build dist/tmp/**/*.html -d dist/public",
-    "deploy": "npm-run-all build deploy:*",
     "deploy:firebase": "firebase deploy"
   },
   "author": "Kirill Ivanov",

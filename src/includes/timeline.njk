@@ -1,11 +1,14 @@
-<ol class="timeline">
-  {%- for element in collections.timeline -%}
-    <li class="item">
+<div class="timeline">
+  {%- for element in collections.timeline | reverse -%}
+    <div class="item">
       <div class="content">
         <h3 class="title">{{element.data.title}}</h3>
         <p class="description">{{element.templateContent | safe}}</p>
       </div>
-      <time class="time">{{element.data.time}}</time>
-    </li>
+      <div class="period">
+        <time>{{element.data.from | dddate}}</time> — <time>{{element.data.to | dddate}}</time>
+        <div>{{element.data.from | duration(element.data.to)}}</div>
+      </div>
+    </div>
   {%- endfor -%}
-</ol>
+</div>

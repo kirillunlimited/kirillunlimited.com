@@ -1,7 +1,10 @@
 ---
-title: Test 2
-time: 2021
+title: RANDOM
+from: 2021-01
+to: настоящее время
 date: 2021-01
 ---
 
-Test
+* Test 1
+* Test 2
+* Test 3

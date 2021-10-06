@@ -1,3 +1,17 @@
+function isValidDate(d) {
+  return d instanceof Date && !isNaN(d);
+}
+
+function yearsDiff(fromDate, toDate) {
+  let yearsDiff =  toDate.getFullYear() - fromDate.getFullYear();
+  return yearsDiff;
+}
+
+function monthsDiff(fromDate, toDate) {
+  let months = toDate.getMonth() - fromDate.getMonth()
+  return months + 1; // include last month
+}
+
 module.exports = function (config) {
   /* Markdown */
   let markdownIt = require('markdown-it');
@@ -22,6 +36,27 @@ module.exports = function (config) {
   config.addWatchTarget('./src/fonts');
 
   config.addPassthroughCopy('./src/favicon.ico');
+
+  config.addNunjucksFilter("dddate", function(value) {
+    const date = new Date(value);
+
+    if (isValidDate(date)) {
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      return `${month} ${year}`;
+    }
+    return value;
+  });
+
+  config.addNunjucksFilter('duration', function(from, to) {
+    const fromDate = new Date(from);
+    const toDateTemp = new Date(to);
+    const toDate = isValidDate(toDateTemp) ? toDateTemp : new Date();
+
+    const years = yearsDiff(fromDate, toDate);
+    const months = monthsDiff(fromDate, toDate);
+    return `${years} лет и ${months} месяцев`;
+  });
 
   return {
     dir: {
