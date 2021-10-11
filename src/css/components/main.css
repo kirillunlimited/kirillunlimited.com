@@ -2,10 +2,14 @@
   flex: 1 0 auto;
   max-width: 54em;
   padding: 0 6%;
+  font-size: 1.25em;
+  line-height: 1.4;
 }
 
 .main p {
   margin: 1em 0;
-  font-size: 1.25em;
-  line-height: 1.4;
+}
+
+.main > *:first-child {
+  margin-top: 1em;
 }
