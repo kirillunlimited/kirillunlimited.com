@@ -1,3 +1,18 @@
+const MONTHS = {
+  0: 'Январь',
+  1: 'Февраль',
+  2: 'Март',
+  3: 'Апрель',
+  4: 'Май',
+  5: 'Июнь',
+  6: 'Июль',
+  7: 'Август',
+  8: 'Сентябрь',
+  9: 'Октябрь',
+  10: 'Ноябрь',
+  11: 'Декабрь'
+}
+
 function isValidDate(d) {
   return d instanceof Date && !isNaN(d);
 }
@@ -10,6 +25,22 @@ function yearsDiff(fromDate, toDate) {
 function monthsDiff(fromDate, toDate) {
   let months = toDate.getMonth() - fromDate.getMonth()
   return months + 1; // include last month
+}
+
+function pluralize(number, one, some, many) {
+  if (number === 0) {
+    return;
+  }
+
+  let noun;
+  if (number === 1) {
+    noun = one;
+  } else if (number < 5) {
+    noun = some;
+  } else {
+    noun = many;
+  }
+  return `${number} ${noun}`;
 }
 
 module.exports = function (config) {
@@ -37,11 +68,11 @@ module.exports = function (config) {
 
   config.addPassthroughCopy('./src/favicon.ico');
 
-  config.addNunjucksFilter("dddate", function(value) {
+  config.addNunjucksFilter("monthAndYear", function(value) {
     const date = new Date(value);
 
     if (isValidDate(date)) {
-      const month = date.getMonth();
+      const month = MONTHS[date.getMonth()];
       const year = date.getFullYear();
       return `${month} ${year}`;
     }
@@ -55,7 +86,11 @@ module.exports = function (config) {
 
     const years = yearsDiff(fromDate, toDate);
     const months = monthsDiff(fromDate, toDate);
-    return `${years} лет и ${months} месяцев`;
+    const resultArray = [
+      pluralize(years, 'год', 'года', 'лет'),
+      pluralize(months, 'месяц', 'месяца', 'месяцев')
+    ].filter(el => el);
+    return resultArray.join(' и ');
   });
 
   config.addNunjucksFilter('navLink', (link) => link.replace('index.html',''));

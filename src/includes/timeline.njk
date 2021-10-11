@@ -6,7 +6,7 @@
         <p class="description">{{element.templateContent | safe}}</p>
       </div>
       <div class="period">
-        <time>{{element.data.from | dddate}}</time> — <time>{{element.data.to | dddate}}</time>
+        <time>{{element.data.from | monthAndYear}}</time> — <time>{{element.data.to | monthAndYear}}</time>
         <div>{{element.data.from | duration(element.data.to)}}</div>
       </div>
     </div>
