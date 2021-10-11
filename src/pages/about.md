@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 permalink: about/index.html
-title: Обо мне
+title: Опыт
 templateEngineOverride: md,njk
 ---
 

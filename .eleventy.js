@@ -58,6 +58,8 @@ module.exports = function (config) {
     return `${years} лет и ${months} месяцев`;
   });
 
+  config.addNunjucksFilter('navLink', (link) => link.replace('index.html',''));
+
   return {
     dir: {
       input: 'src',

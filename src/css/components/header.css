@@ -5,3 +5,12 @@
   align-items: center;
   padding: 4% 6% 0;
 }
+
+nav {
+  display: flex;
+  font-size: 1.25em;
+}
+
+nav a + a {
+  margin-left: 0.5em;
+}
