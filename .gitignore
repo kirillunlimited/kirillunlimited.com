@@ -4,6 +4,7 @@
 .idea
 .env
 .firebase
+.vscode
 firebase-debug.log
 dist
 node_modules
