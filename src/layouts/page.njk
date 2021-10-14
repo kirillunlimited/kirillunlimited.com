@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Кирилл Иванов</title>
-    <meta
-      name="description"
-      content="Персональная страница веб-разработчика."
-    />
-    <meta
-      name="keywords"
-      content="Kirill Ivanov, Кирилл Иванов, frontend, фронтенд, developer, разработчик, javascript, программист"
-    />
+    <meta name="description" content="Персональная страница веб-разработчика"/>
+    <meta name="keywords" content="Kirill Ivanov, Кирилл Иванов, frontend, фронтенд, developer, разработчик, javascript, программист"/>
     <link rel="canonical" href="http://kirillunlimited.ru" />
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/themes/light.css" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
-    <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/themes/light.css" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
+    <link rel="stylesheet" href="./css/themes/dark.css" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-theme-color="light" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-theme-color="dark" />
-    <script src="/js/init.js"></script>
+    <script type="module" src="./js/init.js"></script>
   </head>
   <body>
     {% include 'header.njk' %}
@@ -29,6 +23,6 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    <script src="/js/app.js" async></script>
+    <script type="module" src="./js/app.js" async></script>
   </body>
 </html>

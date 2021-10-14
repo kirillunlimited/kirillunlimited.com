@@ -1,8 +1,10 @@
 .cache
+.parcel-cache
 .DS_Store
 .idea
 .env
 .firebase
+.vscode
 firebase-debug.log
 dist
 node_modules
