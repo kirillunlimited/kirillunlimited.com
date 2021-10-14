@@ -2,7 +2,9 @@
   "name": "kirillunlimited.ru",
   "version": "1.0.0",
   "scripts": {
-    "clean": "npx shx rm -rf dist",
+    "clean": "npm-run-all --parallel clean:*",
+    "clean:cache": "npx shx rm -rf .parcel-cache",
+    "clean:dist": "npx shx rm -rf dist",
     "dev": "npm-run-all clean --parallel dev:*",
     "dev:eleventy": "eleventy --watch --quiet",
     "dev:parcel": "parcel watch dist/tmp/**/*.html --dist-dir dist/public",
