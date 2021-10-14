@@ -2,7 +2,6 @@
 @import './base.css';
 @import './themes/light.css'; /* Theme fallback */
 @import './fonts.css';
-@import './fontello.css';
 
 /* Components */
 @import './components/header.css';

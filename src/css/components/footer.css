@@ -1,6 +1,5 @@
 footer {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
   padding: 0 6% 4%;
   flex-shrink: 0;
