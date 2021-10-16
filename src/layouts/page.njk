@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Кирилл Иванов</title>
-    <meta name="description" content="Персональная страница веб-разработчика"/>
+    <title>Кирилл Иванов - Front-end разработчик</title>
+    <meta name="description" content="Моя персональная страница"/>
     <meta name="keywords" content="Kirill Ivanov, Кирилл Иванов, frontend, фронтенд, developer, разработчик, javascript, программист"/>
-    <link rel="canonical" href="http://kirillunlimited.ru" />
-    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <link rel="canonical" href="https://kirillunlimited.ru" />
+
+    <meta property="og:title" content="Кирилл Иванов - Front-end разработчик" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./img/portrait.jpg" />
+    <meta property="og:url" content="https://kirillunlimited.ru" />
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/themes/light.css" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
     <link rel="stylesheet" href="./css/themes/dark.css" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta name="color-scheme" content="light dark">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-theme-color="light" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-theme-color="dark" />
+
     <script type="module" src="./js/init.js"></script>
   </head>
   <body>
@@ -23,6 +32,7 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
+
     <script type="module" src="./js/app.js" async></script>
   </body>
 </html>

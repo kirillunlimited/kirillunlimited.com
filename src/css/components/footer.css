@@ -9,9 +9,21 @@ footer {
 @media (orientation: portrait) {
   footer {
     flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     margin: 0 auto;
+    text-align: center;
   }
+}
+
+@media (orientation: portrait) {
+  .copyright {
+    margin-top: 1em;
+  }
+}
+
+.heart {
+  color: tomato;
 }
 
 .scheme-select {

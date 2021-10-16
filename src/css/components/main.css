@@ -1,11 +1,9 @@
 .main {
   flex: 1 0 auto;
-  max-width: 54em;
+  max-width: 62em;
   padding: 0 6%;
 }
 
 .main p {
   margin: 1em 0;
-  font-size: 1.25em;
-  line-height: 1.4;
 }
