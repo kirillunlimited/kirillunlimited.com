@@ -1,12 +1,12 @@
 <footer>
   <div class="copyright">
-    <p>Сделано с <span class="heart">♥</span> на движке <a href="https://www.11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a></p>
-    <p>© 2015–<span id="current-year"></span></p>
+    <p>{{copyright | safe}} <a href="https://www.11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a></p>
+    <p>© 2019–<span id="current-year"></span></p>
   </div>
   <fieldset class="scheme-select">
-    <legend>Цветовая схема</legend>
-    <button data-scheme-value="light">Светлая</button> /
-    <button data-scheme-value="auto">Авто</button> /
-    <button data-scheme-value="dark">Темная</button>
+    <legend>{{scheme.legend}}</legend>
+    <button data-scheme-value="light">{{scheme.light}}</button> /
+    <button data-scheme-value="auto">{{scheme.auto}}</button> /
+    <button data-scheme-value="dark">{{scheme.dark}}</button>
   </fieldset>
 </footer>

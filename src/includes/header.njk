@@ -3,19 +3,27 @@
     <a
       href="./img/kirillunlimited.jpg"
       class="portrait"
-      title="Фотография в исходном размере"
+      title="{{ portrait.title }}"
     >
       <img
         class="photo"
         src="./img/portrait.jpg"
-        alt="Кирилл Иванов"
+        alt="{{ portrait.alt }}"
         width="256"
         height="256"
       />
     </a>
     <div>
-      <h1>Кирилл Иванов</h1>
-      <h2>Front-end разработчик</h2>
+      <h1>{{ header.h1 }}</h1>
+      <h2>{{ header.h2 }}</h2>
     </div>
   </div>
+  <nav class="language">
+    {%- for element in collections.pages -%}
+      <a
+        href="/{{element.data.permalink | navLink}}"
+        {% if page.url == element.url %} aria-current="page"{% endif %}>{{element.data.language}}</a>
+      {% if not loop.last %} / {% endif %}
+    {%- endfor -%}
+  </nav>
 </header>

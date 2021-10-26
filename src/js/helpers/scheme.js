@@ -5,7 +5,7 @@ const SCHEMES = {
   DARK: 'dark',
 };
 const LOCAL_STORAGE_KEY = 'scheme';
-const ACTIVE_BUTTON_CLASS = 'active';
+const ACTIVE_BUTTON_ATTRIBUTE = 'aria-current';
 
 /** ELEMENTS */
 const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
@@ -26,7 +26,7 @@ export const initScheme = () => {
 
 export const setupScheme = () => {
   const savedScheme = getSavedScheme();
-  savedScheme && schemeButtons[savedScheme].classList.add(ACTIVE_BUTTON_CLASS);
+  savedScheme && schemeButtons[savedScheme].setAttribute(ACTIVE_BUTTON_ATTRIBUTE, 'true');
 
   schemeSelect.addEventListener('click', ({ target }) => {
     const scheme = target.getAttribute('data-scheme-value');
@@ -34,9 +34,9 @@ export const setupScheme = () => {
       setScheme(scheme);
 
       /** Update scheme select buttons style */
-      const activeSchemeButton = schemeSelect.querySelector(`.${ACTIVE_BUTTON_CLASS}`);
-      activeSchemeButton.classList.remove(ACTIVE_BUTTON_CLASS);
-      schemeButtons[scheme].classList.add(ACTIVE_BUTTON_CLASS);
+      const activeSchemeButton = schemeSelect.querySelector(`[${ACTIVE_BUTTON_ATTRIBUTE}]`);
+      activeSchemeButton.removeAttribute(ACTIVE_BUTTON_ATTRIBUTE);
+      schemeButtons[scheme].setAttribute(ACTIVE_BUTTON_ATTRIBUTE, 'true');
     }
   });
 };

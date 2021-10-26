@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ language }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Кирилл Иванов - Front-end разработчик</title>
-    <meta name="description" content="Моя персональная страница"/>
+    <title>{{ head.title }}</title>
+    <meta name="description" content="{{head.description}}"/>
     <meta name="keywords" content="Kirill Ivanov, Кирилл Иванов, frontend, фронтенд, developer, разработчик, javascript, программист"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
-    <link rel="canonical" href="https://kirillunlimited.ru" />
+    <link rel="alternate" hreflang="ru" href="https://kirillunlimited.ru" />
+    <link rel="alternate" hreflang="en" href="https://kirillunlimited.ru/en" />
 
-    <meta property="og:title" content="Кирилл Иванов - Front-end разработчик" />
+    <meta property="og:title" content="{{ head.title }}"/>
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./img/portrait.jpg" />
     <meta property="og:url" content="https://kirillunlimited.ru" />

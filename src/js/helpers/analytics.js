@@ -24,13 +24,7 @@ export const initAnalytics = () => {
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m);
-  })(
-    window,
-    document,
-    'script',
-    '//www.google-analytics.com/analytics.js',
-    'ga'
-  );
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', GA_ID, 'auto');
   ga('send', 'pageview');
 
@@ -38,7 +32,7 @@ export const initAnalytics = () => {
   document.addEventListener('click', function (e) {
     const linkElement = e.target.closest('a');
     if (linkElement) {
-      const title = linkElement.getAttribute('title');
+      const title = linkElement.href;
       ga('send', 'event', title, 'Click');
     }
   });
