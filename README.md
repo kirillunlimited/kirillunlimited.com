@@ -5,7 +5,7 @@
 This project is built with [11ty](https://www.11ty.dev/) and [Parcel](https://parceljs.org/).
 
 1. 11ty transforms `.md` files to `.html` to the `/dist/tmp` folder
-2. Parcel processes these files as entry points, transforms required assets and outputs the resulting build to the final `/dist/public/` folder.
+2. Parcel processes these files as entry points, transforms required assets and outputs the resulting build to the final `/dist/public` folder.
 
 ## Installation
 
@@ -21,4 +21,4 @@ As there are several entry points (html files), Parcel oblige to explicitly poin
 
 ## Build and deploy
 
-`yarn deploy` to reveal this amazing project to the world
+`yarn deploy` to reveal this amazing project to the world.

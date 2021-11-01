@@ -8,23 +8,19 @@ const LOCAL_STORAGE_KEY = 'scheme';
 const ACTIVE_BUTTON_ATTRIBUTE = 'aria-current';
 
 /** ELEMENTS */
-const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
-const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="dark"]');
-const lightThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=light]');
-const darkThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=dark]');
-const schemeSelect = document.querySelector('.scheme-select');
-const schemeButtons = {
-  [SCHEMES.LIGHT]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.LIGHT}`),
-  [SCHEMES.AUTO]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.AUTO}`),
-  [SCHEMES.DARK]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.DARK}`),
-};
-
-export const initScheme = () => {
+const initScheme = () => {
   const savedScheme = getSavedScheme();
   switchMedia(savedScheme);
 };
 
-export const setupScheme = () => {
+const setupScheme = () => {
+  const schemeSelect = document.querySelector('.scheme-select');
+  const schemeButtons = {
+    [SCHEMES.LIGHT]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.LIGHT}`),
+    [SCHEMES.AUTO]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.AUTO}`),
+    [SCHEMES.DARK]: schemeSelect?.querySelector(`button[data-scheme-value=${SCHEMES.DARK}`),
+  };
+
   const savedScheme = getSavedScheme();
   savedScheme && schemeButtons[savedScheme].setAttribute(ACTIVE_BUTTON_ATTRIBUTE, 'true');
 
@@ -53,6 +49,11 @@ const setScheme = (scheme) => {
 };
 
 const switchMedia = (scheme) => {
+  const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
+  const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="dark"]');
+  const lightThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=light]');
+  const darkThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=dark]');
+
   let lightMedia, darkMedia;
 
   if (scheme === SCHEMES.AUTO) {
@@ -79,3 +80,5 @@ const saveScheme = (scheme) => {
 const clearSavedScheme = () => {
   localStorage.removeItem(LOCAL_STORAGE_KEY);
 };
+
+initScheme();
