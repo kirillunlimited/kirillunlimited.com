@@ -7,6 +7,8 @@ This project is built with [11ty](https://www.11ty.dev/) and [Parcel](https://pa
 1. 11ty transforms `.md` files to `.html` to the `/dist/tmp` folder
 2. Parcel processes these files as entry points, transforms required assets and outputs the resulting build to the final `/dist/public` folder.
 
+⚠️ This project doesn't use javascript transpilation because Parcel 2 requres `type="module"` for .js files that contain `import/export`. "Module" scripts are not "render blocking". This behavior cause flash of incorrect theme (FOIT) as previously selected color-scheme should be set before DOM render.
+
 ## Installation
 
 1. `yarn` to install Parcel with all required dependencies

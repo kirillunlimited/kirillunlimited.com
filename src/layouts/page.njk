@@ -25,7 +25,8 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-theme-color="light" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-theme-color="dark" />
 
-    <script src="./js/scheme.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/head.js"></script>
   </head>
   <body>
     {% include 'header.njk' %}
@@ -33,6 +34,6 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    <script src="./js/app.js"></script>
+    <script src="./js/body.js" async></script>
   </body>
 </html>
