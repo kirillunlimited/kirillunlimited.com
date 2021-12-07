@@ -1,5 +1,6 @@
-@import './base.css';
-@import './fonts.css';
+@import './core/base.css';
+@import './core/fonts.css';
+
 @import './components/header.css';
 @import './components/profile.css';
 @import './components/main.css';

@@ -1,5 +1,4 @@
 const path = require('path');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
@@ -51,7 +50,11 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { postcssOptions: { plugins: [PostCSSPresetEnv] } },
+            options: {
+              postcssOptions: {
+                plugins: [PostCSSPresetEnv],
+              },
+            },
           },
         ],
       },
