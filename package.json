@@ -1,6 +1,10 @@
 {
+  "license": "MIT",
   "name": "kirillunlimited.ru",
-  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kirillunlimited/kirillunlimited.ru"
+  },
   "scripts": {
     "clean": "npx shx rm -rf ./dist",
     "dev": "NODE_ENV=development npm-run-all clean --parallel dev:*",
