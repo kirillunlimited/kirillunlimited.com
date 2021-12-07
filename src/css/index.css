@@ -1,8 +1,5 @@
-/* Core */
 @import './base.css';
 @import './fonts.css';
-
-/* Components */
 @import './components/header.css';
 @import './components/profile.css';
 @import './components/main.css';

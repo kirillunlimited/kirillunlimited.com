@@ -12,6 +12,14 @@ const baseFilename = isDev ? '[name]' : '[name].[contenthash]';
 
 module.exports = {
   mode: isDev ? 'development' : 'production',
+  stats: {
+    colors: true,
+    preset: 'minimal',
+  },
+  performance: {
+    hints: isDev ? 'warning' : 'error',
+  },
+  devtool: isDev ? 'cheap-module-source-map' : 'source-map',
   entry: {
     app: './src/js/index.js',
     styles: './src/css/index.css',
