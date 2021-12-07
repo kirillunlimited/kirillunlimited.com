@@ -1,6 +1,9 @@
 const path = require('path');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssnanoPlugin = require('cssnano-webpack-plugin');
+const PostCSSPresetEnv = require('postcss-preset-env');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -37,13 +40,11 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
+          'css-loader',
           {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
+            loader: 'postcss-loader',
+            options: { postcssOptions: { plugins: [PostCSSPresetEnv] } },
           },
-          'postcss-loader',
         ],
       },
     ],
@@ -52,4 +53,9 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: `${baseFilename}.css` }),
     new WebpackManifestPlugin({ publicPath: '/assets/' }),
   ],
+  ...(!isDev && {
+    optimization: {
+      minimizer: [new TerserPlugin(), new CssnanoPlugin()],
+    },
+  }),
 };
