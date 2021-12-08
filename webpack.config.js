@@ -20,10 +20,10 @@ module.exports = {
   },
   devtool: isDev ? 'cheap-module-source-map' : 'source-map',
   entry: {
-    app: './src/js/index.js',
-    styles: './src/css/index.css',
-    light: './src/css/themes/light.css',
-    dark: './src/css/themes/dark.css',
+    app: './src/assets/js/index.js',
+    styles: './src/assets/css/index.css',
+    light: './src/assets/css/themes/light.css',
+    dark: './src/assets/css/themes/dark.css',
   },
   output: {
     filename: `${baseFilename}.js`,
