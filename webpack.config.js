@@ -4,6 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -63,6 +64,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({ filename: `${baseFilename}.css` }),
     new WebpackManifestPlugin({ publicPath: '/assets/' }),
+    ...(process.env.DEBUG ? [new BundleAnalyzerPlugin()] : []),
   ],
   ...(!isDev && {
     optimization: {
