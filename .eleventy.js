@@ -21,17 +21,12 @@ module.exports = function (config) {
       })
   );
 
-  /* Images */
-  config.addPassthroughCopy('./src/img');
-  config.addWatchTarget('./src/img');
-
-  /* Fonts */
-  config.addPassthroughCopy('./src/fonts');
-  config.addWatchTarget('./src/fonts');
+  config.addPassthroughCopy('./src/assets/img');
+  config.addWatchTarget('./src/assets/img');
 
   config.addPassthroughCopy('./src/favicon.ico');
 
-  // Reload the page every time any JS/CSS files are changed.
+  /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [manifestPath] });
 
   return {
