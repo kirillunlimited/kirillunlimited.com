@@ -10,8 +10,7 @@ module.exports = function (config) {
   let options = { html: true };
   config.setLibrary('md', markdownIt(options).use(markdownItAttrs));
 
-  config.addNunjucksFilter('navLink', (link) => link.replace(/\index.html|.[^/.]+$/, '')); // Strip '.html' and 'index.html'
-
+  /* Assets */
   config.addNunjucksAsyncShortcode(
     'webpack',
     async (name) =>

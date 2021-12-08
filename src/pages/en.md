@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-permalink: en.html
+permalink: '/en'
 language: en
 head:
   title: Kirill Ivanov – Front-end developer
