@@ -1,13 +1,13 @@
 <header class="header">
   <div class="profile">
     <a
-      href="./img/kirillunlimited.jpg"
+      href="./assets/img/kirillunlimited.jpg"
       class="portrait"
       title="{{ portrait.title }}"
     >
       <img
         class="photo"
-        src="./img/portrait.jpg"
+        src="./assets/img/portrait.jpg"
         alt="{{ portrait.alt }}"
         width="256"
         height="256"
@@ -21,7 +21,7 @@
   <nav class="language">
     {%- for element in collections.pages -%}
       <a
-        href="/{{element.data.permalink | navLink}}"
+        href="{{element.data.permalink}}"
         {% if page.url == element.url %} aria-current="page"{% endif %}>{{element.data.language}}</a>
       {% if not loop.last %} / {% endif %}
     {%- endfor -%}

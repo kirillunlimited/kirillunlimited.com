@@ -17,16 +17,16 @@
     <meta property="og:image" content="./img/portrait.jpg" />
     <meta property="og:url" content="https://kirillunlimited.ru" />
 
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/themes/light.css" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
-    <link rel="stylesheet" href="./css/themes/dark.css" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
+    <link rel="stylesheet" href="{% webpack 'styles.css' %}" />
+    <link rel="stylesheet" href="{% webpack 'light.css' %}" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
+    <link rel="stylesheet" href="{% webpack 'dark.css' %}" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
+
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-theme-color="light" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-theme-color="dark" />
 
-    <script src="./js/utils.js"></script>
-    <script src="./js/head.js"></script>
+    <script src="{% webpack 'app.js' %}"></script>
   </head>
   <body>
     {% include 'header.njk' %}
@@ -34,6 +34,5 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    <script src="./js/body.js" async></script>
   </body>
 </html>

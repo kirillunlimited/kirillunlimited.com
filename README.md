@@ -2,12 +2,7 @@
 
 ## About
 
-This project is built with [11ty](https://www.11ty.dev/) and [Parcel](https://parceljs.org/).
-
-1. 11ty transforms `.md` files to `.html` to the `/dist/tmp` folder
-2. Parcel processes these files as entry points, transforms required assets and outputs the resulting build to the final `/dist/public` folder.
-
-⚠️ This project doesn't use javascript transpilation because Parcel 2 requres `type="module"` for .js files that contain `import/export`. "Module" scripts are not "render blocking". This behavior cause flash of incorrect theme (FOIT) as previously selected color-scheme should be set before DOM render.
+This project is built with [11ty](https://www.11ty.dev/) and [Webpack](https://webpack.js.org/).
 
 ## Installation
 
@@ -18,8 +13,6 @@ This project is built with [11ty](https://www.11ty.dev/) and [Parcel](https://pa
 ## Development
 
 `yarn dev` to start hot-reloading local server @ http://localhost:5000
-
-As there are several entry points (html files), Parcel oblige to explicitly point to these pages in browser. To fix this inconvenience, the firebase emulator is used.
 
 ## Build and deploy
 

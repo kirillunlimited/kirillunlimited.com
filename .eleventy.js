@@ -1,3 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+const htmlmin = require('html-minifier');
+
+const manifestPath = path.resolve(__dirname, 'dist/assets/manifest.json');
+
 module.exports = function (config) {
   /* Markdown */
   let markdownIt = require('markdown-it');
@@ -5,30 +11,47 @@ module.exports = function (config) {
   let options = { html: true };
   config.setLibrary('md', markdownIt(options).use(markdownItAttrs));
 
-  config.addNunjucksFilter('navLink', (link) => link.replace(/\index.html|.[^/.]+$/, '')); // Strip '.html' and 'index.html'
+  /* Assets */
+  config.addNunjucksAsyncShortcode(
+    'webpack',
+    async (name) =>
+      new Promise((resolve) => {
+        fs.readFile(manifestPath, { encoding: 'utf8' }, (err, data) =>
+          resolve(err ? `/assets/${name}` : JSON.parse(data)[name])
+        );
+      })
+  );
 
-  /* Styles */
-  config.addPassthroughCopy('./src/css');
-  config.addWatchTarget('./src/css');
+  const shouldTransformHTML = (outputPath) =>
+    outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
 
-  /* Scripts */
-  config.addPassthroughCopy('./src/js');
-  config.addWatchTarget('./src/js');
+  config.addTransform('htmlmin', (content, outputPath) =>
+    shouldTransformHTML(outputPath)
+      ? htmlmin.minify(content, {
+          html5: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true,
+        })
+      : content
+  );
 
-  /* Images */
-  config.addPassthroughCopy('./src/img');
-  config.addWatchTarget('./src/img');
-
-  /* Fonts */
-  config.addPassthroughCopy('./src/fonts');
-  config.addWatchTarget('./src/fonts');
+  config.addPassthroughCopy('./src/assets/img');
+  config.addWatchTarget('./src/assets/img');
 
   config.addPassthroughCopy('./src/favicon.ico');
+
+  /* Reload the page every time any JS/CSS files are changed */
+  config.setBrowserSyncConfig({ files: [manifestPath] });
 
   return {
     dir: {
       input: 'src',
-      output: 'dist/tmp',
+      output: 'dist',
       includes: 'includes',
       layouts: 'layouts',
     },

@@ -1,30 +1,44 @@
 {
+  "license": "MIT",
   "name": "kirillunlimited.ru",
-  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kirillunlimited/kirillunlimited.ru"
+  },
   "scripts": {
-    "clean": "npm-run-all --parallel clean:*",
-    "clean:cache": "npx shx rm -rf .parcel-cache",
-    "clean:dist": "npx shx rm -rf dist",
-    "dev": "npm-run-all clean --parallel dev:*",
-    "dev:eleventy": "eleventy --watch --quiet",
-    "dev:parcel": "parcel watch dist/tmp/**/*.html --dist-dir dist/public",
+    "clean": "npx shx rm -rf ./dist",
+    "dev": "NODE_ENV=development npm-run-all clean --parallel dev:*",
+    "dev:webpack": "webpack --watch",
+    "dev:eleventy": "eleventy --watch",
     "dev:firebase": "firebase emulators:start",
-    "build": "npm-run-all clean build:*",
-    "build:eleventy": "eleventy",
-    "build:parcel": "parcel build dist/tmp/**/*.html --dist-dir dist/public",
+    "build": "NODE_ENV=production npm-run-all clean build:*",
+    "build:assets": "webpack --mode production",
+    "build:site": "eleventy",
     "deploy": "npm-run-all build deploy:*",
-    "deploy:firebase": "firebase deploy"
+    "deploy:firebase": "firebase deploy",
+    "analyze": "NODE_ENV=production & DEBUG=true npm-run-all clean build:*"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "autoprefixer": "^9.5.1",
-    "npm-run-all": "^4.1.5",
-    "parcel": "^2.0.0",
-    "prettier": "^2.3.1"
-  },
-  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "cssnano-webpack-plugin": "^1.0.3",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^12.0.6",
-    "markdown-it-attrs": "^4.0.0"
+    "markdown-it-attrs": "^4.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.1",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.1",
+    "webpack": "^5.64.4",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-fix-style-only-entries": "^0.6.1",
+    "webpack-manifest-plugin": "^4.0.2"
   }
 }
