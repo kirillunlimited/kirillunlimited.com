@@ -6,6 +6,11 @@ const SCHEMES = {
 const LOCAL_STORAGE_KEY = 'scheme';
 const ACTIVE_BUTTON_ATTRIBUTE = 'aria-current';
 
+const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
+const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="dark"]');
+const lightThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=light]');
+const darkThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=dark]');
+
 export const initScheme = () => {
   const savedScheme = getSavedScheme();
   switchMedia(savedScheme);
@@ -47,11 +52,6 @@ const setScheme = (scheme) => {
 };
 
 const switchMedia = (scheme) => {
-  const lightStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="light"]');
-  const darkStyles = document.querySelectorAll('link[rel=stylesheet][data-scheme-colors="dark"]');
-  const lightThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=light]');
-  const darkThemeColor = document.querySelectorAll('meta[name=theme-color][data-theme-color=dark]');
-
   let lightMedia, darkMedia;
 
   if (scheme === SCHEMES.AUTO) {
