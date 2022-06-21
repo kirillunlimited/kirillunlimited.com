@@ -21,7 +21,7 @@
   <nav class="language">
     {%- for element in collections.pages -%}
       <a
-        href="{{element.data.permalink}}"
+        href="{{element.data.permalink | stripTrailingSlash}}"
         {% if page.url == element.url %} aria-current="page"{% endif %}>{{element.data.language}}</a>
       {% if not loop.last %} / {% endif %}
     {%- endfor -%}

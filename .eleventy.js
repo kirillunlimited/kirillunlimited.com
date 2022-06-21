@@ -48,6 +48,13 @@ module.exports = function (config) {
   /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [manifestPath] });
 
+  config.addFilter('stripTrailingSlash', (str) => {
+    if (str === '/') {
+      return str;
+    }
+    return str.replace(/\/+$/, '');
+  });
+
   return {
     dir: {
       input: 'src',
