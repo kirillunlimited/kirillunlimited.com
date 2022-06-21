@@ -20,11 +20,12 @@ body {
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   font-size: 16px; /* fallback */
   font-size: calc(10px + 0.6vw);
-  -webkit-font-smoothing: antialiased;
   color: var(--text-color);
   text-align: left;
   background-color: var(--background-color);
   transition: 0.1s ease background-color, 0.1s ease color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a,
