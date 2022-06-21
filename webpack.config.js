@@ -5,7 +5,7 @@ const CssnanoPlugin = require('cssnano-webpack-plugin');
 const PostCSSPresetEnv = require('postcss-preset-env');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -31,6 +31,11 @@ module.exports = {
     filename: `${baseFilename}.js`,
     path: path.resolve(__dirname, 'dist/assets'),
   },
+  ...(!isDev && {
+    optimization: {
+      minimizer: [new TerserPlugin(), new CssnanoPlugin()],
+    },
+  }),
   module: {
     rules: [
       {
@@ -70,14 +75,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new FixStyleOnlyEntriesPlugin(),
+    new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({ filename: `${baseFilename}.css` }),
     new WebpackManifestPlugin({ publicPath: '/assets/' }),
     ...(process.env.DEBUG ? [new BundleAnalyzerPlugin()] : []),
   ],
-  ...(!isDev && {
-    optimization: {
-      minimizer: [new TerserPlugin(), new CssnanoPlugin()],
-    },
-  }),
 };
