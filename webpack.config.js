@@ -60,6 +60,13 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(woff|woff2)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: `${baseFilename}[ext]`,
+        },
+      },
     ],
   },
   plugins: [
