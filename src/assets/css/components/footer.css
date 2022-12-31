@@ -32,10 +32,15 @@ footer {
   border-radius: 0.5em;
   border-style: solid;
   border-width: 1px;
+  max-height: 3.4em;
 }
 
 @media (orientation: portrait) {
   .scheme-select {
     margin: 1em 0 0;
   }
+}
+
+.legend {
+  margin: 0 auto;
 }

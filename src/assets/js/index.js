@@ -1,8 +1,7 @@
-import { initScheme, setupScheme, initCurrentYear } from './utils';
+import { initScheme, setupScheme } from './utils';
 
 initScheme();
 
 document.addEventListener('DOMContentLoaded', function () {
   setupScheme();
-  initCurrentYear();
 });
