@@ -7,25 +7,27 @@
 }
 
 .header__logo {
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--text-color);
   border-radius: 50%;
   box-shadow: none;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
 }
 
 .header__logo:hover {
   box-shadow: none;
   background-color: var(--link-color);
+  border-color: transparent;
 }
 
 .header__logo[aria-current] {
   box-shadow: none;
   background-color: var(--link-color);
+  border-color: transparent;
   pointer-events: none;
 }
 
