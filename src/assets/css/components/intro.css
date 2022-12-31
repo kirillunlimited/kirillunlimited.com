@@ -21,4 +21,6 @@
   display: block;
   width: 6em;
   border-radius: 50%;
+  border: 1px solid var(--text-color);
+  transition: border-color 0.1s ease;
 }

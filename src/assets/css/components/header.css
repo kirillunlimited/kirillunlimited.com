@@ -2,6 +2,7 @@
   padding: 4% 6% 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 1.25em;
 }
 
@@ -13,6 +14,19 @@
   justify-content: center;
   border: 1px solid var(--text-color);
   border-radius: 50%;
+  box-shadow: none;
+  transition: background-color 0.1s ease;
+}
+
+.header__logo:hover {
+  box-shadow: none;
+  background-color: var(--link-color);
+}
+
+.header__logo[aria-current] {
+  box-shadow: none;
+  background-color: var(--link-color);
+  pointer-events: none;
 }
 
 .header__list {
