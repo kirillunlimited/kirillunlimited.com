@@ -1,18 +1,25 @@
 .header {
   padding: 4% 6% 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25em;
 }
 
-.header__nav {
-  font-size: 1.25em;
+.header__logo {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
 }
 
 .header__list {
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: flex-end;
   gap: 1em;
   list-style: none;
-}
-
-.header__listItem {
 }

@@ -1,9 +1,14 @@
 <header class="header">
+  <div class="header__logo">KI</div>
   <nav class="header__nav">
     <ul class="header__list">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contacts">Contacts</a></li>
+      {%- for element in collections.pages | sortByOrder -%}
+        <li>
+          <a href="{{element.data.permalink}}" {% if page.url == element.url %} aria-current="page"{% endif %}>
+            {{ element.data.title }}
+          </a>
+        </li>
+      {%- endfor -%}
     </ul>
   </nav>
 </header>

@@ -55,6 +55,12 @@ module.exports = function (config) {
     return str.replace(/\/+$/, '');
   });
 
+  function sortByOrder(values) {
+    return values.slice().sort((a, b) => a.data.order - b.data.order);
+  }
+
+  config.addFilter('sortByOrder', sortByOrder);
+
   return {
     dir: {
       input: 'src',

@@ -1,6 +1,8 @@
 ---
 layout: page.njk
 permalink: '/about/'
+title: About me
+order: 1
 head:
   title: Kirill Ivanov – About me
   description: My personal homepage
