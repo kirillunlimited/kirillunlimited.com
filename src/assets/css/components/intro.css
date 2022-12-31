@@ -1,0 +1,24 @@
+.intro {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  gap: 2em;
+}
+
+.intro p {
+  margin: 0;
+}
+
+.intro__name {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.intro__photo {
+  display: block;
+  width: 7em;
+  border-radius: 50%;
+}

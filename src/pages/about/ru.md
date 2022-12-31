@@ -1,6 +1,6 @@
 ---
 layout: page.njk
-permalink: '/'
+permalink: 'about/'
 language: ru
 head:
   title: Кирилл Иванов – Front-end разработчик
