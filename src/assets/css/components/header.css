@@ -1,14 +1,18 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 4% 6% 0;
 }
 
-.language {
+.header__nav {
   font-size: 1.25em;
-  flex-shrink: 0;
-  margin-left: 1em;
-  text-transform: uppercase;
+}
+
+.header__list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+}
+
+.header__listItem {
 }
