@@ -78,8 +78,3 @@ const saveScheme = (scheme) => {
 const clearSavedScheme = () => {
   localStorage.removeItem(LOCAL_STORAGE_KEY);
 };
-
-export const initCurrentYear = () => {
-  const currentYearElement = document.querySelector('#current-year');
-  currentYearElement.innerHTML = new Date().getFullYear();
-};

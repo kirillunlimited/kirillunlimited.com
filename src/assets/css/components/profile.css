@@ -13,12 +13,6 @@
   overflow: hidden;
   transition: 0.05s ease transform;
   box-shadow: none;
-  cursor: zoom-in;
-}
-
-.profile .portrait:hover {
-  transform: scale(1.4);
-  box-shadow: none;
 }
 
 .profile .portrait .photo {
