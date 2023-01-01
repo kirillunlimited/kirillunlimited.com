@@ -10,13 +10,16 @@ head:
 
 <div class="info">
   <div>
+    <p>Hello, my name is Kirill. I'm a 31-year-old front-end developer from Moscow. Currently I'm trying to settle down in Berlin.</p>
     <p>
-      Hello, my name is Kirill. I'm a 31 year old front-end developer from Moscow trying to settle down in Berlin.
-      I've been building stuff on the web for the last 7 years. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I have experience of building and maintaining different large complex front-end projects.
-     </p>
-    <p>
-      I enjoy creating useful, engaging and performant products with intuitive and dynamic user experience. I always keep learning new technologies, tools and development approaches to achieve better quaility of my work. I like to be a part of a team, collaborate with talented developers and share my experience with others.
+      I've been building stuff on the web for the last 7 years. My core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I’ve been lucky enough to be involved in building and maintaining solid and complex front-end projects.
     </p>
+    <p>
+      What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building useful, engaging and performant products with intuitive and dynamic user experience.
+    </p>
+    <p>I'm not afraid of challenges, as this is the main thing that helps me to grow as a developer. I always keep learning new technologies, tools and development approaches to come up with better solutions in my work.
+    </p>
+    <p>I'm a team player, so I like to collaborate with talented and passionated developers and share my experience with others.</p>
   </div>
   <div class="portrait">
     <img class="portrait__image" src="./../assets/img/portrait.jpg" alt="Kirill Ivanov"/>
