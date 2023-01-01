@@ -1,0 +1,40 @@
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: space-between;
+}
+
+.portrait {
+  position: relative;
+}
+
+.portrait:after {
+  content: '';
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--link-color);
+  border-radius: 1em;
+}
+
+.portrait__image {
+  display: block;
+  width: 12em;
+  position: relative;
+  z-index: 1;
+  border-radius: 1em;
+}
+
+.hobbies {
+  padding-left: 1.2em;
+  list-style: none;
+}
+
+.hobbies li:before {
+  content: attr(data-bullet) ' ';
+  margin-left: -1em;
+  margin-right: 0.2em;
+}

@@ -8,6 +8,23 @@ head:
   description: My personal homepage
 ---
 
-Currently I develop web-interfaces at [Ozon](https://www.ozon.ru){target="\_blank" rel="noopener noreferrer"}. You can find more information about my experience and skills on [LinkedIn](https://www.linkedin.com/in/kirillunlimited){target="\_blank" rel="noopener noreferrer"}, but I do not consider any job&nbsp;offers.
+<div class="info">
+  <p>Hello, my name is Kirill. I'm a 31 year old front-end developer from Moscow trying to settle down in Berlin.</p>
 
-I spend most of my free time with my family. The rest of the time I enjoy watching movies, listening to music, reading books, playing computer and board games, writing code for fun, travelling and trying myself in different sports.
+  <div class="portrait">
+    <img class="portrait__image" src="./../assets/img/portrait.jpg" alt="Kirill Ivanov"/>
+  </div>
+</div>
+
+<h2>Hobbies</h2>
+<ul class="hobbies">
+  <li data-bullet="👨‍👩‍👦">to spend time with my wife and take care of my son</li>
+  <li data-bullet="🍿">to watch thrillers and horror movies</li>
+  <li data-bullet="📚">to read self-development books</li>
+  <li data-bullet="🎧">to listen to various music (literally various: from heavy metal to j-pop)</li>
+  <li data-bullet="🎮">to play computer and board games</li>
+  <li data-bullet="👨‍💻">to write code for fun</li>
+  <li data-bullet="🏂">snowboarding</li>
+  <li data-bullet="🚴‍♂️">cycling</li>
+  <li data-bullet="✈️">to travel and hiking</li>
+</ul>

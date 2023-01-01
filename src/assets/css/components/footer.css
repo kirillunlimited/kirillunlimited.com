@@ -2,7 +2,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 6% 4%;
+  padding: 2% 6% 4%;
   flex-shrink: 0;
 }
 
@@ -27,12 +27,11 @@ footer {
 }
 
 .scheme-select {
-  font-size: 1.25em;
   text-align: center;
-  border-radius: 0.5em;
+  border-radius: 1em;
   border-style: solid;
   border-width: 1px;
-  max-height: 3.4em;
+  max-height: 3.7em;
 }
 
 @media (orientation: portrait) {
@@ -41,6 +40,10 @@ footer {
   }
 }
 
-.legend {
+.scheme-select__legend {
   margin: 0 auto;
+}
+
+.scheme-select__button {
+  font-size: 1.25em;
 }

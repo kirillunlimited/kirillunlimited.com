@@ -38,6 +38,7 @@
   <body>
     {% include 'header.njk' %}
     <main class="main">
+      {% if page.url != "/" %}<h1>{{title}}</h1>{% endif %}
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}

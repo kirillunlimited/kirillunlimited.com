@@ -3,6 +3,35 @@
   padding: 0 6%;
 }
 
+.main h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.main h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+.main h2:first-child {
+  margin-top: 0.5em;
+}
+
 .main p {
   margin: 1em 0;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+.main p:first-child {
+  margin-top: 0;
+}
+
+.main p:last-child {
+  margin-bottom: 0;
+}
+
+.main li {
+  font-size: 1.25em;
+  line-height: 1.4;
 }
