@@ -72,3 +72,7 @@ a[aria-current] {
     outline: 2px dotted var(--text-color);
   }
 }
+
+ul {
+  padding-left: 2em;
+}
