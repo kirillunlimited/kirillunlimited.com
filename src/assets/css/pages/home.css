@@ -2,9 +2,6 @@
   height: 100%;
   font-size: 2em;
   gap: 1em;
-}
-
-.home__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -14,9 +11,13 @@
 }
 
 @media (orientation: portrait) {
-  .home__content {
+  .home {
     text-align: center;
   }
+}
+
+.home h1 {
+  margin: 0;
 }
 
 .home p {

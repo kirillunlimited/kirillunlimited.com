@@ -1,6 +1,16 @@
 .photo {
   position: relative;
-  align-self: flex-start;
+  margin-bottom: 2em;
+}
+
+.photo.left {
+  float: left;
+  margin-right: 2em;
+}
+
+.photo.right {
+  float: right;
+  margin-left: 1em;
 }
 
 .photo:after {
@@ -16,7 +26,7 @@
 
 .photo__image {
   display: block;
-  width: 15em;
+  width: 10em;
   position: relative;
   z-index: 1;
   border-radius: 1em;
