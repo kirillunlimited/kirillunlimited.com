@@ -1,10 +1,12 @@
 .hobbies {
-  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  padding-left: 0;
   list-style: none;
 }
 
 .hobbies li:before {
   content: attr(data-bullet) ' ';
-  margin-left: -1em;
   margin-right: 0.2em;
 }
