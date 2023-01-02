@@ -22,9 +22,9 @@ head:
     <p>I'm a team player, so I like to collaborate with talented and passionated developers and share my experience with others.</p>
     <p>You can find more info about my skills and experience on <a href="https://www.linkedin.com/in/kirillunlimited" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
   </div>
-  <div class="portrait">
-    <img class="portrait__image" src="./../assets/img/portrait.jpg" alt="Kirill Ivanov"/>
-  </div>
+
+{% include "photo.njk" src: "portrait.jpg", alt: "Kirill Ivanov" %}
+
 </div>
 
 ## Hobbies

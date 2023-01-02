@@ -1,0 +1,23 @@
+.photo {
+  position: relative;
+  align-self: flex-start;
+}
+
+.photo:after {
+  content: '';
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--link-color);
+  border-radius: 1em;
+}
+
+.photo__image {
+  display: block;
+  width: 15em;
+  position: relative;
+  z-index: 1;
+  border-radius: 1em;
+}
