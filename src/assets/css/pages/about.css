@@ -23,13 +23,14 @@
 
 .portrait__image {
   display: block;
-  width: 18em;
+  width: 15em;
   position: relative;
   z-index: 1;
   border-radius: 1em;
 }
 
 .hobbies {
+  padding-left: 1.2em;
   list-style: none;
 }
 

@@ -1,15 +1,16 @@
 .main {
   flex: 1 0 auto;
-  padding: 0 6%;
+  padding: 0 var(--layout-padding-h);
+  line-height: 1.4;
 }
 
 .main h1 {
-  font-size: 2.5em;
+  font-size: 1.8em;
   margin-bottom: 0.5em;
 }
 
 .main h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 1em 0 0.5em;
 }
 
@@ -19,8 +20,6 @@
 
 .main p {
   margin: 0.5em 0;
-  font-size: 1.25em;
-  line-height: 1.4;
 }
 
 .main p:first-child {
@@ -29,9 +28,4 @@
 
 .main p:last-child {
   margin-bottom: 0;
-}
-
-.main li {
-  font-size: 1.25em;
-  line-height: 1.4;
 }

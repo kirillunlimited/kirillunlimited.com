@@ -1,9 +1,8 @@
 .header {
-  padding: 4% 6% 2%;
+  padding: var(--layout-padding-v) var(--layout-padding-h);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.25em;
 }
 
 .header__logo {

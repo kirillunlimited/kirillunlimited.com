@@ -12,6 +12,18 @@ html {
   margin: 0;
 }
 
+:root {
+  --layout-padding-v: 2em;
+  --layout-padding-h: 6em;
+}
+
+@media (orientation: portrait) {
+  :root {
+    --layout-padding-v: 2em;
+    --layout-padding-h: 2em;
+  }
+}
+
 body {
   height: 100%;
   display: flex;
@@ -19,7 +31,7 @@ body {
   margin: 0;
   font-family: 'Rubik', Helvetica, Arial, sans-serif;
   font-size: 16px; /* fallback */
-  font-size: calc(10px + 0.6vw);
+  font-size: calc(12px + 0.8vw);
   color: var(--text-color);
   text-align: left;
   background-color: var(--background-color);
@@ -71,8 +83,4 @@ a[aria-current] {
   button:focus-visible {
     outline: 2px dotted var(--text-color);
   }
-}
-
-ul {
-  padding-left: 2em;
 }
