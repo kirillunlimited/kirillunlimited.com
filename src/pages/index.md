@@ -8,12 +8,12 @@ head:
   description: My personal homepage
 ---
 
-<div class="intro">
-  <div class="intro__content">
+<div class="home">
+  <div class="home__content">
     <div>
       <p>Hello, my name is</p>
-      <h1 class="intro__name"><a href="/about">Kirill Ivanov</a></h1>
+      <h1 class="home__name"><a href="/about">Kirill Ivanov</a></h1>
     </div>
-    <p class="intro__description">I build things for web</p>
+    <p class="home__description">I build things for web</p>
   </div>
 </div>

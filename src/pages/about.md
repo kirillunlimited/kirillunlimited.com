@@ -27,15 +27,6 @@ head:
   </div>
 </div>
 
-<h2>Hobbies</h2>
-<ul class="hobbies">
-  <li data-bullet="👨‍👩‍👦">spending time with my wife and taking care of my son</li>
-  <li data-bullet="🍿">watching thrillers and horror movies</li>
-  <li data-bullet="📚">reading self-development books</li>
-  <li data-bullet="🎧">listening to various music (literally various: from heavy metal to J-pop)</li>
-  <li data-bullet="🎮">playing computer and board games</li>
-  <li data-bullet="👨‍💻">developing pet projects and solving programming puzzles</li>
-  <li data-bullet="✈️">traveling and hiking</li>
-  <li data-bullet="🚴‍♂️">cycling</li>
-  <li data-bullet="🏂">snowboarding</li>
-</ul>
+## Hobbies
+
+{% include 'hobbies.njk' %}

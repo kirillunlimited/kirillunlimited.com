@@ -1,10 +1,10 @@
-.intro {
+.home {
   height: 100%;
   font-size: 2em;
   gap: 1em;
 }
 
-.intro__content {
+.home__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -14,21 +14,21 @@
 }
 
 @media (orientation: portrait) {
-  .intro__content {
+  .home__content {
     text-align: center;
   }
 }
 
-.intro p {
+.home p {
   margin: 0;
 }
 
-.intro__description {
+.home__description {
   align-self: flex-end;
 }
 
 @media (orientation: portrait) {
-  .intro__description {
+  .home__description {
     align-self: center;
   }
 }
