@@ -1,4 +1,4 @@
-footer {
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -7,7 +7,7 @@ footer {
 }
 
 @media (orientation: portrait) {
-  footer {
+  .footer {
     flex-direction: column;
     flex-direction: column-reverse;
     align-items: center;
@@ -30,9 +30,9 @@ footer {
   text-align: center;
   border-radius: 0.5em;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: var(--link-color);
-  max-height: 3.7em;
+  max-height: 3.4em;
 }
 
 @media (orientation: portrait) {

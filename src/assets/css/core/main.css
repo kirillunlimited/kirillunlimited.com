@@ -4,6 +4,10 @@
   line-height: 1.4;
 }
 
+.main > *:first-child {
+  margin-top: 0;
+}
+
 .main h1 {
   font-size: 1.8em;
   margin: 0 0 0.5em;
@@ -14,18 +18,6 @@
   margin: 1em 0 0.5em;
 }
 
-.main h2:first-child {
-  margin-top: 0.5em;
-}
-
 .main p {
   margin: 0.5em 0;
-}
-
-.main p:first-child {
-  margin-top: 0;
-}
-
-.main p:last-child {
-  margin-bottom: 0;
 }
