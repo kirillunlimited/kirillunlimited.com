@@ -5,7 +5,7 @@ title: Home
 order: 0
 head:
   title: Kirill Ivanov – Home
-  description: My personal homepage
+  description: Kirill Ivanov is a front-end developer and JavaScript engineer.
 ---
 
 <div class="home">

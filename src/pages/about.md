@@ -5,20 +5,20 @@ title: About
 order: 1
 head:
   title: Kirill Ivanov – About
-  description: My personal homepage
+  description: Kirill Ivanov is a professional front-end developer based in Berlin, Germany.
 ---
 
 {% include "components/photo.njk" src: "portrait.jpg", alt: "Kirill Ivanov", float: "right" %}
 
-Hello, my name is Kirill. I'm a front-end developer in my early 30s. I'm from Moscow, but currently I'm trying to settle down in Berlin.
+Hello, my name is Kirill. I am a front-end developer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
 
-I've been building stuff on the web for the last 7 years. My core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I’ve been lucky enough to be involved in building and maintaining a bunch of solid and complex front-end projects.
+I have been building stuff on the web for the last 7 years. My core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex front-end projects.
 
 What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building useful, engaging and performant products with intuitive and dynamic user experience.
 
-I'm not afraid of challenges, as this is the main thing that helps me to grow as a developer. I always keep learning new technologies, tools and development approaches to come up with better solutions in my work.
+I am not afraid of challenges, as this is the main thing that helps me to grow as a developer. I always keep learning new technologies, tools and development approaches to come up with better solutions in my work.
 
-I'm a team player, so I like to collaborate with talented and passionated developers and share my experience with others.
+I am a team player, so I like to collaborate with talented and passionated developers and share my experience with others.
 
 You can find more info about my skills and experience on <a href="https://www.linkedin.com/in/kirillunlimited" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
