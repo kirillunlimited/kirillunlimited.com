@@ -20,7 +20,7 @@ I am not afraid of challenges, as this is the main thing that helps me to grow a
 
 I am a team player, so I like to collaborate with talented and passionated developers and share my experience with others.
 
-You can find more info about my skills and experience on <a href="https://www.linkedin.com/in/kirillunlimited" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+Also, I am open for hire. You can find more information about my skills and experience on <a href="https://www.linkedin.com/in/kirillunlimited" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Feel free to reach out to me with any [contact method](/contact/) you prefer.
 
 ## Hobbies
 
