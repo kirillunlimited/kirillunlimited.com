@@ -48,13 +48,6 @@ module.exports = function (config) {
   /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [manifestPath] });
 
-  config.addFilter('stripTrailingSlash', (str) => {
-    if (str === '/') {
-      return str;
-    }
-    return str.replace(/\/+$/, '');
-  });
-
   config.addFilter('sortByOrder', (elements) =>
     elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order)
   );
