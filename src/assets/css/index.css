@@ -1,3 +1,5 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+
 @import './core/fonts.css';
 @import './core/base.css';
 @import './core/header.css';

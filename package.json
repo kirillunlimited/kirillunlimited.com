@@ -40,5 +40,7 @@
     "webpack-manifest-plugin": "^4.0.2",
     "webpack-remove-empty-scripts": "^0.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }

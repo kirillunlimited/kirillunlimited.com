@@ -8,7 +8,7 @@ head:
   description: My personal homepage
 ---
 
-{% include "photo.njk" src: "portrait.jpg", alt: "Kirill Ivanov", float: "right" %}
+{% include "components/photo.njk" src: "portrait.jpg", alt: "Kirill Ivanov", float: "right" %}
 
 Hello, my name is Kirill. I'm a front-end developer in my early 30s. I'm from Moscow, but currently I'm trying to settle down in Berlin.
 
@@ -24,4 +24,4 @@ You can find more info about my skills and experience on <a href="https://www.li
 
 ## Hobbies
 
-{% include 'hobbies.njk' %}
+{% include 'components/hobbies.njk' %}
