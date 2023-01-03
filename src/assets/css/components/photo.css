@@ -26,8 +26,15 @@
 
 .photo__image {
   display: block;
-  width: 10em;
+  width: 12em;
+  max-width: 320px;
   position: relative;
   z-index: 1;
   border-radius: 1em;
+}
+
+@media (orientation: portrait) {
+  .photo__image {
+    width: 8em;
+  }
 }
