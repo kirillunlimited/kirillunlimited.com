@@ -8,7 +8,7 @@ head:
   description: Kirill Ivanov is a professional front-end developer based in Berlin, Germany.
 ---
 
-{% include "components/photo.njk" src: "portrait.jpg", alt: "Kirill Ivanov", float: "right" %}
+{% include "components/photo.njk" src: "me.jpg", alt: "Kirill Ivanov", float: "right" %}
 
 Hello, my name is Kirill. I am a front-end developer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
 
