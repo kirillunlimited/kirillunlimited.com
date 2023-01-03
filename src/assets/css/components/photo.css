@@ -1,11 +1,10 @@
 .photo {
   position: relative;
-  margin-bottom: 2em;
+  margin: 0 1em 2em 0;
 }
 
 .photo--left {
   float: left;
-  margin-right: 2em;
 }
 
 .photo--right {
