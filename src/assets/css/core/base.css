@@ -1,6 +1,17 @@
 html {
   box-sizing: border-box;
   height: 100%;
+
+  /* Prevent layout shift (fallback) */
+  overflow: scroll;
+}
+
+/* Prevent layout shift */
+@supports (scrollbar-gutter: stable) {
+  html {
+    overflow: auto;
+    scrollbar-gutter: stable;
+  }
 }
 
 *,
