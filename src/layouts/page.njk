@@ -23,14 +23,14 @@
 
     {# Styles #}
     <link rel="stylesheet" href="{% webpack 'styles.css' %}" />
-    <link rel="stylesheet" href="{% webpack 'light.css' %}" media="(prefers-color-scheme: light)" data-scheme-colors="light"/>
-    <link rel="stylesheet" href="{% webpack 'dark.css' %}" media="(prefers-color-scheme: dark)" data-scheme-colors="dark"/>
+    <link rel="stylesheet" href="{% webpack 'light.css' %}" media="(prefers-color-scheme: light)" data-color-scheme="light"/>
+    <link rel="stylesheet" href="{% webpack 'dark.css' %}" media="(prefers-color-scheme: dark)" data-color-scheme="dark"/>
 
     {# Theme #}
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-theme-color="light" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-theme-color="dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-color-scheme="light" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-color-scheme="dark" />
 
     <script src="{% webpack 'app.js' %}"></script>
   </head>

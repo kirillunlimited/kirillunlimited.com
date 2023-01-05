@@ -1,7 +1,7 @@
-import { initScheme, setupScheme } from './utils';
+import { initColorScheme, initColorSchemeControls } from './utils';
 
-initScheme();
+initColorScheme();
 
-document.addEventListener('DOMContentLoaded', function () {
-  setupScheme();
+document.addEventListener('DOMContentLoaded', () => {
+  initColorSchemeControls();
 });
