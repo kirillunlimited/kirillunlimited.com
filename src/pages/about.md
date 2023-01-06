@@ -12,7 +12,7 @@ head:
 
 Hello, my name is Kirill. I am a front-end developer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
 
-I have been building stuff on the web for the last 7 years. My core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex front-end projects that allowed me to gain a lot of professional experience.
+I have been building stuff on the web since 2015. My core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex front-end projects that allowed me to gain a lot of professional experience.
 
 What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building useful, engaging and performant products with intuitive and dynamic user experience.
 
