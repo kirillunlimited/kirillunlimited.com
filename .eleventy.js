@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const htmlmin = require('html-minifier');
+const { DateTime } = require('luxon');
 
 const manifestPath = path.resolve(__dirname, 'dist/assets/manifest.json');
 
@@ -51,6 +52,10 @@ module.exports = function (config) {
   config.addFilter('sortByOrder', (elements) =>
     elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order)
   );
+
+  config.addFilter('postDate', (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
 
   config.addNunjucksFilter('isPageInCollection', (collection = [], pageUrl = this.ctx.page.url) => {
     return collection.some((element) => element.url === pageUrl);
