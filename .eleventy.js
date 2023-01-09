@@ -5,6 +5,9 @@ const { DateTime } = require('luxon');
 
 const manifestPath = path.resolve(__dirname, 'dist/assets/manifest.json');
 
+const shouldTransformHTML = (outputPath) =>
+  outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
+
 module.exports = function (config) {
   /* Markdown */
   let markdownIt = require('markdown-it');
@@ -23,9 +26,6 @@ module.exports = function (config) {
       })
   );
 
-  const shouldTransformHTML = (outputPath) =>
-    outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
-
   config.addTransform('htmlmin', (content, outputPath) =>
     shouldTransformHTML(outputPath)
       ? htmlmin.minify(content, {
@@ -43,23 +43,21 @@ module.exports = function (config) {
 
   config.addPassthroughCopy('./src/assets/img');
   config.addWatchTarget('./src/assets/img');
-
   config.addPassthroughCopy('./src/favicon.ico');
 
   /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [manifestPath] });
 
+  /* Filters */
   config.addFilter('sortByOrder', (elements) =>
     elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order)
   );
 
-  config.addFilter('postDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
-  });
+  config.addFilter('postDate', (dateObj) => DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED));
 
-  config.addNunjucksFilter('isPageInCollection', (collection = [], pageUrl = this.ctx.page.url) => {
-    return collection.some((element) => element.url === pageUrl);
-  });
+  config.addNunjucksFilter('isPageInCollection', (collection = [], pageUrl = this.ctx.page.url) =>
+    collection.some((element) => element.url === pageUrl)
+  );
 
   return {
     dir: {
