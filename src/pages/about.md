@@ -1,6 +1,4 @@
 ---
-layout: page.njk
-permalink: '/about/'
 title: About
 order: 1
 head:

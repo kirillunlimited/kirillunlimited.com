@@ -4,7 +4,7 @@
     <ul class="header__list">
       {%- for element in collections.pages | sortByOrder -%}
         <li>
-          <a href="{{element.data.permalink}}" {% if page.url == element.url %} aria-current="page"{% endif %}>
+          <a href="{{element.url}}" {% if page.url == element.url %} aria-current="page"{% endif %}>
             {{ element.data.title }}
           </a>
         </li>

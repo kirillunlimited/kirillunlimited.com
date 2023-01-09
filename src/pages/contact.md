@@ -1,8 +1,6 @@
 ---
-layout: page.njk
-permalink: '/contact/'
 title: Contact
-order: 2
+order: 3
 head:
   title: Kirill Ivanov – Contact
   description: Kirill Ivanov is open for hire and chat.

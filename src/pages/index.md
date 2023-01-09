@@ -1,5 +1,4 @@
 ---
-layout: page.njk
 permalink: '/'
 title: Home
 order: 0
