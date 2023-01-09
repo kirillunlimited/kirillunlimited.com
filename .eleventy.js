@@ -52,6 +52,10 @@ module.exports = function (config) {
     elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order)
   );
 
+  config.addNunjucksFilter('isPageInCollection', (collection = [], pageUrl = this.ctx.page.url) => {
+    return collection.some((element) => element.url === pageUrl);
+  });
+
   return {
     dir: {
       input: 'src',

@@ -74,8 +74,13 @@ button {
 }
 
 button[aria-current],
-a[aria-current] {
+a[aria-current],
+a.active {
   box-shadow: inset 0 -1.2em 0 0 var(--link-color);
+}
+
+button[aria-current],
+a[aria-current] {
   pointer-events: none;
 }
 
