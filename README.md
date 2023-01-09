@@ -12,7 +12,7 @@ This project is built with [11ty](https://www.11ty.dev/) and [Webpack](https://w
 
 ## Development
 
-`yarn dev` to start hot-reloading local server @ http://localhost:5000
+`yarn dev` to start hot-reloading local server at http://localhost:8080
 
 ## Build and deploy
 
