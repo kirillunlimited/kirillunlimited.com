@@ -1,0 +1,35 @@
+.home {
+  height: 100%;
+  font-size: 2em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+}
+
+@media (orientation: portrait) {
+  .home {
+    text-align: center;
+  }
+}
+
+.home h1 {
+  margin: 0;
+}
+
+.home p {
+  margin: 0;
+}
+
+.home__description {
+  align-self: flex-end;
+}
+
+@media (orientation: portrait) {
+  .home__description {
+    align-self: center;
+  }
+}

@@ -1,0 +1,39 @@
+.photo {
+  position: relative;
+  margin: 0 1em 2em 0;
+}
+
+.photo--left {
+  float: left;
+}
+
+.photo--right {
+  float: right;
+  margin-left: 1em;
+}
+
+.photo:after {
+  content: '';
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--link-color);
+  border-radius: 1em;
+}
+
+.photo__image {
+  display: block;
+  width: 12em;
+  max-width: 320px;
+  position: relative;
+  z-index: 1;
+  border-radius: 1em;
+}
+
+@media (orientation: portrait) {
+  .photo__image {
+    width: 8em;
+  }
+}

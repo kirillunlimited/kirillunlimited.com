@@ -1,7 +1,12 @@
-@import './core/base.css';
-@import './core/fonts.css';
+@import '../../../node_modules/normalize.css/normalize.css';
 
-@import './components/header.css';
-@import './components/profile.css';
-@import './components/main.css';
-@import './components/footer.css';
+@import './core/fonts.css';
+@import './core/base.css';
+@import './core/header.css';
+@import './core/main.css';
+@import './core/footer.css';
+
+@import './pages/home.css';
+
+@import './components/hobbies.css';
+@import './components/photo.css';

@@ -1,13 +1,13 @@
-footer {
+.footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 6% 4%;
+  padding: var(--layout-padding-v) var(--layout-padding-h);
   flex-shrink: 0;
 }
 
 @media (orientation: portrait) {
-  footer {
+  .footer {
     flex-direction: column;
     flex-direction: column-reverse;
     align-items: center;
@@ -27,11 +27,11 @@ footer {
 }
 
 .scheme-select {
-  font-size: 1.25em;
   text-align: center;
   border-radius: 0.5em;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
+  border-color: var(--link-color);
   max-height: 3.4em;
 }
 
@@ -41,6 +41,6 @@ footer {
   }
 }
 
-.legend {
+.scheme-select__legend {
   margin: 0 auto;
 }

@@ -1,9 +1,9 @@
 {
   "license": "MIT",
-  "name": "kirillunlimited.ru",
+  "name": "kirillunlimited.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kirillunlimited/kirillunlimited.ru"
+    "url": "https://github.com/kirillunlimited/kirillunlimited.com"
   },
   "scripts": {
     "clean": "npx shx rm -rf ./dist",
@@ -13,8 +13,6 @@
     "build": "NODE_ENV=production npm-run-all clean build:*",
     "build:assets": "webpack --mode production",
     "build:site": "eleventy",
-    "deploy": "npm-run-all build deploy:*",
-    "deploy:firebase": "firebase deploy",
     "analyze": "NODE_ENV=production & DEBUG=true npm-run-all clean build:*"
   },
   "author": "Kirill Ivanov",
@@ -40,5 +38,7 @@
     "webpack-manifest-plugin": "^4.0.2",
     "webpack-remove-empty-scripts": "^0.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }

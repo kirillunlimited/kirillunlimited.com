@@ -1,25 +1,19 @@
 <header class="header">
-  <div class="profile">
-    <div class="portrait">
-      <img
-        class="photo"
-        src="/assets/img/portrait.jpg"
-        alt="{{ portrait.alt }}"
-        width="256"
-        height="256"
-      />
-    </div>
-    <div>
-      <h1>{{ header.h1 }}</h1>
-      <h2>{{ header.h2 }}</h2>
-    </div>
-  </div>
-  <nav class="language">
-    {%- for element in collections.pages -%}
-      <a
-        href="{{element.data.permalink | stripTrailingSlash}}"
-        {% if page.url == element.url %} aria-current="page"{% endif %}>{{element.data.language}}</a>
-      {% if not loop.last %} / {% endif %}
-    {%- endfor -%}
+  <a class="header__logo" href="/" {% if page.url == "/" %} aria-current="page"{% endif %} aria-label="home"></a>
+  <nav class="header__nav">
+    <ul class="header__list">
+      {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
+      {%- for element in collections.pages | sortByOrder -%}
+        <li>
+          <a
+            href="{{element.url}}"
+            {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %} class="active" {% endif %}
+            {% if page.url == element.url %} aria-current="page"{% endif %}
+          >
+            {{ element.data.title }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
   </nav>
 </header>
