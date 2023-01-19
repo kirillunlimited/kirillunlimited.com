@@ -4,8 +4,8 @@ permalink: '/'
 title: Home
 order: 0
 head:
-  title: Kirill Ivanov – Home
-  description: Kirill Ivanov is a front-end developer and JavaScript engineer.
+  title: Kirill Ivanov
+  description: Hello, my name is Kirill Ivanov. I am a friendly front-end developer and JavaScript engineer.
 ---
 
 <div class="home">

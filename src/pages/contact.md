@@ -2,7 +2,7 @@
 title: Contact
 order: 3
 head:
-  title: Kirill Ivanov – Contact
+  title: Contact – Kirill Ivanov
   description: Kirill Ivanov is open for hire and chat.
 ---
 
