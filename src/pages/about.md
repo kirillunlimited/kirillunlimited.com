@@ -16,7 +16,7 @@ What excites me most about working in software development is being able to craf
 
 I am not afraid of challenges, as this is the main thing that helps me to grow as a developer. I always keep learning new technologies, tools and development approaches to come up with better solutions in my work.
 
-I am a team player, so I like to collaborate with talented and passionated developers and share my experience with others.
+Although, I am comfortable working on my own, I also gain a lot of satisfaction from being a team player, as I like to collaborate with talented and passionated developers and share my experience with others.
 
 Also, I am open for hire. You can find more information about my skills and experience on <a href="https://www.linkedin.com/in/kirillunlimited" target="_blank" rel="noopener noreferrer">LinkedIn</a>. Feel free to reach out to me with any [contact method](/contact/) you prefer.
 
