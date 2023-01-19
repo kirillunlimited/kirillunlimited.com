@@ -3,7 +3,7 @@ title: Contact
 order: 3
 head:
   title: Contact – Kirill Ivanov
-  description: Kirill Ivanov is open for hire and chat.
+  description: If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me - you can always find me on social media.
 ---
 
 Currently I am looking for new job opportunities in Berlin. I am interested in working with any company that thinks my skills will be helpful. If you are looking for someone like me, don't hesitate to shoot me an email.

@@ -3,7 +3,7 @@ title: About
 order: 1
 head:
   title: About – Kirill Ivanov
-  description: Kirill Ivanov is a professional front-end developer based in Berlin, Germany.
+  description: I am a professional front-end developer and JavaScript engineer based in Berlin, Germany.
 ---
 
 {% include "components/photo.njk" src: "me.jpg", alt: "Kirill Ivanov", float: "right" %}

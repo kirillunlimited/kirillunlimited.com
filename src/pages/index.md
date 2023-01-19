@@ -5,7 +5,7 @@ title: Home
 order: 0
 head:
   title: Kirill Ivanov
-  description: Hello, my name is Kirill Ivanov. I am a friendly front-end developer and JavaScript engineer.
+  description: Hello, my name is Kirill Ivanov. I build things for web.
 ---
 
 <div class="home">
