@@ -39,6 +39,7 @@
     "webpack-remove-empty-scripts": "^0.8.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "speedlify-score": "^2.0.2"
   }
 }

@@ -4,9 +4,11 @@
 @import './core/base.css';
 @import './core/header.css';
 @import './core/main.css';
-@import './core/footer.css';
 
 @import './pages/home.css';
 
 @import './components/hobbies.css';
 @import './components/photo.css';
+
+@import '../../../node_modules/speedlify-score/speedlify-score.css';
+@import './core/footer.css';

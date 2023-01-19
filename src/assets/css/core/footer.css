@@ -8,17 +8,10 @@
 
 @media (orientation: portrait) {
   .footer {
-    flex-direction: column;
     flex-direction: column-reverse;
     align-items: center;
-    margin: 0 auto;
+    gap: 1em;
     text-align: center;
-  }
-}
-
-@media (orientation: portrait) {
-  .copyright {
-    margin-top: 1em;
   }
 }
 
@@ -35,12 +28,15 @@
   max-height: 3.4em;
 }
 
-@media (orientation: portrait) {
-  .scheme-select {
-    margin: 1em 0 0;
-  }
-}
-
 .scheme-select__legend {
   margin: 0 auto;
+}
+
+.speedlify-container,
+.speedlify-container:hover {
+  box-shadow: none;
+}
+
+.speedlify-score {
+  color: var(--text-color);
 }

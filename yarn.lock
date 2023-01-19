@@ -5550,6 +5550,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.10.tgz#0d9becccde7003d6c658d487dd48a32f0bf3014b"
   integrity sha512-oie3/+gKf7QtpitB0LYLETe+k8SifzsX4KixvpOsbI6S0kRiRQ5MKOio8eMSAKQ17N06+wdEOXRiId+zOxo0hA==
 
+speedlify-score@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/speedlify-score/-/speedlify-score-2.0.2.tgz#44c5f49ca33dd7d58e096570c486d943ba8c7f38"
+  integrity sha512-FAFunl3H/faGETUX0tMh/fU0CZs5afqPR6Qm3I8xPVo9iLOZVhiDA6pUm5owXq4rSEb45y3Pf8iJqE6DmZiNvA==
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
