@@ -8,8 +8,19 @@
   </a>{% endif %}
   <fieldset class="scheme-select">
     <legend class="scheme-select__legend">Color scheme</legend>
-    <button class="scheme-select__button" data-scheme-value="light">Light</button> /
-    <button class="scheme-select__button" data-scheme-value="auto">Auto</button> /
-    <button class="scheme-select__button" data-scheme-value="dark">Dark</button>
+    <div class="scheme-select__control">
+      <input type="radio" id="radio-light-scheme" class="scheme-select__radio" name="scheme-select" value="light"/>
+      <label class="scheme-select__radioLabel" for="radio-light-scheme">Light</label>
+    </div>
+
+    <div class="scheme-select__control">
+      <input type="radio" id="radio-auto-scheme" class="scheme-select__radio" name="scheme-select" value="auto"/>
+      <label class="scheme-select__radioLabel" for="radio-auto-scheme">Auto</label>
+    </div>
+
+    <div class="scheme-select__control">
+      <input type="radio" id="radio-dark-scheme" class="scheme-select__radio" name="scheme-select" value="dark"/>
+      <label class="scheme-select__radioLabel" for="radio-dark-scheme">Dark</label>
+    </div>
   </fieldset>
 </footer>
