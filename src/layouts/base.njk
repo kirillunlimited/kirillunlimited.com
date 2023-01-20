@@ -46,5 +46,6 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
+    {% if script %}<script src="{% webpack script %}"></script>{% endif %}
   </body>
 </html>
