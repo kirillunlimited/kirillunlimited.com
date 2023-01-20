@@ -3,9 +3,9 @@
     <p>Made with <span class="heart">♥</span> using <a href="https://www.11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a></p>
     <p><a href="https://github.com/kirillunlimited/kirillunlimited.com" target="_blank" rel="noopener noreferrer">Source code</a></p>
   </div>
-  <a href="https://kirillunlimited-speedlify.netlify.app/kirillunlimited.com/" target="_blank" rel="noopener noreferrer" class="speedlify-container">
-    <speedlify-score speedlify-url="https://kirillunlimited-speedlify.netlify.app" hash="a62bad82">
-  </a>
+  {% if speedlify %} <a href="https://kirillunlimited-speedlify.netlify.app/kirillunlimited.com/#site-{{speedlify}}" target="_blank" rel="noopener noreferrer" class="speedlify-container">
+    <speedlify-score speedlify-url="https://kirillunlimited-speedlify.netlify.app" hash="{{speedlify}}">
+  </a>{% endif %}
   <fieldset class="scheme-select">
     <legend class="scheme-select__legend">Color scheme</legend>
     <button class="scheme-select__button" data-scheme-value="light">Light</button> /
