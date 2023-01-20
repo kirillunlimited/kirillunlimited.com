@@ -29,7 +29,7 @@ html {
 @media (orientation: portrait) {
   :root {
     --layout-padding-v: 2em;
-    --layout-padding-h: 2em;
+    --layout-padding-h: 1em;
   }
 }
 
