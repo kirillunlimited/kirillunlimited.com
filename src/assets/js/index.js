@@ -1,4 +1,4 @@
-import { initColorScheme, initColorSchemeControls } from './utils';
+import { initColorScheme, initColorSchemeControls } from './color-scheme';
 import 'speedlify-score';
 
 initColorScheme();
