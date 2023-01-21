@@ -38,31 +38,20 @@
 .scheme-select__radioLabel::before {
   content: '';
   display: block;
-  width: 1em;
-  height: 1em;
+  width: 0.75em;
+  height: 0.75em;
   border-radius: 50%;
   border: 1px solid var(--text-color);
   outline-offset: 0.1em;
-  transition: border-width 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .scheme-select__radio:hover + .scheme-select__radioLabel::before {
-  border: 2px solid var(--text-color);
+  transform: scale(1.25);
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::before {
   background-color: var(--link-color);
-}
-
-.scheme-select__radio:checked + .scheme-select__radioLabel::after {
-  /* content: ''; */
-  display: block;
-  width: 0.3em;
-  height: 0.3em;
-  position: absolute;
-  left: 0.3em;
-  background-color: var(--text-color);
-  border-radius: 50%;
 }
 
 @supports (contain: none) {

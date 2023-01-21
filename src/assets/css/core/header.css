@@ -15,7 +15,7 @@
   justify-content: center;
   border-radius: 50%;
   box-shadow: none;
-  transition: background-color 0.1s ease, border-color 0.1s ease;
+  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
   background-image: url('../../img/avatar.jpg');
   background-size: cover;
 }
