@@ -12,6 +12,9 @@
 
 @media (orientation: portrait) {
   .home {
+    justify-content: flex-start;
+    gap: 4em;
+    padding: 2em 0;
     text-align: center;
   }
 }

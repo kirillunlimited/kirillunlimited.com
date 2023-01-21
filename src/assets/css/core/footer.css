@@ -24,6 +24,12 @@
   box-shadow: none;
 }
 
+@media (orientation: portrait) {
+  .speedlify-container {
+    order: 1;
+  }
+}
+
 .speedlify-score {
   color: var(--text-color);
 }
