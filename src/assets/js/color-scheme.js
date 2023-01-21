@@ -16,9 +16,8 @@ export const initColorScheme = () => {
 };
 
 export const initColorSchemeControls = () => {
-  const scheme = getSavedColorScheme();
-
   const colorSchemeControls = document.querySelectorAll('input[name="scheme-select"]');
+  const scheme = getSavedColorScheme();
 
   colorSchemeControls.forEach((control) => {
     if (control.value === scheme) {
@@ -26,8 +25,7 @@ export const initColorSchemeControls = () => {
     }
 
     control.addEventListener('change', (event) => {
-      const value = event.target.value;
-      setColorScheme(value);
+      setColorScheme(event.target.value);
     });
   });
 };
