@@ -18,12 +18,10 @@
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
   background-image: url('../../img/avatar.jpg');
   background-size: cover;
-  transition: transform 0.1s ease-in-out;
 }
 
 .header__logo:hover {
   box-shadow: none;
-  transform: scale(1.25);
 }
 
 .header__logo[aria-current] {

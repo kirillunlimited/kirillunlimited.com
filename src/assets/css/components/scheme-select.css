@@ -43,11 +43,7 @@
   border-radius: 50%;
   border: 1px solid var(--text-color);
   outline-offset: 0.1em;
-  transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
-}
-
-.scheme-select__radio:hover + .scheme-select__radioLabel::before {
-  transform: scale(1.25);
+  transition: background-color 0.1s ease-in-out;
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::before {
