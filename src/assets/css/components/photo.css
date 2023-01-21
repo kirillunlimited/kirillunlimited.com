@@ -25,15 +25,21 @@
 
 .photo__image {
   display: block;
-  width: 12em;
-  max-width: 320px;
+  width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 1em;
 }
 
+.photo--left,
+.photo--right {
+  width: 12em;
+  max-width: 320px;
+}
+
 @media (orientation: portrait) {
-  .photo__image {
+  .photo--left,
+  .photo--right {
     width: 8em;
   }
 }

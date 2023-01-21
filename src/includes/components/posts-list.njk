@@ -1,9 +1,10 @@
-<ul>
+<ul class="postsList">
   {%- for element in collections.posts -%}
-    <li>
+    <li class="postsList__element">
       <a href="{{element.url}}">
         {{ element.data.title }}
       </a>
+      <time class="postsList__date">{{ element.date | postDate}}</time>
     </li>
   {%- endfor -%}
 </ul>
