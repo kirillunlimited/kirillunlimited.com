@@ -43,24 +43,25 @@
   border-radius: 50%;
   border: 1px solid var(--text-color);
   outline-offset: 0.1em;
+  transition: border-width 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .scheme-select__radio:hover + .scheme-select__radioLabel::before {
-  border: 0.1em solid var(--link-color);
+  border: 2px solid var(--text-color);
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::before {
-  border: 0.1em solid var(--link-color);
+  background-color: var(--link-color);
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::after {
-  content: '';
+  /* content: ''; */
   display: block;
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
   position: absolute;
-  left: 0.25em;
-  background-color: var(--link-color);
+  left: 0.3em;
+  background-color: var(--text-color);
   border-radius: 50%;
 }
 
