@@ -23,4 +23,15 @@ Also, I am open for hire. You can find more information about my skills and expe
 
 ## Hobbies
 
-{% include 'components/hobbies.njk' %}
+<ul class="hobbies">
+  <li data-bullet="👨‍👩‍👦">spending time with my wife and taking care of my son</li>
+  <li data-bullet="🍿">watching thrillers and horror movies</li>
+  <li data-bullet="📚">reading nonfiction books</li>
+  <li data-bullet="🎧">exploring new music genres</li>
+  <li data-bullet="🎮">playing computer and board games</li>
+  <li data-bullet="👨‍💻">developing pet projects</li>
+  <li data-bullet="🧩">solving programming puzzles</li>
+  <li data-bullet="✈️">traveling and hiking</li>
+  <li data-bullet="🚴‍♂️">cycling</li>
+  <li data-bullet="🏂">snowboarding</li>
+</ul>
