@@ -73,8 +73,8 @@ module.exports = {
       );
     }),
 
-  imageShortcode: async (src, folder) => {
-    const ext = src.split('.').slice(-1);
+  imageShortcode: async (src, extension) => {
+    const ext = extension || src.split('.').slice(-1);
     const imageMetadata = await Image(src, {
       outputDir: `${constants.outputDir}/assets/img`,
       urlPath: '/assets/img',
