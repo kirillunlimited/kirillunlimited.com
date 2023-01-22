@@ -31,14 +31,7 @@ module.exports = {
     return imageMetadata[ext][0].url;
   },
 
-  pictureShortcode: async (
-    src,
-    alt,
-    float = undefined,
-    widths = [400, 800, 1280],
-    formats = ['webp', 'jpeg'],
-    sizes = '100vw'
-  ) => {
+  pictureShortcode: async (src, alt, float = undefined, widths = [400, 800, 1200], formats = ['webp', 'jpeg']) => {
     const imageMetadata = await Image(src, {
       widths: [...widths, null],
       formats: [...formats, null],
@@ -58,7 +51,6 @@ module.exports = {
           type: sourceType,
           // srcset needs to be a comma-separated attribute
           srcset: images.map((image) => image.srcset).join(', '),
-          sizes,
         });
 
         // Return one <source> per format
