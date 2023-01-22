@@ -31,6 +31,60 @@ module.exports = {
     return imageMetadata[ext][0].url;
   },
 
+  logoShortcode: async (src) => {
+    const formats = ['webp', 'jpeg'];
+    const imageMetadata = await Image(src, {
+      widths: ['auto'],
+      formats,
+      outputDir: `${constants.outputDir}/assets/img`,
+      urlPath: '/assets/img',
+    });
+
+    const sourceHtmlString = Object.values(imageMetadata)
+      // Map each format to the source HTML markup
+      .map((images) => {
+        // The first entry is representative of all the others
+        // since they each have the same shape
+        const { sourceType } = images[0];
+
+        // Use our util from earlier to make our lives easier
+        const sourceAttributes = stringifyAttributes({
+          type: sourceType,
+          // srcset needs to be a comma-separated attribute
+          srcset: images.map((image) => image.srcset).join(', '),
+        });
+
+        // Return one <source> per format
+        return `<source ${sourceAttributes}>`;
+      })
+      .join('\n');
+
+    const getLargestImage = (format) => {
+      const images = imageMetadata[format];
+      return images[images.length - 1];
+    };
+
+    const largestUnoptimizedImg = getLargestImage(formats[0]);
+    const imgAttributes = stringifyAttributes({
+      src: largestUnoptimizedImg.url,
+      alt: 'Logo',
+      class: 'logo__pictureImg',
+      loading: 'lazy',
+      decoding: 'async',
+    });
+    const imgHtmlString = `<img ${imgAttributes}>`;
+
+    const pictureAttributes = stringifyAttributes({
+      class: 'logo__picture',
+    });
+    const picture = `<picture ${pictureAttributes}>
+    ${sourceHtmlString}
+    ${imgHtmlString}
+  </picture>`;
+
+    return outdent`${picture}`;
+  },
+
   pictureShortcode: async (src, alt, float = undefined, widths = [400, 800, 1200], formats = ['webp', 'jpeg']) => {
     const imageMetadata = await Image(src, {
       widths: [...widths, null],

@@ -19,6 +19,7 @@ module.exports = function (config) {
   /* Shortcodes */
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
   config.addNunjucksAsyncShortcode('image', shortcodes.imageShortcode);
+  config.addNunjucksAsyncShortcode('logo', shortcodes.logoShortcode);
   config.addShortcode('picture', shortcodes.pictureShortcode);
 
   /* Static assets */
