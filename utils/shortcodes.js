@@ -23,8 +23,8 @@ module.exports = {
   imageShortcode: async (src, folder) => {
     const ext = src.split('.').slice(-1);
     const imageMetadata = await Image(src, {
-      outputDir: `dist/assets/images/${folder}`,
-      urlPath: `/assets/images/${folder}`,
+      outputDir: `${constants.outputDir}/assets/img`,
+      urlPath: '/assets/img',
       formats: [ext],
     });
 
@@ -35,8 +35,8 @@ module.exports = {
     const imageMetadata = await Image(src, {
       widths: [...widths, null],
       formats: [...formats, null],
-      outputDir: 'dist/assets/images',
-      urlPath: '/assets/images',
+      outputDir: `${constants.outputDir}/assets/img`,
+      urlPath: '/assets/img',
     });
 
     const sourceHtmlString = Object.values(imageMetadata)

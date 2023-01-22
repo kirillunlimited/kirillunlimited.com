@@ -30,7 +30,7 @@ module.exports = function (config) {
   return {
     dir: {
       input: 'src',
-      output: 'dist',
+      output: constants.outputDir,
       includes: 'includes',
       layouts: 'layouts',
     },
