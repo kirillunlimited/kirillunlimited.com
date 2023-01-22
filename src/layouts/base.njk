@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="{% webpack 'styles.css' %}" />
 
     {# Favicon #}
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon/48.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% image 'src/assets/img/favicon/16.png', 'favicon' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% image 'src/assets/img/favicon/32.png', 'favicon' %}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{% image 'src/assets/img/favicon/48.png', 'favicon' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% image 'src/assets/img/favicon/192.png', 'favicon' %}">
 
     {# Theme #}
     <meta name="color-scheme" content="light dark">

@@ -14,6 +14,17 @@ const stringifyAttributes = (attributeMap) => {
     .join(' ');
 };
 
+const imageShortcode = async (src, folder) => {
+  const ext = src.split('.').slice(-1);
+  const imageMetadata = await Image(src, {
+    outputDir: `dist/assets/images/${folder}`,
+    urlPath: `/assets/images/${folder}`,
+    formats: [ext],
+  });
+
+  return imageMetadata[ext][0].url;
+};
+
 const pictureShortcode = async (
   src,
   alt,
@@ -118,8 +129,6 @@ module.exports = function (config) {
       : content
   );
 
-  config.addPassthroughCopy('./src/assets/img');
-  config.addWatchTarget('./src/assets/img');
   config.addPassthroughCopy('./src/favicon.ico');
 
   /* Reload the page every time any JS/CSS files are changed */
@@ -137,6 +146,7 @@ module.exports = function (config) {
   );
 
   config.addShortcode('picture', pictureShortcode);
+  config.addNunjucksAsyncShortcode('image', imageShortcode);
 
   return {
     dir: {
