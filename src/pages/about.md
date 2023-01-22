@@ -7,7 +7,7 @@ head:
 speedlify: 5405eac0
 ---
 
-{% include "components/photo.njk" src: "me.jpg", alt: "Kirill Ivanov", float: "right" %}
+{% picture "src/assets/img/me.jpg", "Kirill Ivanov", "right" %}
 
 Hello, my name is Kirill. I am a front-end developer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
 

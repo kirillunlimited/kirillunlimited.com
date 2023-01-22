@@ -73,6 +73,13 @@ module.exports = {
           filename: `${baseFilename}[ext]`,
         },
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: `img/${baseFilename}[ext]`,
+        },
+      },
     ],
   },
   plugins: [

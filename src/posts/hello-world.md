@@ -5,7 +5,7 @@ head:
   description: 'Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. But my desire was too strong.'
 ---
 
-{% include "components/photo.njk" src: "posts/hello-world/1.jpg", alt: "Hello, world" %}
+{% picture "src/assets/img/posts/hello-world/1.jpg", "Hello, world" %}
 
 Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. But my desire was too strong.
 
