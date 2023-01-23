@@ -6,6 +6,7 @@ const PostCSSPresetEnv = require('postcss-preset-env');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const constants = require('./utils/constants');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -30,7 +31,7 @@ module.exports = {
   },
   output: {
     filename: `${baseFilename}.js`,
-    path: path.resolve(__dirname, 'dist/assets'),
+    path: path.resolve(__dirname, `${constants.outputDir}/assets`),
   },
   ...(!isDev && {
     optimization: {
@@ -71,6 +72,13 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: `${baseFilename}[ext]`,
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: `img/${baseFilename}[ext]`,
         },
       },
     ],

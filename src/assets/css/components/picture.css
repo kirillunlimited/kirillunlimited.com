@@ -1,18 +1,19 @@
-.photo {
+.picture {
+  display: block;
   position: relative;
   margin: 0 1em 2em 0;
 }
 
-.photo--left {
+.picture--left {
   float: left;
 }
 
-.photo--right {
+.picture--right {
   float: right;
   margin-left: 1em;
 }
 
-.photo:after {
+.picture:after {
   content: '';
   position: absolute;
   top: 1em;
@@ -23,17 +24,23 @@
   border-radius: 1em;
 }
 
-.photo__image {
+.picture__image {
   display: block;
-  width: 12em;
-  max-width: 320px;
+  width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 1em;
 }
 
+.picture--left,
+.picture--right {
+  width: 12em;
+  max-width: 320px;
+}
+
 @media (orientation: portrait) {
-  .photo__image {
+  .picture--left,
+  .picture--right {
     width: 8em;
   }
 }

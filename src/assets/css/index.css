@@ -7,9 +7,11 @@
 
 @import './pages/home.css';
 
+@import './components/logo.css';
 @import './components/hobbies.css';
-@import './components/photo.css';
+@import './components/picture.css';
 @import './components/scheme-select.css';
+@import './components/posts-list.css';
 
 @import '../../../node_modules/speedlify-score/speedlify-score.css';
 @import './core/footer.css';

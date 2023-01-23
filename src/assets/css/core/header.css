@@ -5,30 +5,6 @@
   align-items: center;
 }
 
-.header__logo {
-  width: 2em;
-  height: 2em;
-  max-width: 64px;
-  max-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: none;
-  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
-  background-image: url('../../img/avatar.jpg');
-  background-size: cover;
-}
-
-.header__logo:hover {
-  box-shadow: none;
-}
-
-.header__logo[aria-current] {
-  box-shadow: none;
-  pointer-events: none;
-}
-
 .header__list {
   padding: 0;
   margin: 0;

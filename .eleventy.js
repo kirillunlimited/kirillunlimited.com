@@ -1,68 +1,37 @@
-const fs = require('fs');
-const path = require('path');
-const htmlmin = require('html-minifier');
-const { DateTime } = require('luxon');
-
-const manifestPath = path.resolve(__dirname, 'dist/assets/manifest.json');
-
-const shouldTransformHTML = (outputPath) =>
-  outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
+const constants = require('./utils/constants');
+const markdown = require('./utils/markdown');
+const filters = require('./utils/filters');
+const shortcodes = require('./utils/shortcodes');
+const transforms = require('./utils/transforms');
 
 module.exports = function (config) {
   /* Markdown */
-  let markdownIt = require('markdown-it');
-  let markdownItAttrs = require('markdown-it-attrs');
-  let options = { html: true };
-  config.setLibrary('md', markdownIt(options).use(markdownItAttrs));
+  config.setLibrary('md', markdown);
 
-  /* Assets */
-  config.addNunjucksAsyncShortcode(
-    'webpack',
-    async (name) =>
-      new Promise((resolve) => {
-        fs.readFile(manifestPath, { encoding: 'utf8' }, (err, data) =>
-          resolve(err ? `/assets/${name}` : JSON.parse(data)[name])
-        );
-      })
-  );
+  /* Transforms */
+  config.addTransform('htmlmin', transforms.htmlmin);
 
-  config.addTransform('htmlmin', (content, outputPath) =>
-    shouldTransformHTML(outputPath)
-      ? htmlmin.minify(content, {
-          html5: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeRedundantAttributes: true,
-          removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          useShortDoctype: true,
-        })
-      : content
-  );
+  /* Filters */
+  config.addFilter('sortByOrder', filters.sortByOrder);
+  config.addFilter('postDate', filters.postDate);
+  config.addNunjucksFilter('isPageInCollection', filters.isPageInCollection);
 
-  config.addPassthroughCopy('./src/assets/img');
-  config.addWatchTarget('./src/assets/img');
+  /* Shortcodes */
+  config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
+  config.addNunjucksAsyncShortcode('image', shortcodes.imageShortcode);
+  config.addNunjucksAsyncShortcode('logo', shortcodes.logoShortcode);
+  config.addShortcode('picture', shortcodes.pictureShortcode);
+
+  /* Static assets */
   config.addPassthroughCopy('./src/favicon.ico');
 
   /* Reload the page every time any JS/CSS files are changed */
-  config.setBrowserSyncConfig({ files: [manifestPath] });
-
-  /* Filters */
-  config.addFilter('sortByOrder', (elements) =>
-    elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order)
-  );
-
-  config.addFilter('postDate', (dateObj) => DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED));
-
-  config.addNunjucksFilter('isPageInCollection', (collection = [], pageUrl = this.ctx.page.url) =>
-    collection.some((element) => element.url === pageUrl)
-  );
+  config.setBrowserSyncConfig({ files: [constants.manifestPath] });
 
   return {
     dir: {
       input: 'src',
-      output: 'dist',
+      output: constants.outputDir,
       includes: 'includes',
       layouts: 'layouts',
     },

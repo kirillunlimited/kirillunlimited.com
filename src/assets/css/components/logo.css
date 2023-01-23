@@ -1,0 +1,31 @@
+.logo {
+  width: 2em;
+  height: 2em;
+  max-width: 64px;
+  max-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.logo:hover {
+  box-shadow: none;
+}
+
+.logo[aria-current] {
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.logo__picture {
+  display: block;
+  width: 100%;
+}
+
+.logo__pictureImg {
+  display: block;
+  width: 100%;
+}
