@@ -4,6 +4,7 @@ order: 2
 head:
   title: Blog – Kirill Ivanov
   description: The place where I share my thoughts and knowledge.
+speedlify: d368102b
 ---
 
 <ul class="postsList">
