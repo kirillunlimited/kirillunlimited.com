@@ -1,3 +1,4 @@
+const htmlmin = require('html-minifier');
 const shouldTransformHTML = (outputPath) =>
   outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
 
