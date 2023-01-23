@@ -12,7 +12,7 @@ const stringifyAttributes = (attributeMap) => {
     .join(' ');
 };
 
-const commonPictureHandler = async (src, alt, widths, formats, pictureClassName, imgClassName) => {
+const commonPictureHandler = async (src, alt, widths, formats, pictureClassName, imgClassName, sizes) => {
   const imageMetadata = await Image(src, {
     widths,
     formats,
@@ -32,6 +32,7 @@ const commonPictureHandler = async (src, alt, widths, formats, pictureClassName,
         type: sourceType,
         // srcset needs to be a comma-separated attribute
         srcset: images.map((image) => image.srcset).join(', '),
+        sizes: sizes || '100vw',
       });
 
       // Return one <source> per format
@@ -85,16 +86,26 @@ module.exports = {
   },
 
   logoShortcode: async (src) => {
-    return commonPictureHandler(src, 'Logo', ['auto'], ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg');
+    return commonPictureHandler(src, 'Logo', [64], ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg');
   },
 
-  pictureShortcode: async (src, alt, float = undefined, widths = [400, 800, 1200], formats = ['webp', 'jpeg']) => {
+  pictureShortcode: async (
+    src,
+    alt,
+    float = undefined,
+    widths = [360, 640, 800, 1200, 1600, 2000],
+    formats = ['webp', 'jpeg']
+  ) => {
     let pictureClassName = 'picture';
+    let sizes = '(orientation: portrait) 90vw, 80vw';
+
     if (float) {
       const floatName = `picture--${float}`;
       pictureClassName += ` ${floatName}`;
+      sizes = '(max-width: 1600px) 30vw, 320px';
+      widths = [360, 640, 800];
     }
 
-    return commonPictureHandler(src, alt, widths, formats, pictureClassName, 'picture__image');
+    return commonPictureHandler(src, alt, widths, formats, pictureClassName, 'picture__image', sizes);
   },
 };
