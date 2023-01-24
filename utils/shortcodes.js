@@ -74,15 +74,14 @@ module.exports = {
       );
     }),
 
-  imageShortcode: async (src, extension) => {
-    const ext = extension || src.split('.').slice(-1);
+  imageShortcode: async (src, format, widths = ['auto']) => {
     const imageMetadata = await Image(src, {
       outputDir: `${constants.outputDir}/assets/img`,
       urlPath: '/assets/img',
-      formats: [ext],
+      formats: [format],
+      widths,
     });
-
-    return imageMetadata[ext][0].url;
+    return imageMetadata[format][0].url;
   },
 
   logoShortcode: async (src) => {

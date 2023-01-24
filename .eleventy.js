@@ -23,7 +23,8 @@ module.exports = function (config) {
   config.addShortcode('picture', shortcodes.pictureShortcode);
 
   /* Static assets */
-  config.addPassthroughCopy('./src/favicon.ico');
+  config.addWatchTarget('./src/assets/img');
+  config.addPassthroughCopy({ './src/static': './' });
 
   /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [constants.manifestPath] });
