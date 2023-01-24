@@ -3,10 +3,14 @@ const markdown = require('./utils/markdown');
 const filters = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 
 module.exports = function (config) {
   /* Markdown */
   config.setLibrary('md', markdown);
+
+  /* RSS */
+  config.addPlugin(pluginRss);
 
   /* Transforms */
   config.addTransform('htmlmin', transforms.htmlmin);
@@ -35,6 +39,7 @@ module.exports = function (config) {
       output: constants.outputDir,
       includes: 'includes',
       layouts: 'layouts',
+      data: 'data',
     },
   };
 };
