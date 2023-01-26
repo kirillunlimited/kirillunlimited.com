@@ -3,16 +3,16 @@ title: Hello, world!
 date: 2023-01-23
 head:
   title: Hello, world!
-  description: 'Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. But my desire was too strong.'
+  description: A quick introduction with technical overview of this website.
 thumbnail: src/assets/img/posts/hello-world/1.jpg
 speedlify: ad131629
 ---
 
 {% picture "src/assets/img/posts/hello-world/1.jpg", "Hello, world" %}
 
-Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. But my desire was too strong.
+Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. After some quick attempts, I decided to postpone this project for a while.
 
-A few years ago I finally I came up with the first version of my site. It was just a single page that contained only some basic info about me. It was a really small website but it was enough to fulfil my obsession for some time.
+A few years ago I finally came up with the first version of my site. It was just a single page that contained only some basic info about me. It was a really small website but it was enough to fulfil my obsession for some time.
 
 Recently, I found some free time to rethink and redo my homepage. Firstly, I divided information about myself and contact information into separate pages to make my website to not look like an ugly landing page.
 

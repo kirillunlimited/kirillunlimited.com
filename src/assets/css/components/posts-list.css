@@ -3,8 +3,19 @@
   list-style: none;
 }
 
+.postsList__element {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (orientation: portrait) {
+  .postsList__element {
+    flex-direction: column;
+  }
+}
+
 .postsList__date {
-  display: block;
-  margin: 0;
-  font-size: 0.75em;
+  width: 4em;
+  min-width: 4em;
+  opacity: 0.7;
 }
