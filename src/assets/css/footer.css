@@ -15,21 +15,21 @@
   }
 }
 
-.heart {
+.footer__heart {
   color: tomato;
 }
 
-.speedlify-container,
-.speedlify-container:hover {
+.footer__speedlify,
+.footer__speedlify:hover {
   box-shadow: none;
 }
 
 @media (orientation: portrait) {
-  .speedlify-container {
+  .footer__speedlify {
     order: 1;
   }
 }
 
-.speedlify-score {
+.footer__speedlify .speedlify-score {
   color: var(--text-color);
 }

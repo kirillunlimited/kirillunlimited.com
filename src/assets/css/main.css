@@ -21,3 +21,7 @@
 .main p {
   margin: 0.75em 0;
 }
+
+.main time {
+  opacity: 0.6;
+}
