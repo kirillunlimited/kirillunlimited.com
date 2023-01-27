@@ -3,7 +3,7 @@ title: Hello, world!
 date: 2023-01-23
 head:
   title: Hello, world!
-  description: A quick introduction with technical overview of this website.
+  description: A quick overview of the new version of my website.
 thumbnail: src/assets/img/posts/hello-world/1.jpg
 speedlify: ad131629
 ---
