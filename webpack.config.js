@@ -21,7 +21,7 @@ module.exports = {
   performance: {
     hints: isDev ? 'warning' : 'error',
   },
-  devtool: isDev ? 'cheap-module-source-map' : 'source-map',
+  devtool: isDev && 'cheap-module-source-map',
   entry: {
     app: './src/assets/js/index.js',
     contact: './src/assets/js/contact.js',
