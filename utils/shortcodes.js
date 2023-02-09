@@ -50,6 +50,8 @@ const commonPictureHandler = async (src, alt, widths, formats, pictureClassName,
     src: largestUnoptimizedImg.url,
     alt,
     class: imgClassName,
+    width: largestUnoptimizedImg.width,
+    height: largestUnoptimizedImg.height,
     loading: 'lazy',
     decoding: 'async',
   });
