@@ -1,17 +1,17 @@
 ---
-title: VIM navigation for your system
+title: Enhanced keyboard navigation
 date: 2023-02-08
 head:
-  title: VIM navigation for your system
+  title: Enhanced keyboard navigation
   description: A guide on how to improve keyboard navigation on MacOS.
-thumbnail: src/assets/img/posts/vim-navigation-for-your-system/1.jpg
+thumbnail: src/assets/img/posts/enhanced-keyboard-navigation/1.jpg
 ---
 
 ## Keyboard navigation problem
 
 If you have ever used VIM text editor for at least a short amount of time, you should know about its unusual navigation layout. If you unfamiliar with VIM, in short, you use HJKL keys instead of arrows:
 
-{% picture "src/assets/img/posts/vim-navigation-for-your-system/1.jpg", "VIM navigation" %}
+{% picture "src/assets/img/posts/enhanced-keyboard-navigation/1.jpg", "VIM navigation" %}
 
 At first glance it may seem strange and uncomfortable. But after you get used to it, you would probably start to benefit from this approach as it boosts your typing performance pretty much.
 
@@ -23,7 +23,7 @@ Fortunately, I found a solution that I would like to share.
 
 [Karabiner-Elements](https://karabiner-elements.pqrs.org/){target="\_blank" rel="noopener noreferrer"} – is a powerful MacOS application that allows you to script key bindings on a system level. You can setup any key combination you want, but we are here for VIM-navigation layout. So, in the Complex Modifications section you can add custom rules. If you try to add a new rule, it will offer you some examples. And so we get what we were looking for:
 
-{% picture "src/assets/img/posts/vim-navigation-for-your-system/2.jpg", "Karabiner-Elements screenshot" %}
+{% picture "src/assets/img/posts/enhanced-keyboard-navigation/2.jpg", "Karabiner-Elements screenshot" %}
 
 Enable the second option and here we go! Now you can use HJKL keys to emulate cursor navigation behaviour while holding right command modifier key. If you want to add more hotkeys then you can edit configuration file by yourself. It is a `.json` file where everything is pretty simple. Just experiment and come up with key bindings that suits you best. As for me, I use Caps Lock as a modifier because I really don’t use Caps Lock for uppercase that often. I also added some hotkeys for language switch, undo/redo, quick launch of some applications etc. You can find my configuration file [here](https://raw.githubusercontent.com/kirillunlimited/dev-env/master/karabiner.json){target="\_blank" rel="noopener noreferrer"} which you can use as a boilerplate for your setup. Also there is a nice [collection of presets](https://ke-complex-modifications.pqrs.org/){target="\_blank" rel="noopener noreferrer"} for any taste.
 
