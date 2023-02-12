@@ -32,4 +32,5 @@
 
 .footer__speedlify .speedlify-score {
   color: var(--text-color);
+  transition: 0.1s ease-in-out color;
 }
