@@ -5,6 +5,7 @@ head:
   title: Enhanced keyboard navigation
   description: A guide on how to improve keyboard navigation on MacOS.
 thumbnail: src/assets/img/posts/enhanced-keyboard-navigation/1.jpg
+speedlify: b333036d
 ---
 
 ## Keyboard navigation problem
