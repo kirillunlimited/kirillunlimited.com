@@ -6,6 +6,7 @@ order: 0
 head:
   title: Kirill Ivanov
   description: Hello, my name is Kirill Ivanov. I build things for web.
+thumbnail: src/assets/img/og.jpg
 speedlify: a62bad82
 ---
 

@@ -13,7 +13,7 @@
     <meta property="og:title" content="{{ head.title }}"/>
     <meta property="og:description" content="{{ head.description }}"/>
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{site.url}}{% image thumbnail or 'src/assets/img/avatar.jpg', 'jpeg' %}" />
+    {% if thumbnail %}<meta property="og:image" content="{{site.url}}{% image thumbnail, 'jpeg' %}" />{% endif %}
     <meta property="og:url" content="{{site.url}}{{ page.url }}" />
 
     {# Preload fonts #}

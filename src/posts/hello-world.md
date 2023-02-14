@@ -4,11 +4,8 @@ date: 2023-01-23
 head:
   title: Hello, world!
   description: A quick overview of the new version of my website.
-thumbnail: src/assets/img/posts/hello-world/1.jpg
 speedlify: ad131629
 ---
-
-{% picture "src/assets/img/posts/hello-world/1.jpg", "Hello, world" %}
 
 Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. After some quick attempts, I decided to postpone this project for a while.
 
