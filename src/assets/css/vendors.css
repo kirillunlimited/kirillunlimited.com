@@ -1,0 +1,10 @@
+@import '~normalize.css/normalize.css';
+@import '~speedlify-score/speedlify-score.css';
+
+pre {
+  transition: background-color 0.1s ease-in-out;
+}
+
+pre code {
+  transition: color 0.1s ease-in-out;
+}
