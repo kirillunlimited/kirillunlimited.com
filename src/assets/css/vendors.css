@@ -8,3 +8,7 @@ pre {
 pre code {
   transition: color 0.1s ease-in-out;
 }
+
+#utterances-container .utterances {
+  max-width: none;
+}

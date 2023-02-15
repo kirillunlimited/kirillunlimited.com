@@ -1,4 +1,4 @@
-const SCHEMES = {
+export const SCHEMES = {
   LIGHT: 'light',
   AUTO: 'auto',
   DARK: 'dark',
@@ -13,6 +13,7 @@ const darkThemeColor = document.querySelector('meta[name=theme-color][data-color
 export const initColorScheme = () => {
   const scheme = getSavedColorScheme();
   switchMedia(scheme);
+  return scheme;
 };
 
 export const initColorSchemeControls = () => {
@@ -33,6 +34,9 @@ export const initColorSchemeControls = () => {
 const setColorScheme = (scheme) => {
   switchMedia(scheme);
   saveColorScheme(scheme);
+
+  const event = new CustomEvent('scheme-change', { detail: scheme });
+  document.dispatchEvent(event);
 };
 
 const switchMedia = (scheme) => {
