@@ -1,4 +1,21 @@
-import { SCHEMES } from './color-scheme';
+import { SCHEMES, getSavedColorScheme } from './color-scheme';
+
+const initComments = () => {
+  const scheme = getSavedColorScheme();
+
+  const utterancesContainer = document.getElementById('utterances-container');
+
+  if (!utterancesContainer) {
+    return;
+  }
+
+  initUterrances(scheme, utterancesContainer);
+
+  document.addEventListener('scheme-change', (event) => {
+    const scheme = event.detail;
+    setUtterancTheme(scheme);
+  });
+};
 
 const getUtterancesThemeByScheme = (scheme) => {
   let theme = '';
@@ -31,21 +48,6 @@ const initUterrances = (scheme, utterancesContainer) => {
   utterancesContainer.appendChild(scriptElem);
 };
 
-export const initComments = (scheme) => {
-  const utterancesContainer = document.getElementById('utterances-container');
-
-  if (!utterancesContainer) {
-    return;
-  }
-
-  initUterrances(scheme, utterancesContainer);
-
-  document.addEventListener('scheme-change', (event) => {
-    const scheme = event.detail;
-    setUtterancTheme(scheme);
-  });
-};
-
 const setUtterancTheme = (scheme) => {
   if (document.querySelector('.utterances-frame')) {
     let theme = getUtterancesThemeByScheme(scheme);
@@ -62,3 +64,5 @@ const setUtterancTheme = (scheme) => {
     iframe.contentWindow.postMessage(message, 'https://utteranc.es');
   }
 };
+
+initComments();

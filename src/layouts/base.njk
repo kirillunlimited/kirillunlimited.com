@@ -44,7 +44,7 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    {% if script %}<script src="{% webpack script %}"></script>{% endif %}
+    {% if script %}<script async src="{% webpack script %}"></script>{% endif %}
     <script data-goatcounter="https://kirillunlimitedcom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>
 </html>

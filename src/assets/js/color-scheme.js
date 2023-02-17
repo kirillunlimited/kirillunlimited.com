@@ -13,7 +13,6 @@ const darkThemeColor = document.querySelector('meta[name=theme-color][data-color
 export const initColorScheme = () => {
   const scheme = getSavedColorScheme();
   switchMedia(scheme);
-  return scheme;
 };
 
 export const initColorSchemeControls = () => {
@@ -68,7 +67,7 @@ const switchMedia = (scheme) => {
   });
 };
 
-const getSavedColorScheme = () => localStorage.getItem(LOCAL_STORAGE_KEY) || SCHEMES.AUTO;
+export const getSavedColorScheme = () => localStorage.getItem(LOCAL_STORAGE_KEY) || SCHEMES.AUTO;
 const saveColorScheme = (scheme) => {
   localStorage.setItem(LOCAL_STORAGE_KEY, scheme);
 };

@@ -23,8 +23,9 @@ module.exports = {
   },
   devtool: isDev && 'cheap-module-source-map',
   entry: {
-    app: './src/assets/js/index.js',
+    app: './src/assets/js/app.js',
     contact: './src/assets/js/contact.js',
+    comments: './src/assets/js/comments.js',
     styles: './src/assets/css/index.css',
     light: './src/assets/css/themes/light.css',
     dark: './src/assets/css/themes/dark.css',
