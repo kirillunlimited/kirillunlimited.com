@@ -18,8 +18,7 @@ const getUtterancesThemeByScheme = (scheme) => {
   return theme;
 };
 
-const initUterrances = (scheme) => {
-  const utterancesContainer = document.getElementById('utterances-container');
+const initUterrances = (scheme, utterancesContainer) => {
   const theme = getUtterancesThemeByScheme(scheme);
   const scriptElem = document.createElement('script');
   scriptElem.src = 'https://utteranc.es/client.js';
@@ -33,7 +32,13 @@ const initUterrances = (scheme) => {
 };
 
 export const initComments = (scheme) => {
-  initUterrances(scheme);
+  const utterancesContainer = document.getElementById('utterances-container');
+
+  if (!utterancesContainer) {
+    return;
+  }
+
+  initUterrances(scheme, utterancesContainer);
 
   document.addEventListener('scheme-change', (event) => {
     const scheme = event.detail;
