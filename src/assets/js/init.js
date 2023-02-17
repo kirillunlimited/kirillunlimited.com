@@ -1,7 +1,7 @@
 /**
- * Before render
+ * Before render (critical)
  */
 
-import { initColorScheme } from './color-scheme';
+import { initColorScheme } from './helpers/color-scheme';
 
 initColorScheme();

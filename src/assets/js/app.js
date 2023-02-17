@@ -2,7 +2,7 @@
  * After render
  */
 
-import { initColorSchemeControls } from './color-scheme';
+import { initColorSchemeControls } from './helpers/color-scheme';
 import 'speedlify-score';
 
 initColorSchemeControls();

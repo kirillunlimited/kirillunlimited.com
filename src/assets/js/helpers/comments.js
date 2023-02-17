@@ -1,6 +1,6 @@
 import { SCHEMES, getSavedColorScheme } from './color-scheme';
 
-const initComments = () => {
+export const initComments = () => {
   const scheme = getSavedColorScheme();
 
   const utterancesContainer = document.getElementById('utterances-container');
@@ -64,5 +64,3 @@ const setUtterancTheme = (scheme) => {
     iframe.contentWindow.postMessage(message, 'https://utteranc.es');
   }
 };
-
-initComments();

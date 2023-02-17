@@ -26,7 +26,7 @@ module.exports = {
     init: './src/assets/js/init.js',
     app: './src/assets/js/app.js',
     contact: './src/assets/js/contact.js',
-    comments: './src/assets/js/comments.js',
+    post: './src/assets/js/post.js',
     styles: './src/assets/css/index.css',
     light: './src/assets/css/themes/light.css',
     dark: './src/assets/css/themes/dark.css',
