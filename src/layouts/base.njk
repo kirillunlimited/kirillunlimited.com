@@ -36,7 +36,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#32d9ff" data-color-scheme="light" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#4c49fd" data-color-scheme="dark" />
 
-    <script src="{% webpack 'app.js' %}"></script>
+    <script src="{% webpack 'init.js' %}"></script>
   </head>
   <body>
     {% include 'header.njk' %}
@@ -44,6 +44,7 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
+    <script async src="{% webpack 'app.js' %}"></script>
     {% if script %}<script async src="{% webpack script %}"></script>{% endif %}
     <script data-goatcounter="https://kirillunlimitedcom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </body>

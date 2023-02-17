@@ -23,6 +23,7 @@ module.exports = {
   },
   devtool: isDev && 'cheap-module-source-map',
   entry: {
+    init: './src/assets/js/init.js',
     app: './src/assets/js/app.js',
     contact: './src/assets/js/contact.js',
     comments: './src/assets/js/comments.js',
