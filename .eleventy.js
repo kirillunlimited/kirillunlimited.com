@@ -1,4 +1,5 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const constants = require('./utils/constants');
 const markdown = require('./utils/markdown');
 const transforms = require('./utils/transforms');
@@ -7,8 +8,9 @@ const shortcodes = require('./utils/shortcodes');
 const collections = require('./utils/collections');
 
 module.exports = function (config) {
-  /* RSS */
+  /* Plugins */
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight);
 
   /* Markdown */
   config.setLibrary('md', markdown);
