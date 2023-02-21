@@ -41,7 +41,7 @@ mkdir -p ~/.config/karabiner && cp karabiner.json $_
 mkdir ~/.nvm
 ```
 
-The key part of this setup is installing packages from the [Brewfile](https://github.com/kirillunlimited/dev-env/blob/master/Brewfile){target="\_blank" rel="noopener noreferrer"} via [Homebrew](https://brew.sh/){target="\_blank" rel="noopener noreferrer"}. Homebrew is the most popular package manager for MacOS. And the Brewfile is a file with the list of packages to be installed. You can think of Brewfile as a `package.json` but for your system. Create your own Brewfile, list in it all dependencies you need and you are good to go:
+The key part of this setup is installing packages from the [Brewfile](https://github.com/kirillunlimited/dev-env/blob/master/Brewfile){target="\_blank" rel="noopener noreferrer"} via [Homebrew](https://brew.sh/){target="\_blank" rel="noopener noreferrer"}. Homebrew is the most popular package manager for MacOS. And the Brewfile is a file with the list of packages to be installed. You can think of Brewfile as a `package.json` for your JavaScript application, but for your system. Create your own Brewfile, list in it all dependencies you need and you are good to go:
 
 ```bash
 # Install Homebrew

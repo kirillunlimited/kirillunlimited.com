@@ -3,7 +3,7 @@ title: Blog
 order: 2
 head:
   title: Blog – Kirill Ivanov
-  description: The place where I share my thoughts and knowledge.
+  description: My thoughts, knowledge and guides that I would like to share.
 speedlify: d368102b
 templateEngineOverride: njk,md
 ---
@@ -26,4 +26,4 @@ templateEngineOverride: njk,md
       </li>
     {%- endfor %}
   </ul>
-  {%- endfor %}
+{%- endfor %}

@@ -26,7 +26,7 @@ I am open for hire. You can find more information about my skills and experience
 ## Hobbies
 
 <ul class="hobbies">
-  <li data-bullet="👨‍👩‍👦">spending time with my wife and taking care of my son</li>
+  <li data-bullet="👨‍👩‍👦">spending time with my wife and son</li>
   <li data-bullet="🍿">watching thrillers and horror movies</li>
   <li data-bullet="📚">reading non-fiction books</li>
   <li data-bullet="🎧">exploring new music genres</li>
