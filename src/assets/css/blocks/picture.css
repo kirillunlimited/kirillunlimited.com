@@ -1,7 +1,7 @@
 .picture {
   display: block;
   position: relative;
-  margin: 0 1em 2em 0;
+  margin: 0 0.5em 1em 0;
 }
 
 .picture--left {
@@ -10,14 +10,14 @@
 
 .picture--right {
   float: right;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 .picture:after {
   content: '';
   position: absolute;
-  top: 1em;
-  left: 1em;
+  top: 0.5em;
+  left: 0.5em;
   width: 100%;
   height: 100%;
   border: 2px solid var(--link-color);
