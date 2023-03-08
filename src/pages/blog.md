@@ -15,13 +15,12 @@ templateEngineOverride: njk,md
   <h2>{{ year }}</h2>
   <ul class="postsList">
     {%- for post in yearPosts %}
-      <li class="postsList__element">
-        <time class="postsList__date">{{ post.date | shortPostDate }}</time>
+      <li>
         <div>
           <a href="{{post.url}}">
           {{ post.data.title }}
           </a>
-          <div>{{ post.data.head.description }}</div>
+          <div class="postsList__description">{{ post.data.head.description }}</div>
         </div>
       </li>
     {%- endfor %}

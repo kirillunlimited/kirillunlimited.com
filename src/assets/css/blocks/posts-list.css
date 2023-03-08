@@ -6,18 +6,6 @@
   list-style: none;
 }
 
-.postsList__element {
-  display: flex;
-  flex-direction: row;
-}
-
-@media (orientation: portrait) {
-  .postsList__element {
-    flex-direction: column;
-  }
-}
-
-.postsList__date {
-  width: 4em;
-  min-width: 4em;
+.postsList__description {
+  font-size: 0.8em;
 }

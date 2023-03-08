@@ -21,7 +21,6 @@ module.exports = function (config) {
   /* Filters */
   config.addFilter('sortByOrder', filters.sortByOrder);
   config.addFilter('postDate', filters.postDate);
-  config.addFilter('shortPostDate', filters.shortPostDate);
   config.addNunjucksFilter('isPageInCollection', filters.isPageInCollection);
 
   /* Shortcodes */
