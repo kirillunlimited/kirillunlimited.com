@@ -1,8 +1,8 @@
 ---
-title: Enhanced keyboard navigation
+title: Enhanced Keyboard Navigation
 date: 2023-02-08
 head:
-  title: Enhanced keyboard navigation
+  title: Enhanced Keyboard Navigation
   description: A guide on how to improve keyboard navigation on MacOS.
 speedlify: b333036d
 ---

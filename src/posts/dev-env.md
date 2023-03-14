@@ -1,8 +1,8 @@
 ---
-title: Developer environment setup
+title: Developer Environment Setup
 date: 2023-02-19
 head:
-  title: Developer environment setup
+  title: Developer Environment Setup
   description: Automated MacOS setup for development.
 speedlify: 2ffbc883
 ---
