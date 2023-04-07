@@ -64,6 +64,7 @@ body {
   transition: 0.1s ease-in-out background-color, 0.1s ease-in-out color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
