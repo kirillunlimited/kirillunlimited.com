@@ -1,5 +1,6 @@
 import { initComments } from './helpers/comments';
 
-document.addEventListener('DOMContentLoaded', () => {
+if (!/HeadlessChrome/.test(window.navigator.userAgent)) {
+  // Not headless
   initComments();
-});
+}
