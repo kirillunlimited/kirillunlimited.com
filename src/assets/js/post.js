@@ -1,3 +1,5 @@
 import { initComments } from './helpers/comments';
 
-initComments();
+document.addEventListener('DOMContentLoaded', () => {
+  initComments();
+});
