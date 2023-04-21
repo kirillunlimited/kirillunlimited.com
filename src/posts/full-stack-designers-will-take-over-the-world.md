@@ -1,8 +1,8 @@
 ---
-title: Full-stack designers will take over the world
+title: Full-Stack Designers Will Take Over the World
 date: 2023-04-18
 head:
-  title: Full-stack designers will take over the world
+  title: Full-Stack Designers Will Take Over the World
   description: Should we fear that front-end developers will be kicked off the job market by full-stack designers in the near future?
 ---
 
