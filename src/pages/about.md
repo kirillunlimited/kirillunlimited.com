@@ -3,17 +3,17 @@ title: About
 order: 1
 head:
   title: About – Kirill Ivanov
-  description: I am a professional front-end developer and JavaScript engineer based in Berlin, Germany.
+  description: I am a professional front-end engineer and JavaScript engineer based in Berlin, Germany.
 speedlify: 5405eac0
 ---
 
 {% picture "src/assets/img/me.jpg", "Kirill Ivanov", "right" %}
 
-Hello, my name is Kirill. I am a front-end developer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
+Hello, my name is Kirill. I am a front-end engineer in my early 30s. I am from Moscow, but currently I am trying to settle down in Berlin.
 
 I always loved designing and building things, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics, but web development fascinated me the most.
 
-I have been building stuff on the web since 2015. Throughout my career, I grew up from a HTML-developer to a full-fledged front-end developer. I have experience using different programming languages, but my core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex projects that allowed me to gain a lot of professional experience.
+I have been building stuff on the web since 2015. Throughout my career, I grew up from a HTML-developer to a full-fledged front-end engineer. I have experience using different programming languages, but my core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex projects that allowed me to gain a lot of professional experience.
 
 What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products with intuitive and dynamic user experience.
 
