@@ -2,7 +2,6 @@
 title: Stay hungry
 date: 2023-06-15
 head:
-  title: Stay hungry
   description: How to boost technical skills after years of routine in software engineering.
 ---
 Software engineering is a rapidly evolving field, so you need to grow constantly to keep up with it. But after reaching a certain level of technical expertise, you are likely to experience a plateau in your further professional development. Such stalemate can negatively affect your motivation, lead to development fatigue and even imposter syndrome and burnout. Here are a few techniques to help you out of the pit of stagnation and regain your love of programming.

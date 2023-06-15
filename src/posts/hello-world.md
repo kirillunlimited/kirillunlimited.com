@@ -2,7 +2,6 @@
 title: Hello, World!
 date: 2023-01-23
 head:
-  title: Hello, World!
   description: A quick overview of the new version of my website.
 speedlify: ad131629
 ---
