@@ -3,7 +3,6 @@ title: Join the Dark Side
 date: 2023-03-15
 head:
   description: How to easily implement color scheme switching on a website.
-speedlify: 9e29aad5
 ---
 
 ## Why you should be bothered by color schemes?

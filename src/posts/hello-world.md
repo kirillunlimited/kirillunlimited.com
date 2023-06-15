@@ -3,7 +3,6 @@ title: Hello, World!
 date: 2023-01-23
 head:
   description: A quick overview of the new version of my website.
-speedlify: ad131629
 ---
 
 Since the day I became a web developer I always wanted to build my personal website. I tried to make it several times but I always failed in the very beginning: I had no idea what it should look like and what it would exactly be about. After some quick attempts, I decided to postpone this project for a while.

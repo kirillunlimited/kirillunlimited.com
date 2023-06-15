@@ -3,7 +3,6 @@ title: Developer Environment Setup
 date: 2023-02-19
 head:
   description: Automated MacOS setup for development.
-speedlify: 2ffbc883
 ---
 
 Preparing new computer for work can be a real headache. You need to remember all of the applications and packages that you use day to day to reinstall them on a new machine. It is an important problem, because until then, you can’t actually get to work without being constantly distracted by installing required applications. Of course you can use some migration tools to recover your previous system from backup on a new device. But this is not the case if you use an employer-issued laptop as you probably should do a clean install.
