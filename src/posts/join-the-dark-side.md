@@ -1,6 +1,5 @@
 ---
 title: Join the Dark Side
-date: 2023-03-15
 head:
   description: How to easily implement color scheme switching on a website.
 ---

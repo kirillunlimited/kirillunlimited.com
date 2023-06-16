@@ -1,6 +1,5 @@
 ---
 title: Enhanced Keyboard Navigation
-date: 2023-02-08
 head:
   description: A guide on how to improve keyboard navigation on MacOS.
 ---

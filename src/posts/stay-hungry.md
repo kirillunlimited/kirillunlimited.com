@@ -1,6 +1,5 @@
 ---
 title: Stay hungry
-date: 2023-06-15
 head:
   description: How to boost technical skills after years of routine in software engineering.
 ---

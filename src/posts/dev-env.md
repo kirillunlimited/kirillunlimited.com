@@ -1,6 +1,5 @@
 ---
 title: Developer Environment Setup
-date: 2023-02-19
 head:
   description: Automated MacOS setup for development.
 ---

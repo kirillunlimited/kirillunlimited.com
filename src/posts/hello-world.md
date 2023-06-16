@@ -1,6 +1,5 @@
 ---
 title: Hello, World!
-date: 2023-01-23
 head:
   description: A quick overview of the new version of my website.
 ---
