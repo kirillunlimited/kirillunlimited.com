@@ -8,4 +8,6 @@ module.exports = {
 
   isPageInCollection: (collection = [], pageUrl = this.ctx.page.url) =>
     collection.some((element) => element.url === pageUrl),
+
+  isoPostDate: (dateObj) => DateTime.fromJSDate(dateObj).toISO()
 };

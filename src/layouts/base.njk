@@ -17,6 +17,10 @@
     {% if thumbnail %}<meta property="og:image" content="{{site.url}}{% image thumbnail, 'jpeg' %}" />{% endif %}
     <meta property="og:url" content="{{site.url}}{{ page.url }}" />
 
+    {# Article #}
+    {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
+    {% if isPost %} <meta property="article:published_time" content={{ page.date | isoPostDate }}> {% endif %}
+
     {# Preload fonts #}
     <link rel="preload" href="{% webpack 'Rubik-Medium.woff2' %}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{% webpack 'Rubik-Light.woff2' %}" as="font" type="font/woff2" crossorigin>
