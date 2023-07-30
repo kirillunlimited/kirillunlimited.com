@@ -1,5 +1,5 @@
 ---
-title: Stay hungry
+title: Stay Hungry
 head:
   description: How to boost technical skills after years of routine in software engineering.
 ---
