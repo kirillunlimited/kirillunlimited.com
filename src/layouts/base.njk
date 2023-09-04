@@ -11,7 +11,7 @@
     <link rel="alternate" type="application/atom+xml" title="RSS Feed for kirillunlimited.com" href="{{site.url}}/feed.xml" />
 
     {# Open Graph #}
-    <meta property="og:title" content="{{ head.title }}"/>
+    <meta property="og:title" content="{{ head.title if head.title else title }}"/>
     <meta property="og:description" content="{{ head.description }}"/>
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}" />
