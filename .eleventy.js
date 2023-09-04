@@ -29,6 +29,10 @@ module.exports = function (config) {
   config.addNunjucksAsyncShortcode('image', shortcodes.imageShortcode);
   config.addNunjucksAsyncShortcode('logo', shortcodes.logoShortcode);
   config.addShortcode('picture', shortcodes.pictureShortcode);
+  config.addShortcode('ogImage', shortcodes.ogImageUrlShortcode);
+
+  /* Global data */
+  config.addGlobalData('generated', () =>  new Date().getTime());
 
   /* Collections */
   config.addCollection('postsByYear', collections.postsByYear);

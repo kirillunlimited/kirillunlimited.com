@@ -2,3 +2,4 @@ Sitemap: https://kirillunlimited.com/sitemap.xml
 
 User-agent: *
 Allow: /
+Disallow: /og/*

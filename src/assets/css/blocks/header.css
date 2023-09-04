@@ -1,5 +1,5 @@
 .header {
-  padding: var(--layout-padding-v) var(--layout-padding-h);
+  padding: var(--layout-padding-v) var(--layout-padding-h) 0 var(--layout-padding-h);
   display: flex;
   justify-content: space-between;
   align-items: center;

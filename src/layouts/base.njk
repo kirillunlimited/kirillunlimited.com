@@ -14,8 +14,8 @@
     <meta property="og:title" content="{{ head.title }}"/>
     <meta property="og:description" content="{{ head.description }}"/>
     <meta property="og:type" content="website" />
-    {% if thumbnail %}<meta property="og:image" content="{{site.url}}{% image thumbnail, 'jpeg' %}" />{% endif %}
-    <meta property="og:url" content="{{site.url}}{{ page.url }}" />
+    <meta property="og:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 
     {# Article #}
     {%- set isPost = collections.posts | isPageInCollection(page.url) -%}

@@ -86,8 +86,8 @@ module.exports = {
     return imageMetadata[format][0].url;
   },
 
-  logoShortcode: async (src) => {
-    return commonPictureHandler(src, 'Logo', [64], ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg');
+  logoShortcode: async (src, widths = [64]) => {
+    return commonPictureHandler(src, 'Logo', widths, ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg');
   },
 
   pictureShortcode: async (
@@ -108,5 +108,10 @@ module.exports = {
     }
 
     return commonPictureHandler(src, alt, widths, formats, pictureClassName, 'picture__image', sizes);
+  },
+
+  ogImageUrlShortcode: async(apiScreenshotUrl, siteUrl, pageUrl, hash) => {
+    const encodedPath = encodeURIComponent(`${siteUrl}/og${pageUrl.slice(0, -1)}`);
+    return `${apiScreenshotUrl}/${encodedPath}/opengraph/_${hash}_wait:2`;
   },
 };

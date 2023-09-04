@@ -1,0 +1,24 @@
+---
+layout: og.njk
+eleventyExcludeFromCollections: true
+tags: og
+pagination:
+  data: collections.all
+  size: 1
+  alias: post
+permalink: "og/{{ post.url }}/"
+---
+<main class="og">
+  <div class="logo logo--big">
+    {% logo 'src/assets/img/avatar.jpg', [180] %}
+  </div>
+  <div>
+    <h1 class="og__title">{{ post.data.title }}</h1>
+    <p class="og__description">{{ post.data.head.description }}</p>
+    <footer class="og__footer">
+      <div><a href="#" class="og__link">kirillunlimited.com</a></div>
+      {%- set isPost = collections.posts | isPageInCollection(post.url) -%}
+      {% if isPost %} <time class="og__date">{{post.date | postDate}}</time> {% endif %}
+    </footer>
+  </div>
+</main>

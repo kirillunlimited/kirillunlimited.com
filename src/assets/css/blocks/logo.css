@@ -20,6 +20,13 @@
   pointer-events: none;
 }
 
+.logo--big {
+  width: 8em;
+  height: 8em;
+  max-width: 180px;
+  max-height: 180px;
+}
+
 .logo__picture {
   display: block;
   width: 100%;
