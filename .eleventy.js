@@ -5,7 +5,6 @@ const markdown = require('./utils/markdown');
 const transforms = require('./utils/transforms');
 const filters = require('./utils/filters');
 const shortcodes = require('./utils/shortcodes');
-const collections = require('./utils/collections');
 
 module.exports = function (config) {
   /* Plugins */
@@ -33,9 +32,6 @@ module.exports = function (config) {
 
   /* Global data */
   config.addGlobalData('generated', () =>  new Date().getTime());
-
-  /* Collections */
-  config.addCollection('postsByYear', collections.postsByYear);
 
   /* Static assets */
   config.addWatchTarget('./src/assets/img');

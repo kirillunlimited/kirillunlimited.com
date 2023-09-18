@@ -25,5 +25,6 @@
 }
 
 .main time {
-  color: var(--description-color);
+  display: block;
+  margin-bottom: 1em;
 }
