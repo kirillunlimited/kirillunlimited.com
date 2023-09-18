@@ -5,8 +5,9 @@ head:
 ---
 
 ## Why you should be bothered by color schemes?
-
 It is hard to deny that dark mode has been on a hype train for the last few years. Not only websites and apps started to allow users to choose desired color scheme, but also devices themselves cannot do without this feature. Some might assume, that it is only about aesthetics, but you should not forget about readability reasons: vast majority of users prefer to use the dark mode at dark time as it feels more comfortable for eyes.
+
+So, if you want to embed a color scheme switching control in your web application, check out this step-by-step guide describing a clear and easy to implement technique.
 
 ## Scheme variables
 
