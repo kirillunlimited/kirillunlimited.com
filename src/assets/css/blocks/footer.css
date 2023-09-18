@@ -15,6 +15,10 @@
   }
 }
 
+.footer__copyright {
+  line-height: 1.4;
+}
+
 .footer__heart {
   color: tomato;
 }
