@@ -42,12 +42,15 @@ html {
 :root {
   --layout-padding-v: 2em;
   --layout-padding-h: 6em;
+  --text-margin: 0.8em;
+  --text-margin-big: calc(var(--text-margin) * 2);
 }
 
 @media (orientation: portrait) {
   :root {
     --layout-padding-v: 2em;
     --layout-padding-h: 1.5em;
+    --text-margin: 0.6em;
   }
 }
 

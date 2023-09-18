@@ -4,27 +4,28 @@
   line-height: 1.4;
 }
 
-.main > *:first-child {
+.main *:first-child {
   margin-top: 0;
 }
 
+.main *:last-child {
+  margin-bottom: 0;
+}
+
 .main h1 {
+  margin: 0 0 var(--text-margin);
   font-size: 1.8em;
-  margin: 0 0 0.5em;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .main h2 {
+  margin: var(--text-margin-big) 0 var(--text-margin);
   font-size: 1.2em;
-  margin: 1.25em 0 0.5em;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .main p {
-  margin: 0.75em 0;
-}
-
-.main time {
-  display: block;
-  margin-bottom: 1em;
+  margin: var(--text-margin) 0;
 }

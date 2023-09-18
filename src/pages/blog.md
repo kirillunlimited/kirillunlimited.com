@@ -10,15 +10,17 @@ templateEngineOverride: njk,md
 
 [Subscribe to my RSS feed](/feed.xml) if you don't want to miss new posts.
 
-<ul class="postsList">
+<div class="blog">
   {%- for post in collections.posts | reverse -%}
-    <li class="postsList__post">
+    <article class="blog__post">
       <div>
-        <time>{{post.date | postDate}}</time>
-        <p class="postsList__title">{{ post.data.title }}</p>
-        <p class="postsList__description">{{ post.data.head.description }}</p>
+        <p class="blog__title">{{ post.data.title }}</p>
+        <p class="blog__description">{{ post.data.head.description }}</p>
       </div>
-      <a href="{{post.url}}" class="postsList__link">Read post</a>
-    </li>
+      <footer class="blog__footer">
+        <time>{{post.date | postDate}}</time>
+        <div><a href="{{post.url}}" class="blog__link">Read post</a></div>
+      </footer>
+    </article>
   {%- endfor %}
-</ul>
+</div>

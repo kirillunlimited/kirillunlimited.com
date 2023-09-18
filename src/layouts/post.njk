@@ -3,10 +3,13 @@ layout: base.njk
 script: 'post.js'
 date: git Created
 ---
-<time>{{page.date | postDate}}</time>
-<h1>{{title}}</h1>
-{{content | safe}}
+<div class="post">
+  <time class="post__date">{{page.date | postDate}}</time>
+  <h1>{{title}}</h1>
 
-<div id="utterances-container"></div>
+  {{content | safe}}
 
-<p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
+  <div id="utterances-container"></div>
+
+  <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
+</div>
