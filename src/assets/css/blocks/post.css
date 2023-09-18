@@ -2,3 +2,17 @@
   display: block;
   margin: 0 0 var(--text-margin);
 }
+
+.post h1 {
+  margin-bottom: 0;
+}
+
+.post__description {
+  font-style: italic;
+  padding-bottom: var(--text-margin);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post__description + h2 {
+  margin-top: var(--text-margin);
+}
