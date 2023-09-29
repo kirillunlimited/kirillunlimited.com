@@ -1,17 +1,20 @@
+{%- set pageTitle = `${title} – ${site.author}` -%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{ head.title if head.title else title }}</title>
+
+    <title>{{ pageTitle }}</title>
     <meta name="description" content="{{head.description}}"/>
     <meta name="keywords" content="Kirill Ivanov, frontend, developer, engineer, javascript"/>
     <meta name="generator" content="Eleventy" >
     <link rel="alternate" type="application/atom+xml" title="RSS Feed for kirillunlimited.com" href="{{site.url}}/feed.xml" />
 
     {# Open Graph #}
-    <meta property="og:title" content="{{ head.title if head.title else title }}"/>
+    <meta property="og:title" content="{{ pageTitle }}"/>
     <meta property="og:description" content="{{ head.description }}"/>
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}" />
@@ -19,7 +22,7 @@
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="twitter:title" content="{{ head.title if head.title else title }}">
+    <meta property="twitter:title" content="{{ pageTitle }}">
     <meta property="twitter:description" content="{{ head.description }}">
     <meta property="twitter:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}">
 

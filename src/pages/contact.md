@@ -1,9 +1,7 @@
 ---
 title: Contact
+description: If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media.
 order: 3
-head:
-  title: Contact – Kirill Ivanov
-  description: If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media.
 script: 'contact.js'
 speedlify: 1b7840ed
 ---

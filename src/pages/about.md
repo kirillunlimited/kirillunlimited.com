@@ -1,9 +1,7 @@
 ---
 title: About
+description: I am a professional front-end engineer and JavaScript engineer based in Berlin, Germany.
 order: 1
-head:
-  title: About – Kirill Ivanov
-  description: I am a professional front-end engineer and JavaScript engineer based in Berlin, Germany.
 speedlify: 5405eac0
 ---
 

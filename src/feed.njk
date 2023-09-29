@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
     <title>Kirill Ivanov's Blog</title>
     <link>{{ site.url }}</link>
     <atom:link href="{{ permalink | absoluteUrl(site.url) }}" rel="self" type="application/rss+xml" />
-    <description>The place where I share my thoughts, ideas and knowledge.</description>
+    <description>Here I share my thoughts, knowledge and experience.</description>
     <language>en</language>
     {%- for post in collections.posts | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(site.url) %}

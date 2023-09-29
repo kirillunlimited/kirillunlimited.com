@@ -2,10 +2,8 @@
 layout: base.njk
 permalink: '/'
 title: Home
+description: Hello, my name is Kirill Ivanov. I build things for web.
 order: 0
-head:
-  title: Kirill Ivanov
-  description: Hello, my name is Kirill Ivanov. I build things for web.
 speedlify: a62bad82
 ---
 
