@@ -39,7 +39,7 @@ html {
 
 :root {
   --layout-padding-v: 2em;
-  --layout-padding-h: 6em;
+  --layout-padding-h: 2em;
   --text-margin: 0.8em;
   --text-margin-big: calc(var(--text-margin) * 2);
 }
