@@ -1,0 +1,11 @@
+{% if toc %}
+  <div class="toc">
+    {%- for heading in toc %}
+      <p>
+        <a class="toc__link" href="#{{ heading | slugify }}">
+          {{ heading | safe }}
+        </a>
+      </p>
+      {%- endfor %}
+  </div>
+{% endif %}

@@ -16,3 +16,9 @@
 .post__description + h2 {
   margin-top: var(--text-margin);
 }
+
+.post__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}

@@ -2,6 +2,12 @@
 title: Stumbling Blocks of Backend-Driven UI on the Web
 head:
   description: Unobvious issues to be aware of before implementing backend-driven UI architecture in a web application.
+toc:
+  - Cross-Platform Layout
+  - Tree-Shaking
+  - Page Load Time
+  - Scalability and Maintainability
+  - Conclusion
 ---
 
 Backend-driven UI (BDUI, also known as server-driver UI) is a powerful concept for building modern applications instead of the classical client-server architecture. It implies that the backend dictates not only **what** to render, but also **how** it should look like. In other words, BDUI is a quintessence of a “thin client” architecture. Technically, the server response contains not just raw data, but also detailed information about each UI element on the page, its position in the layout, description of its behaviour and reactions to user actions.

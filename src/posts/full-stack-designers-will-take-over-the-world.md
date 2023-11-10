@@ -2,7 +2,14 @@
 title: Full-Stack Designers Will Take Over the World
 head:
   description: Should we fear that front-end developers will be kicked off the job market by full-stack designers in the near future?
+toc:
+  - Intro
+  - Why do we need full-stack designers?
+  - My vision
+  - Conclusion
 ---
+
+## Intro
 
 If we are talking about making web products and features in a modern IT-company, it would probably require the workforce of product designers and front-end developers. Both of them are responsible for the final look and feel of the result.
 

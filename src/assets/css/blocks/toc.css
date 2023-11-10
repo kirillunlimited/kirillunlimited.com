@@ -1,0 +1,7 @@
+.toc {
+  padding: 1em;
+  position: sticky;
+  top: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 1em;
+}

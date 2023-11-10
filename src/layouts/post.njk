@@ -3,16 +3,21 @@ layout: base.njk
 script: 'post.js'
 date: git Created
 ---
-<article class="post">
-  <time class="post__date">{{page.date | postDate}}</time>
-  <h1>{{title}}</h1>
-  <p class="post__description">{{head.description}}</p>
+<div class="post">
+    <time class="post__date">{{page.date | postDate}}</time>
+    <h1>{{title}}</h1>
+    <p class="post__description">{{head.description}}</p>
 
-  <div>
-    {{content | safe}}
-  </div>
+    <div class="post__content">
+      <article>
+        {{content | safe}}
+      </article>
+      <aside>
+        {% include 'toc.njk' %}
+      </aside>
+    </div>
 
-  <div id="utterances-container"></div>
+    <div id="utterances-container"></div>
 
-  <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
-</article>
+    <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
+</div>
