@@ -38,6 +38,7 @@
 
 .footer__speedlify,
 .footer__speedlify:hover {
+  text-decoration: none;
   box-shadow: none;
 }
 
