@@ -1,8 +1,6 @@
 .scheme-select {
   display: flex;
-  height: 4em;
   align-items: center;
-  gap: 0.5em;
 }
 
 .scheme-select__control {
@@ -16,15 +14,20 @@
 
 .scheme-select__radioLabel {
   position: relative;
-  padding: 0.2em 0.4em;
+  padding: 0.2em 0.5em;
   cursor: pointer;
   align-items: center;
-  border: 1px solid var(--background-color);
+  border: 1px solid var(--text-color);
+  border-right: 0;
   transition: 0.1s ease-in-out background-color, 0.1s ease-in-out color, 0.1s ease-in-out border-color;
 }
 
 .scheme-select__radioLabel:hover {
   border-color: var(--text-color);
+}
+
+.scheme-select__control:last-child .scheme-select__radioLabel {
+  border-right: 1px solid var(--text-color);
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel {
