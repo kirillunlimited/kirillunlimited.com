@@ -1,8 +1,8 @@
 .scheme-select {
-  text-align: center;
-  height: 3.4em;
   display: flex;
-  gap: 0.75em;
+  height: 4em;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .scheme-select__control {
@@ -16,25 +16,21 @@
 
 .scheme-select__radioLabel {
   position: relative;
-  display: inline-flex;
+  padding: 0.2em 0.4em;
   cursor: pointer;
   align-items: center;
-  gap: 0.25em;
+  border: 1px solid var(--background-color);
+  transition: 0.1s ease-in-out background-color, 0.1s ease-in-out color, 0.1s ease-in-out border-color;
+}
+
+.scheme-select__radioLabel:hover {
+  border-color: var(--text-color);
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel {
+  background-color: var(--text-color);
+  color: var(--background-color);
   pointer-events: none;
-}
-
-.scheme-select__radioLabel::before {
-  content: '';
-  display: block;
-  width: 0.75em;
-  height: 0.75em;
-  border-radius: 50%;
-  border: 1px solid var(--text-color);
-  outline-offset: 0.1em;
-  transition: background-color 0.1s ease-in-out;
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::before {
@@ -42,13 +38,13 @@
 }
 
 @supports (contain: none) {
-  .scheme-select__radio:focus-visible + .scheme-select__radioLabel::before {
+  .scheme-select__radio:focus-visible + .scheme-select__radioLabel {
     outline: 2px dotted var(--text-color);
   }
 }
 
 @supports not (contain: none) {
-  .scheme-select__radio:focus + .scheme-select__radioLabel::before {
+  .scheme-select__radio:focus + .scheme-select__radioLabel {
     outline: 2px dotted var(--text-color);
   }
 }
