@@ -9,7 +9,7 @@
         <li>
           <a
             href="{{element.url}}"
-            {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %} class="active" {% endif %}
+            class="header__link {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %}active{% endif %}"
             {% if page.url == element.url %} aria-current="page"{% endif %}
           >
             {{ element.data.title }}

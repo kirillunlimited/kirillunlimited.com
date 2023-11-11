@@ -38,7 +38,7 @@
 }
 
 .scheme-select__radio:checked + .scheme-select__radioLabel::before {
-  background-color: var(--link-color);
+  background-color: var(--text-color);
 }
 
 @supports (contain: none) {

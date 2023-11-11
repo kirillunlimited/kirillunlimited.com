@@ -10,6 +10,21 @@
   margin: 0;
   display: flex;
   justify-content: flex-end;
-  gap: 1em;
+  gap: 0.4em;
   list-style: none;
+}
+
+.header__link {
+  padding: 0.2em 0.4em;
+}
+
+.header__link.active {
+  padding: 0.2em 0.4em;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+.header__link[aria-current] {
+  pointer-events: none;
 }
