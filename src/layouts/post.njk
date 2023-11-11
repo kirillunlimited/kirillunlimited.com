@@ -4,20 +4,18 @@ script: 'post.js'
 date: git Created
 ---
 <div class="post">
-    <time class="post__date">{{page.date | postDate}}</time>
-    <h1>{{title}}</h1>
-    <p class="post__description">{{head.description}}</p>
+  <time class="post__date">{{page.date | postDate}}</time>
+  <h1>{{title}}</h1>
+  <p class="post__description">{{head.description}}</p>
 
-    <div class="post__content">
-      <article>
-        {{content | safe}}
-      </article>
-      <aside>
-        {% include 'toc.njk' %}
-      </aside>
-    </div>
-
-    <div id="utterances-container"></div>
-
-    <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
+  <div class="post__content">
+    <article>
+      {{content | safe}}
+      <div id="utterances-container"></div>
+      <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
+    </article>
+    <aside>
+      {% include 'toc.njk' %}
+    </aside>
+  </div>
 </div>

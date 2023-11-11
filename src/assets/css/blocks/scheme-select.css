@@ -1,18 +1,8 @@
 .scheme-select {
   text-align: center;
-  border-radius: 0.5em;
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--link-color);
   height: 3.4em;
   display: flex;
   gap: 0.75em;
-  transition: 0.1s ease-in-out border-color;
-}
-
-.scheme-select__legend {
-  margin: 0 auto;
-  padding: 0 0.25em;
 }
 
 .scheme-select__control {
