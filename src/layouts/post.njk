@@ -8,13 +8,13 @@ date: git Created
   <h1>{{title}}</h1>
   <p class="post__description">{{head.description}}</p>
 
-  <div class="post__content">
-    <article>
+  <div class="grid">
+    <article class="grid__content">
       {{content | safe}}
       <div id="utterances-container"></div>
       <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>
     </article>
-    <aside>
+    <aside class="grid__aside">
       {% include 'toc.njk' %}
     </aside>
   </div>
