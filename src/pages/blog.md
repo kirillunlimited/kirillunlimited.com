@@ -1,7 +1,7 @@
 ---
 title: Blog
 description: My thoughts, knowledge and guides that I would like to share.
-order: 2
+order: 1
 speedlify: d368102b
 templateEngineOverride: njk,md
 ---

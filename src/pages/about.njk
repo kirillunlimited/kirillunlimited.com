@@ -1,0 +1,95 @@
+---
+title: About
+description: I am a professional frontend engineer and JavaScript engineer based in Berlin, Germany.
+order: 2
+speedlify: 5405eac0
+script: 'about.js'
+about:
+  - Hello, my name is Kirill. I am a frontend engineer based in 🇩🇪 Berlin.
+  - I always loved designing and building things, so I suppose it is natural that I became an engineer. Back in the day, I was into different technologies, such as game dev, 3D modeling and computer linguistics. But web development fascinated me the most.
+contact:
+  content:
+    - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
+  links:
+    - title: E-mail
+      part1: kirillunlimited
+      part2: gmail
+      part3: com
+      from: homepage
+    - title: Telegram
+      link: https://t.me/kirillunlimited
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/kirillunlimited
+    - title: Instagram
+      link: https://www.instagram.com/kirillunlimited
+    - title: Facebook
+      link: https://www.facebook.com/kirillunlimited
+    - title: GitHub
+      link: https://github.com/kirillunlimited
+skills:
+  - HTML
+  - CSS
+  - JavaScript
+  - TypeScript
+  - React
+  - Vue
+  - SPA
+  - Frontend Architecture
+  - Browsers
+  - Performance
+  - Accessibility
+  - UI/UX
+  - Interviewing
+hobbies:
+  - 👨‍👩‍👦 spending time with my wife and son
+  - 🍿 watching thrillers and horror movies
+  - 📚 reading non-fiction books
+  - 🎮 playing video games and chess
+  - ✈️ traveling and hiking
+  - 🚴‍♂️ cycling
+  - 🏂 snowboarding
+---
+
+<div class="grid">
+  <div class="grid__content">
+    {% picture "src/assets/img/me.jpg", "Kirill Ivanov" %}
+
+    {%- for paragraph in about %}
+      <p>{{ paragraph }}</p>
+    {%- endfor %}
+
+    {%- for paragraph in contact.content %}
+      <p>{{ paragraph }}:</p>
+    {%- endfor %}
+
+    {%- for element in contact.links %}
+      {% if not loop.first %} • {% endif %}
+      <a
+        href="{{element.link}}"
+        target="_blank"
+        rel="noopener noreferrer"
+        {% if element.part1 %}data-part1={{element.part1}}{% endif %}
+        {% if element.part2 %}data-part2={{element.part2}}{% endif %}
+        {% if element.part3 %}data-part3={{element.part3}}{% endif %}
+        {% if element.from %}data-from="{{element.from}}"{% endif %}
+      >{{element.title}}</a>
+    {%- endfor %}
+  </div>
+
+  <aside class="grid__aside">
+    <h2>Skills</h2>
+      <ul class="columns">
+        {%- for skill in skills %}
+          <li>{{skill}}
+        {%- endfor %}
+      </ul>
+
+    <h2>Hobbies</h2>
+      <ul class="list">
+        {%- for hobby in hobbies %}
+          <li>{{hobby}}
+        {%- endfor %}
+      </ul>
+  </aside>
+</div>
+
