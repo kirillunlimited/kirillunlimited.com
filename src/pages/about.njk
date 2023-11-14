@@ -6,7 +6,9 @@ speedlify: 5405eac0
 script: 'about.js'
 about:
   - Hello, my name is Kirill. I am a frontend engineer based in 🇩🇪 Berlin.
-  - I always loved designing and building things, so I suppose it is natural that I became an engineer. Back in the day, I was into different technologies, such as game dev, 3D modeling and computer linguistics. But web development fascinated me the most.
+  - I always loved designing and building things, so I suppose it is natural that I became an engineer. Back in the day, I was into different technologies, such as game dev, 3D modeling and computer linguistics.
+  - But it was the web that I really fell in love with.
+  - I have been building stuff on the web since 2015. Throughout my career, I grew up from a HTML-developer to a full-fledged front-end engineer. I have experience using different programming languages, but my core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex projects that allowed me to gain a lot of professional experience.
 contact:
   content:
     - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
@@ -48,6 +50,7 @@ hobbies:
   - ✈️ traveling and hiking
   - 🚴‍♂️ cycling
   - 🏂 snowboarding
+  - ✍️ sometimes <a href="/blog">blogging</a>
 ---
 
 <div class="grid">
@@ -78,18 +81,18 @@ hobbies:
 
   <aside class="grid__aside">
     <h2>Skills</h2>
-      <ul class="columns">
-        {%- for skill in skills %}
-          <li>{{skill}}
-        {%- endfor %}
-      </ul>
+    <ul class="columns">
+      {%- for skill in skills %}
+        <li>{{skill}}
+      {%- endfor %}
+    </ul>
 
     <h2>Hobbies</h2>
-      <ul class="list">
-        {%- for hobby in hobbies %}
-          <li>{{hobby}}
-        {%- endfor %}
-      </ul>
+    <ul class="list">
+      {%- for hobby in hobbies %}
+        <li>{{hobby | safe }}
+      {%- endfor %}
+    </ul>
   </aside>
 </div>
 
