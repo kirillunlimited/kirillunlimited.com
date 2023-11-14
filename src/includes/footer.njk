@@ -1,24 +1,9 @@
 <footer class="footer">
-  <div class="footer__copyright">
-    <p><a href="https://github.com/kirillunlimited/kirillunlimited.com" target="_blank" rel="noopener noreferrer">Made</a> with <span class="footer__heart">♥</span> using <a href="https://www.11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a></p>
-  </div>
+  <a class="footer__512kbLink" href="https://512kb.club" target="_blank" rel="noopener noreferrer">
+    <img class="footer__512kbImage" src="https://512kb.club/assets/images/orange-team.svg" alt="a proud member of the orange team of 512KB club" />
+  </a>
   {% if speedlify %} <a href="https://kirillunlimited-speedlify.netlify.app/kirillunlimited.com/#site-{{speedlify}}" target="_blank" rel="noopener noreferrer" class="footer__speedlify">
     <speedlify-score speedlify-url="https://kirillunlimited-speedlify.netlify.app" hash="{{speedlify}}">
   </a>{% endif %}
-  <div class="scheme-select">
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-light-scheme" class="scheme-select__radio" name="scheme-select" value="light"/>
-      <label class="scheme-select__radioLabel" for="radio-light-scheme">Light</label>
-    </div>
-
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-auto-scheme" class="scheme-select__radio" name="scheme-select" value="auto"/>
-      <label class="scheme-select__radioLabel" for="radio-auto-scheme">Auto</label>
-    </div>
-
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-dark-scheme" class="scheme-select__radio" name="scheme-select" value="dark"/>
-      <label class="scheme-select__radioLabel" for="radio-dark-scheme">Dark</label>
-    </div>
-  </div>
+  <p><a href="https://github.com/kirillunlimited/kirillunlimited.com" target="_blank" rel="noopener noreferrer">Made</a> with <span class="footer__heart">♥</span> using <a href="https://www.11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a></p>
 </footer>

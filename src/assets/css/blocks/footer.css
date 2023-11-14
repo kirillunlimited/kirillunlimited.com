@@ -8,15 +8,11 @@
 
 @media (orientation: portrait) {
   .footer {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     gap: 1em;
     text-align: center;
   }
-}
-
-.footer__copyright {
-  line-height: 1.4;
 }
 
 .footer__heart {
@@ -32,4 +28,13 @@
 .footer__speedlify .speedlify-score {
   color: var(--text-color);
   transition: 0.1s ease-in-out color;
+}
+
+.footer__512kbLink {
+  width: 10em;
+}
+
+.footer__512kbImage {
+  display: block;
+  width: 100%;
 }
