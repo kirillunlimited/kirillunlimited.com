@@ -9,6 +9,29 @@ about:
   - I always loved designing and building things, so I suppose it is natural that I became an engineer. Back in the day, I was into different technologies, such as game dev, 3D modeling and computer linguistics.
   - But it was the web that I really fell in love with.
   - I have been building stuff on the web since 2015. Throughout my career, I grew up from a HTML-developer to a full-fledged front-end engineer. I have experience using different programming languages, but my core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex projects that allowed me to gain a lot of professional experience.
+  - What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products with intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
+skills:
+  - HTML
+  - CSS
+  - JavaScript
+  - TypeScript
+  - React
+  - Vue
+  - SPA
+  - Browsers
+  - Performance
+  - Accessibility
+  - UI/UX
+  - Interviewing
+hobbies:
+  - 👨‍👩‍👦 spending time with my wife and son
+  - 🍿 watching thrillers and horror movies
+  - 📚 reading non-fiction books
+  - 🎮 playing video games and chess
+  - ✈️ traveling and hiking
+  - 🚴‍♂️ cycling
+  - 🏂 snowboarding
+  - ✍️ sometimes <a href="/blog">blogging</a>
 contact:
   content:
     - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
@@ -28,29 +51,6 @@ contact:
       link: https://www.facebook.com/kirillunlimited
     - title: GitHub
       link: https://github.com/kirillunlimited
-skills:
-  - HTML
-  - CSS
-  - JavaScript
-  - TypeScript
-  - React
-  - Vue
-  - SPA
-  - Frontend Architecture
-  - Browsers
-  - Performance
-  - Accessibility
-  - UI/UX
-  - Interviewing
-hobbies:
-  - 👨‍👩‍👦 spending time with my wife and son
-  - 🍿 watching thrillers and horror movies
-  - 📚 reading non-fiction books
-  - 🎮 playing video games and chess
-  - ✈️ traveling and hiking
-  - 🚴‍♂️ cycling
-  - 🏂 snowboarding
-  - ✍️ sometimes <a href="/blog">blogging</a>
 ---
 
 <div class="grid">
@@ -59,23 +59,6 @@ hobbies:
 
     {%- for paragraph in about %}
       <p>{{ paragraph }}</p>
-    {%- endfor %}
-
-    {%- for paragraph in contact.content %}
-      <p>{{ paragraph }}:</p>
-    {%- endfor %}
-
-    {%- for element in contact.links %}
-      {% if not loop.first %} • {% endif %}
-      <a
-        href="{{element.link}}"
-        target="_blank"
-        rel="noopener noreferrer"
-        {% if element.part1 %}data-part1={{element.part1}}{% endif %}
-        {% if element.part2 %}data-part2={{element.part2}}{% endif %}
-        {% if element.part3 %}data-part3={{element.part3}}{% endif %}
-        {% if element.from %}data-from="{{element.from}}"{% endif %}
-      >{{element.title}}</a>
     {%- endfor %}
   </div>
 
@@ -92,6 +75,25 @@ hobbies:
       {%- for hobby in hobbies %}
         <li>{{hobby | safe }}
       {%- endfor %}
+    </ul>
+
+    <h2>Contact</h2>
+    {%- for paragraph in contact.content %}
+      <p>{{ paragraph }}:</p>
+    {%- endfor %}
+
+    <ul class="columns">
+    {%- for element in contact.links %}
+      <li><a
+        href="{{element.link}}"
+        target="_blank"
+        rel="noopener noreferrer"
+        {% if element.part1 %}data-part1={{element.part1}}{% endif %}
+        {% if element.part2 %}data-part2={{element.part2}}{% endif %}
+        {% if element.part3 %}data-part3={{element.part3}}{% endif %}
+        {% if element.from %}data-from="{{element.from}}"{% endif %}
+      >{{element.title}}</a></li>
+    {%- endfor %}
     </ul>
   </aside>
 </div>
