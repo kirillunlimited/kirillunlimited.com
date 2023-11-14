@@ -12,4 +12,8 @@
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .grid--reversed .grid__aside {
+    order: -1;
+  }
 }
