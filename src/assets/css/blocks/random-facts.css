@@ -1,0 +1,14 @@
+.random-facts__fact {
+  display: none;
+}
+
+.random-facts__fact--visible {
+  display: block;
+}
+
+.random-facts__button {
+  border: 0;
+  outline: 0;
+  background: none;
+  cursor: pointer;
+}

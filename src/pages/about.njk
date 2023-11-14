@@ -5,11 +5,12 @@ order: 2
 speedlify: 5405eac0
 script: 'about.js'
 about:
-  - Hello, my name is Kirill. I am a frontend engineer based in 🇩🇪 Berlin.
-  - I always loved designing and building things, so I suppose it is natural that I became an engineer. Back in the day, I was into different technologies, such as game dev, 3D modeling and computer linguistics.
-  - But it was the web that I really fell in love with.
+  - Hello, my name is Kirill. I am a frontend engineer based in Berlin.
+  - I always loved designing and building things, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics.
+  - But it was the web that I really fell in love with...
   - I have been building stuff on the web since 2015. Throughout my career, I grew up from a HTML-developer to a full-fledged front-end engineer. I have experience using different programming languages, but my core skill is based on JavaScript, so I enjoy doing most of the things using JavaScript. I have been lucky enough to be involved in building and maintaining a bunch of solid and complex projects that allowed me to gain a lot of professional experience.
   - What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products with intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
+  - I am currently trying to focus on further development in the technical field of building web products. Maybe someday I will try my hand at management, but solving technical problems still gives me enough satisfaction to keep going.
 skills:
   - HTML
   - CSS
@@ -17,19 +18,16 @@ skills:
   - TypeScript
   - React
   - Vue
-  - SPA
+  - Nuxt
   - Browsers
   - Performance
-  - Accessibility
   - UI/UX
-  - Interviewing
 hobbies:
   - 👨‍👩‍👦 spending time with my wife and son
   - 🍿 watching thrillers and horror movies
   - 📚 reading non-fiction books
   - 🎮 playing video games and chess
   - ✈️ traveling and hiking
-  - 🚴‍♂️ cycling
   - 🏂 snowboarding
   - ✍️ sometimes <a href="/blog">blogging</a>
 contact:
@@ -51,8 +49,25 @@ contact:
       link: https://www.facebook.com/kirillunlimited
     - title: GitHub
       link: https://github.com/kirillunlimited
+random_facts:
+  - I was born in Moscow.
+  - My son's name is Miron.
+  - I graduated from the Higher School of Economics University with a degree in computer-aided design in 2013.
+  - My favorite JavaScript framework is Vue.
+  - I earned my first money as an English tutor.
+  - My favorite country I have been to is the Czech Republic.
+  - My favorite writer is Haruki Murakami.
+  - My favorite movie director is Christopher Nolan.
+  - My favorite actor is Mads Mikkelsen.
+  - My favorite video game franchise is Tom Clancy's Splinter Cell.
+  - In 2014, I ran a marathon in 4 hours and 16 minutes.
+  - I used to breakdance for 8 years.
+  - I created my first website in 2006. It was a fan site devoted to the "Tony Hawk's American Wasteland" video game.
+  - I have visited more than 20 offline conferences and meetups about web development.
+  - My favorite food is the burger.
+  - My favorite color is cyan.
+  - I moved to Germany in 2023.
 ---
-
 <div class="grid">
   <div class="grid__content">
     {% picture "src/assets/img/me.jpg", "Kirill Ivanov" %}
@@ -95,6 +110,14 @@ contact:
       >{{element.title}}</a></li>
     {%- endfor %}
     </ul>
+
+    <h2>Random Fact <button class="random-facts__button">🔄</button></h2>
+    <div class="random-facts">
+      {%- for fact in random_facts %}
+        <p class="random-facts__fact">{{fact}}</p>
+      {%- endfor %}
+    </div>
+
   </aside>
 </div>
 
