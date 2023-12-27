@@ -1,16 +1,16 @@
 <header class="header">
-  <div class="header__start">
-    <a class="logo" href="/" {% if page.url == "/" %} aria-current="page"{% endif %} aria-label="home">
-      {% logo 'src/assets/img/avatar.jpg' %}
-    </a>
-    <nav class="header__nav">
-      <ul class="header__list">
+  <a class="header__logo logo" href="/" {% if page.url == "/" %} aria-current="page"{% endif %} aria-label="home">
+    {% logo 'src/assets/img/avatar.jpg' %}
+  </a>
+  <div class="header__menu menu">
+    <nav>
+      <ul class="menu__list">
         {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
         {%- for element in collections.pages | sortByOrder -%}
           <li>
             <a
               href="{{element.url}}"
-              class="header__link {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %}active{% endif %}"
+              class="menu__link {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %}active{% endif %}"
               {% if page.url == element.url %} aria-current="page"{% endif %}
             >
               {{ element.data.title }}
@@ -19,21 +19,21 @@
         {%- endfor -%}
       </ul>
     </nav>
-  </div>
-  <div class="scheme-select">
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-light-scheme" class="scheme-select__radio" name="scheme-select" value="light"/>
-      <label class="scheme-select__radioLabel" for="radio-light-scheme">Light</label>
-    </div>
+    <div class="scheme-select">
+      <div class="scheme-select__control">
+        <input type="radio" id="radio-light-scheme" class="scheme-select__radio" name="scheme-select" value="light"/>
+        <label class="scheme-select__radioLabel" for="radio-light-scheme">Light</label>
+      </div>
 
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-auto-scheme" class="scheme-select__radio" name="scheme-select" value="auto"/>
-      <label class="scheme-select__radioLabel" for="radio-auto-scheme">Auto</label>
-    </div>
+      <div class="scheme-select__control">
+        <input type="radio" id="radio-auto-scheme" class="scheme-select__radio" name="scheme-select" value="auto"/>
+        <label class="scheme-select__radioLabel" for="radio-auto-scheme">Auto</label>
+      </div>
 
-    <div class="scheme-select__control">
-      <input type="radio" id="radio-dark-scheme" class="scheme-select__radio" name="scheme-select" value="dark"/>
-      <label class="scheme-select__radioLabel" for="radio-dark-scheme">Dark</label>
+      <div class="scheme-select__control">
+        <input type="radio" id="radio-dark-scheme" class="scheme-select__radio" name="scheme-select" value="dark"/>
+        <label class="scheme-select__radioLabel" for="radio-dark-scheme">Dark</label>
+      </div>
     </div>
   </div>
 </header>
