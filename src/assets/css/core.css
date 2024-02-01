@@ -1,16 +1,8 @@
 @font-face {
-  font-family: 'Rubik';
-  src: url('/src/assets/fonts/Rubik-Light.woff2') format('woff2');
-  font-style: normal;
-  font-weight: normal;
-  font-display: fallback;
-}
-
-@font-face {
-  font-family: 'Rubik';
-  src: url('/src/assets/fonts/Rubik-Medium.woff2') format('woff2');
-  font-style: normal;
-  font-weight: bold;
+  font-family: 'Geist';
+  src: url('/src/assets/fonts/GeistVariableVF.woff2') format('woff2 supports variations'),
+    url('/src/assets/fonts/GeistVariableVF.woff2') format('woff2-variations');
+  font-weight: 100 1000;
   font-display: fallback;
 }
 
@@ -56,9 +48,10 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Rubik', Helvetica, Arial, sans-serif;
+  font-family: 'Geist', serif;
   font-size: 16px; /* fallback */
   font-size: calc(12px + 0.8vw);
+  font-weight: 300;
   color: var(--text-color);
   text-align: left;
   background-color: var(--background-color);

@@ -31,8 +31,7 @@
     {% if isPost %} <meta property="article:published_time" content={{ page.date | isoPostDate }}> {% endif %}
 
     {# Preload fonts #}
-    <link rel="preload" href="{% webpack 'Rubik-Medium.woff2' %}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{% webpack 'Rubik-Light.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{% webpack 'GeistVariableVF.woff2' %}" as="font" type="font/woff2" crossorigin>
 
     {# Styles #}
     <link rel="stylesheet" href="{% webpack 'light.css' %}" media="(prefers-color-scheme: light)" data-color-scheme="light"/>
