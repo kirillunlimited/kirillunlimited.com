@@ -9,6 +9,7 @@
 
 .menu__link {
   padding: 0.2em 0.4em;
+  transition: 0.1s ease-in-out background-color, 0.1s ease-in-out color;
 }
 
 .menu__link.active {
