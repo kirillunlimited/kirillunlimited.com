@@ -8,7 +8,7 @@ about:
   - Hello, my name is Kirill. I am a frontend engineer based in Berlin.
   - I always loved creating things and was curious about how things worked, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics.
   - But it was the web that I really fell in love with...
-  - "Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are: CPA marketing platform, online-lending platform, corporate and promo sites for construction companies and building one of the biggest marketplaces in Russia."
+  - Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a>, <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a> and <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>.
   - What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products that provide intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
 skills:
   - HTML
@@ -54,7 +54,7 @@ contact:
     {% picture "src/assets/img/me.jpg", "Kirill Ivanov" %}
 
     {%- for paragraph in about %}
-      <p>{{ paragraph }}</p>
+      <p>{{ paragraph | safe }}</p>
     {%- endfor %}
   </div>
 
