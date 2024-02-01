@@ -1,19 +1,7 @@
 .header {
   padding: var(--layout-padding-v) var(--layout-padding-h) 0 var(--layout-padding-h);
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1em;
-}
-
-.header__logo {
-  flex: 1 0 auto;
-}
-
-.header__menu {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
-  width: 100%;
 }
