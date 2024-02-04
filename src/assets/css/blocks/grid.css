@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 2fr minmax(0, 1fr);
+}
+
+.grid__content {
+  min-width: 0;
+}
+
+@media (orientation: portrait) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid--reversed .grid__aside {
+    order: -1;
+  }
+}

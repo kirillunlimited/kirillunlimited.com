@@ -16,6 +16,7 @@ module.exports = function (config) {
 
   /* Transforms */
   config.addTransform('htmlmin', transforms.htmlmin);
+  config.addTransform('anchors', transforms.anchors);
 
   /* Filters */
   config.addFilter('sortByOrder', filters.sortByOrder);

@@ -2,7 +2,7 @@ const { DateTime } = require('luxon');
 
 module.exports = {
   sortByOrder: (elements) =>
-    elements.filter((element) => element.data.permalink !== '/').sort((a, b) => a.data.order - b.data.order),
+    elements.sort((a, b) => a.data.order - b.data.order),
 
   postDate: (dateObj) => DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy'),
 

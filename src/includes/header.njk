@@ -2,14 +2,14 @@
   <a class="logo" href="/" {% if page.url == "/" %} aria-current="page"{% endif %} aria-label="home">
     {% logo 'src/assets/img/avatar.jpg' %}
   </a>
-  <nav class="header__nav">
-    <ul class="header__list">
+  <nav class="menu">
+    <ul class="menu__list">
       {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
       {%- for element in collections.pages | sortByOrder -%}
         <li>
           <a
             href="{{element.url}}"
-            {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %} class="active" {% endif %}
+            class="menu__link {% if (page.url == element.url) or (element.url == '/blog/' and isPost) %}active{% endif %}"
             {% if page.url == element.url %} aria-current="page"{% endif %}
           >
             {{ element.data.title }}

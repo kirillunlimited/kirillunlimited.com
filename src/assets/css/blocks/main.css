@@ -14,8 +14,9 @@
 
 .main h1 {
   margin: 0 0 var(--text-margin);
-  font-size: 1.8em;
+  font-size: 1.6em;
   line-height: 1.2;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -23,9 +24,14 @@
   margin: var(--text-margin-big) 0 var(--text-margin);
   font-size: 1.2em;
   line-height: 1.2;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .main p {
   margin: var(--text-margin) 0;
+}
+
+.main strong {
+  font-weight: 700;
 }

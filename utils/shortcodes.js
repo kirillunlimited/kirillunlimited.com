@@ -38,7 +38,7 @@ const commonPictureHandler = async (src, alt, widths, formats, pictureClassName,
       // Return one <source> per format
       return `<source ${sourceAttributes}>`;
     })
-    .join('\n');
+    .join(' ');
 
   const getLargestImage = (format) => {
     const images = imageMetadata[format];

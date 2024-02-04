@@ -1,0 +1,19 @@
+.toc {
+  position: sticky;
+  top: 1em;
+  padding: 0.5em 1em 1em;
+  border-radius: 0.5em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--border-color);
+  transition: 0.1s ease-in-out border-color;
+}
+
+.toc__legend {
+  margin: 0 auto;
+  padding: 0 0.25em;
+}
+
+.toc__legend + p {
+  margin-top: 0;
+}

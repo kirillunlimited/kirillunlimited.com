@@ -7,8 +7,7 @@
 
 @media (orientation: portrait) {
   .blog {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -26,7 +25,7 @@
 }
 
 .blog__title {
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
 }
 

@@ -1,7 +1,7 @@
 ---
 title: Blog
 description: My thoughts, knowledge and guides that I would like to share.
-order: 2
+order: 1
 speedlify: d368102b
 templateEngineOverride: njk,md
 ---
@@ -10,7 +10,7 @@ templateEngineOverride: njk,md
 
 <div class="blog">
   {%- for post in collections.posts | reverse -%}
-    <article class="blog__post">
+    <div class="blog__post">
       <div>
         <p class="blog__title">{{ post.data.title }}</p>
         <p class="blog__description">{{ post.data.head.description }}</p>
@@ -19,6 +19,6 @@ templateEngineOverride: njk,md
         <time>{{post.date | postDate}}</time>
         <div><a href="{{post.url}}" class="blog__link">Read post</a></div>
       </footer>
-    </article>
+    </div>
   {%- endfor %}
 </div>

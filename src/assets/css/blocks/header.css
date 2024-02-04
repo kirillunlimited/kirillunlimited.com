@@ -3,13 +3,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header__list {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
   gap: 1em;
-  list-style: none;
 }

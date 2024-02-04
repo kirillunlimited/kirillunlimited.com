@@ -1,0 +1,5 @@
+.columns {
+  padding-left: 1em;
+  column-count: 2;
+  column-gap: 1em;
+}

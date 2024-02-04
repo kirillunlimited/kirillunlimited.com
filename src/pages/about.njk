@@ -1,0 +1,96 @@
+---
+title: About
+description: I am a professional frontend engineer and JavaScript engineer based in Berlin, Germany.
+order: 2
+speedlify: 5405eac0
+script: 'about.js'
+about:
+  - Hello, my name is Kirill. I am a frontend engineer based in Berlin.
+  - I always loved creating things and was curious about how things worked, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics.
+  - But it was the web that I really fell in love with...
+  - Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a>, <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a> and <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>.
+  - What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products that provide intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
+skills:
+  - HTML
+  - CSS
+  - JavaScript
+  - TypeScript
+  - React
+  - Vue
+  - Nuxt
+  - Browsers
+  - Performance
+  - UI/UX
+hobbies:
+  - 👨‍👩‍👦 spending time with my wife and son
+  - 🍿 watching thrillers and horror movies
+  - 📚 reading non-fiction books
+  - 🎮 playing video games and chess
+  - ✈️ traveling and hiking
+  - 🏂 snowboarding
+  - ✍️ sometimes <a href="/blog">blogging</a>
+contact:
+  content:
+    - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
+  links:
+    - title: E-mail
+      part1: kirillunlimited
+      part2: gmail
+      part3: com
+      from: homepage
+    - title: Telegram
+      link: https://t.me/kirillunlimited
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/kirillunlimited
+    - title: Instagram
+      link: https://www.instagram.com/kirillunlimited
+    - title: Facebook
+      link: https://www.facebook.com/kirillunlimited
+    - title: GitHub
+      link: https://github.com/kirillunlimited
+---
+<div class="grid">
+  <div class="grid__content">
+    {% picture "src/assets/img/me.jpg", "Kirill Ivanov" %}
+
+    {%- for paragraph in about %}
+      <p>{{ paragraph | safe }}</p>
+    {%- endfor %}
+  </div>
+
+  <aside class="grid__aside">
+    <h2>Skills</h2>
+    <ul class="columns">
+      {%- for skill in skills %}
+        <li>{{skill}}
+      {%- endfor %}
+    </ul>
+
+    <h2>Hobbies</h2>
+    <ul class="list">
+      {%- for hobby in hobbies %}
+        <li>{{hobby | safe }}
+      {%- endfor %}
+    </ul>
+
+    <h2>Contact</h2>
+    {%- for paragraph in contact.content %}
+      <p>{{ paragraph }}:</p>
+    {%- endfor %}
+
+    <ul class="columns">
+    {%- for element in contact.links %}
+      <li><a
+        href="{{element.link}}"
+        target="_blank"
+        rel="noopener noreferrer"
+        {% if element.part1 %}data-part1={{element.part1}}{% endif %}
+        {% if element.part2 %}data-part2={{element.part2}}{% endif %}
+        {% if element.part3 %}data-part3={{element.part3}}{% endif %}
+        {% if element.from %}data-from="{{element.from}}"{% endif %}
+      >{{element.title}}</a></li>
+    {%- endfor %}
+    </ul>
+  </aside>
+</div>
+

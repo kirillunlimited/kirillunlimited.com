@@ -1,0 +1,12 @@
+{% if toc %}
+  <fieldset class="toc">
+    <legend class="toc__legend">Contents</legend>
+    {%- for heading in toc %}
+      <p>
+        <a href="#{{ heading | slugify }}">
+          {{ heading | safe }}
+        </a>
+      </p>
+    {%- endfor %}
+  </fieldset>
+{% endif %}

@@ -1,0 +1,24 @@
+.menu__list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.menu__link {
+  padding: 0.2em 0.4em;
+  transition: 0.1s ease-in-out background-color, 0.1s ease-in-out color;
+}
+
+.menu__link.active {
+  padding: 0.2em 0.4em;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+.menu__link[aria-current] {
+  pointer-events: none;
+}

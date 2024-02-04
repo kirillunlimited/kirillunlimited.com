@@ -1,10 +1,14 @@
 @import './header.css';
+@import './menu.css';
 @import './logo.css';
 @import './main.css';
+@import './grid.css';
 @import './home.css';
-@import './hobbies.css';
+@import './list.css';
+@import './columns.css';
 @import './picture.css';
 @import './blog.css';
 @import './post.css';
 @import './scheme-select.css';
 @import './footer.css';
+@import './toc.css';
