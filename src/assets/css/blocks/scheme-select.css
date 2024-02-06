@@ -3,16 +3,14 @@
   align-items: center;
 }
 
-.scheme-select__control {
-  display: flex;
-}
-
 .scheme-select__radio {
+  position: absolute;
   width: 0;
   opacity: 0;
 }
 
 .scheme-select__radioLabel {
+  display: block;
   position: relative;
   padding: 0.2em 0.5em;
   cursor: pointer;
