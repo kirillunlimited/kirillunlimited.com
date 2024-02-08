@@ -27,6 +27,7 @@ module.exports = {
     app: './src/assets/js/app.js',
     about: './src/assets/js/about.js',
     post: './src/assets/js/post.js',
+    count: './src/assets/js/count.js',
     styles: './src/assets/css/index.css',
     light: './src/assets/css/themes/light.css',
     dark: './src/assets/css/themes/dark.css',

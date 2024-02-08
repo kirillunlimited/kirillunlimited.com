@@ -21,21 +21,14 @@ const commonPictureHandler = async (src, alt, widths, formats, pictureClassName,
   });
 
   const sourceHtmlString = Object.values(imageMetadata)
-    // Map each format to the source HTML markup
     .map((images) => {
-      // The first entry is representative of all the others
-      // since they each have the same shape
       const { sourceType } = images[0];
-
-      // Use our util from earlier to make our lives easier
       const sourceAttributes = stringifyAttributes({
         type: sourceType,
-        // srcset needs to be a comma-separated attribute
         srcset: images.map((image) => image.srcset).join(', '),
         sizes: sizes || '100vw',
       });
 
-      // Return one <source> per format
       return `<source ${sourceAttributes}>`;
     })
     .join(' ');
@@ -52,7 +45,6 @@ const commonPictureHandler = async (src, alt, widths, formats, pictureClassName,
     class: imgClassName,
     width: largestUnoptimizedImg.width,
     height: largestUnoptimizedImg.height,
-    loading: 'lazy',
     decoding: 'async',
   });
   const imgHtmlString = `<img ${imgAttributes}>`;
@@ -86,8 +78,8 @@ module.exports = {
     return imageMetadata[format][0].url;
   },
 
-  logoShortcode: async (src, widths = [64]) => {
-    return commonPictureHandler(src, 'Logo', widths, ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg');
+  logoShortcode: async (src, widths = [64, 128]) => {
+    return commonPictureHandler(src, 'Logo', widths, ['webp', 'jpeg'], 'logo__picture', 'logo__pictureImg', '64px');
   },
 
   pictureShortcode: async (

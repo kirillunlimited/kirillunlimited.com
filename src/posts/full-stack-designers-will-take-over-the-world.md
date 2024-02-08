@@ -1,7 +1,6 @@
 ---
 title: Full-Stack Designers Will Take Over the World
-head:
-  description: Should we fear that front-end developers will be kicked off the job market by full-stack designers in the near future?
+description: Should we fear that front-end developers will be kicked off the job market by full-stack designers in the near future?
 toc:
   - Intro
   - Why do we need full-stack designers?

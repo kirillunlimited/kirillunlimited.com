@@ -13,7 +13,7 @@ templateEngineOverride: njk,md
     <div class="blog__post">
       <div>
         <p class="blog__title">{{ post.data.title }}</p>
-        <p class="blog__description">{{ post.data.head.description }}</p>
+        <p class="blog__description">{{ post.data.description }}</p>
       </div>
       <footer class="blog__footer">
         <time>{{post.date | postDate}}</time>

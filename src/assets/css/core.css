@@ -86,3 +86,7 @@ a:hover {
     outline: 2px dotted var(--text-color);
   }
 }
+
+ul {
+  line-height: 1.5;
+}

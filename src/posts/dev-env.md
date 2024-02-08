@@ -1,7 +1,6 @@
 ---
 title: Developer Environment Setup
-head:
-  description: Automated MacOS setup for development.
+description: Automated MacOS setup for development.
 toc:
   - Intro
   - Solution

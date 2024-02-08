@@ -14,7 +14,7 @@ permalink: "og/{{ post.url }}/"
   </div>
   <div>
     <h1 class="og__title">{{ post.data.title }}</h1>
-    <p class="og__description">{{ post.data.head.description }}</p>
+    <p class="og__description">{{ post.data.description }}</p>
     <footer class="og__footer">
       <div><a href="#" class="og__link">kirillunlimited.com</a></div>
       {%- set isPost = collections.posts | isPageInCollection(post.url) -%}
