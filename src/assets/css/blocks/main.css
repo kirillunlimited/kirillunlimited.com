@@ -28,6 +28,14 @@
   text-transform: uppercase;
 }
 
+.main h3 {
+  margin: var(--text-margin-big) 0 var(--text-margin);
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .main p {
   margin: var(--text-margin) 0;
 }
