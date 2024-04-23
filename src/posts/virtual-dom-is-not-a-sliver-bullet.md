@@ -1,6 +1,7 @@
 ---
 title: Virtual DOM Is Not a Silver Bullet
 description: An attempt to find out what is the exact advantage of using the Virtual DOM.
+picture: virtual-dom-is-not-a-silver-bullet.jpeg
 ---
 For a long time I was wondering, what the magic was behind the Virtual DOM. I’ve heard a lot about how it boosts rendering performance but I never understood exactly how. So I decided to finally figure it out for myself.
 

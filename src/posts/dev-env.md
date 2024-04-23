@@ -1,6 +1,7 @@
 ---
 title: Developer Environment Setup
 description: Automated MacOS setup for development.
+picture: dev-env.jpeg
 toc:
   - Intro
   - Solution

@@ -1,6 +1,7 @@
 ---
 title: Full-Stack Designers Will Take Over the World
 description: Should we fear that front-end developers will be kicked off the job market by full-stack designers in the near future?
+picture: full-stack-designers-will-take-over-the-world.jpeg
 toc:
   - Intro
   - Why do we need full-stack designers?
@@ -12,7 +13,7 @@ toc:
 
 If we are talking about making web products and features in a modern IT-company, it would probably require the workforce of product designers and front-end developers. Both of them are responsible for the final look and feel of the result.
 
-But a few years ago the full-stack designers started to appear due to trend towards multidisciplinary IT professionals. If you have never heard about full-stack designers, you can find some detailed articles such as [this one](https://medium.com/ux-school/what-does-it-mean-to-be-a-full-stack-designer-is-it-worth-the-effort-575b07e3a4ea){target="\_blank" rel="noopener noreferrer"}. Full-stack designer is a new type of specialists who solve both design and front-end problems. It is an established profession already, but it is not is quite common yet due to a very rich skillset: they not only can create design systems, create mockups and prototypes, perform some UX researches, but they also can write code using HTML, CSS and JavaScript. Sound promising, isn’t it?
+But a few years ago the full-stack designers started to appear due to trend towards multidisciplinary IT professionals. If you have never heard about full-stack designers, you can find some detailed articles such as [this one](https://medium.com/ux-school/what-does-it-mean-to-be-a-full-stack-designer-is-it-worth-the-effort-575b07e3a4ea){target="\_blank" rel="noopener noreferrer"}. Full-stack designer is a new type of specialists who solve both design and front-end problems. It is an established profession already, but it is not is quite common yet due to a very rich skillset: they not only can create design systems, create mockups and prototypes, perform some UX researches, but they also can write code using HTML, CSS and JavaScript. Sounds promising, isn’t it?
 
 Should we fear that front-end developers will be kicked off the job market in the near future? I want to reflect on that and try to answer this question.
 

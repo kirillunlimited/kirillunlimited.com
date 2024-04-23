@@ -1,6 +1,7 @@
 ---
 title: Stumbling Blocks of Backend-Driven UI on the Web
 description: Unobvious issues to be aware of before implementing backend-driven UI architecture in a web application.
+picture: stumbling-blocks-of-backend-driven-ui-on-the-web.jpeg
 toc:
   - Cross-Platform Layout
   - Tree-Shaking

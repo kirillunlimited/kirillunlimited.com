@@ -1,6 +1,7 @@
 ---
 title: Preparing for a Behavioral Interview
 description: Simple recommendations and techniques that might help you succeed in job interviews at your dream company.
+picture: preparing-for-a-behavioral-interview.jpeg
 toc:
   - Intro
   - Behavioral Interview

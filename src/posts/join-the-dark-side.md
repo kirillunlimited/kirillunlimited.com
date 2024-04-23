@@ -1,6 +1,7 @@
 ---
 title: Join the Dark Side
 description: How to easily implement color scheme switching on a website.
+picture: join-the-dark-side.jpeg
 toc:
   - Why you should be bothered by color schemes?
   - Scheme variables

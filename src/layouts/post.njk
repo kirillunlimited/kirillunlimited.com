@@ -10,6 +10,7 @@ date: git Created
 
   <div class="grid grid--reversed">
     <article class="grid__content">
+      {% if picture %} {% picture picture | postPicturePath, title, true %} {% endif %}
       {{content | safe}}
       <div id="utterances-container"></div>
       <p><a href="/feed.xml">Subscribe to my RSS feed</a> if you don't want to miss new posts.</p>

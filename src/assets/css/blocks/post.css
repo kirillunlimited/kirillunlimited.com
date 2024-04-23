@@ -10,7 +10,6 @@
 .post__description {
   font-style: italic;
   padding-bottom: var(--text-margin);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .post__description + h2 {

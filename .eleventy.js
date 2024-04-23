@@ -23,6 +23,7 @@ module.exports = function (config) {
   config.addFilter('postDate', filters.postDate);
   config.addFilter('isoPostDate', filters.isoPostDate);
   config.addNunjucksFilter('isPageInCollection', filters.isPageInCollection);
+  config.addFilter('postPicturePath', filters.postPicturePath)
 
   /* Shortcodes */
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);

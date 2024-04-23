@@ -1,6 +1,7 @@
 ---
 title: Stay Hungry
 description: How to boost technical skills after years of routine in software engineering.
+picture: stay-hungry.jpeg
 toc:
   - Intro
   - Solving coding challenges

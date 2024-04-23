@@ -13,51 +13,51 @@ const stringifyAttributes = (attributeMap) => {
 };
 
 const commonPictureHandler = async (src, alt, widths, formats, pictureClassName, imgClassName, sizes) => {
-  const imageMetadata = await Image(src, {
-    widths,
-    formats,
-    outputDir: `${constants.outputDir}/assets/img`,
-    urlPath: '/assets/img',
-  });
+    const imageMetadata = await Image(src, {
+      widths,
+      formats,
+      outputDir: `${constants.outputDir}/assets/img`,
+      urlPath: '/assets/img',
+    });
 
-  const sourceHtmlString = Object.values(imageMetadata)
-    .map((images) => {
-      const { sourceType } = images[0];
-      const sourceAttributes = stringifyAttributes({
-        type: sourceType,
-        srcset: images.map((image) => image.srcset).join(', '),
-        sizes: sizes || '100vw',
-      });
+    const sourceHtmlString = Object.values(imageMetadata)
+      .map((images) => {
+        const { sourceType } = images[0];
+        const sourceAttributes = stringifyAttributes({
+          type: sourceType,
+          srcset: images.map((image) => image.srcset).join(', '),
+          sizes: sizes || '100vw',
+        });
 
-      return `<source ${sourceAttributes}>`;
-    })
-    .join(' ');
+        return `<source ${sourceAttributes}>`;
+      })
+      .join(' ');
 
-  const getLargestImage = (format) => {
-    const images = imageMetadata[format];
-    return images[images.length - 1];
-  };
+    const getLargestImage = (format) => {
+      const images = imageMetadata[format];
+      return images[images.length - 1];
+    };
 
-  const largestUnoptimizedImg = getLargestImage(formats[0]);
-  const imgAttributes = stringifyAttributes({
-    src: largestUnoptimizedImg.url,
-    alt,
-    class: imgClassName,
-    width: largestUnoptimizedImg.width,
-    height: largestUnoptimizedImg.height,
-    decoding: 'async',
-  });
-  const imgHtmlString = `<img ${imgAttributes}>`;
+    const largestUnoptimizedImg = getLargestImage(formats[0]);
+    const imgAttributes = stringifyAttributes({
+      src: largestUnoptimizedImg.url,
+      alt,
+      class: imgClassName,
+      width: largestUnoptimizedImg.width,
+      height: largestUnoptimizedImg.height,
+      decoding: 'async',
+    });
+    const imgHtmlString = `<img ${imgAttributes}>`;
 
-  const pictureAttributes = stringifyAttributes({
-    class: pictureClassName,
-  });
-  const picture = `<picture ${pictureAttributes}>
-    ${sourceHtmlString}
-    ${imgHtmlString}
-  </picture>`;
+    const pictureAttributes = stringifyAttributes({
+      class: pictureClassName,
+    });
+    const picture = `<picture ${pictureAttributes}>
+      ${sourceHtmlString}
+      ${imgHtmlString}
+    </picture>`;
 
-  return outdent`${picture}`;
+    return outdent`${picture}`;
 };
 
 module.exports = {
@@ -85,6 +85,7 @@ module.exports = {
   pictureShortcode: async (
     src,
     alt,
+    isAi = false,
     float = undefined,
     widths = [360, 640, 800, 1200, 1600, 2000],
     formats = ['webp', 'jpeg']
@@ -92,9 +93,12 @@ module.exports = {
     let pictureClassName = 'picture';
     let sizes = '(orientation: portrait) 90vw, 80vw';
 
+    if (isAi) {
+      pictureClassName += ` picture--ai`;
+    }
+
     if (float) {
-      const floatName = `picture--${float}`;
-      pictureClassName += ` ${floatName}`;
+      pictureClassName += ` picture--${float}`;
       sizes = '(max-width: 1600px) 30vw, 320px';
       widths = [360, 640, 800];
     }

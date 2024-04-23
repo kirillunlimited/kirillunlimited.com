@@ -1,6 +1,7 @@
 ---
 title: Enhanced Keyboard Navigation
 description: A guide on how to improve keyboard navigation on MacOS.
+picture: enhanced-keyboard-navigation.jpeg
 toc:
   - Keyboard navigation problem
   - Karabiner-Elements
