@@ -6,7 +6,7 @@ const PostCSSPresetEnv = require('postcss-preset-env');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const constants = require('./utils/constants');
+const constants = require('./eleventy/constants');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -31,7 +31,7 @@ module.exports = {
     styles: './src/assets/css/index.css',
     light: './src/assets/css/themes/light.css',
     dark: './src/assets/css/themes/dark.css',
-    og: './src/assets/css/og.css'
+    og: './src/assets/css/og.css',
   },
   output: {
     filename: `${baseFilename}.js`,

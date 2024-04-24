@@ -34,19 +34,19 @@ import WarningIcon from './warning';
 import FailIcon from './fail';
 
 export const IconComponents = {
-	success: SuccessIcon,
-	warning: WarningIcon,
-	fail: FailIcon
-}
+  success: SuccessIcon,
+  warning: WarningIcon,
+  fail: FailIcon,
+};
 ```
 
 Maintaining this list is not a big problem, since it can be generated automatically by the design library tools. But the real problem is that generic icon component cannot predict which exact icon component will be needed at actual runtime, so every single icon will be included into a bundle. In React we will have a high-order component that will render an icon based on the alias value passed in. It will look something like this:
 
 ```jsx
-import React from "react";
+import React from 'react';
 import IconComponents from './icons';
 
-export default function Icon({iconName}) {
+export default function Icon({ iconName }) {
   return React.createElement(IconComponents[iconName]);
 }
 ```

@@ -3,6 +3,7 @@ title: Virtual DOM Is Not a Silver Bullet
 description: An attempt to find out what is the exact advantage of using the Virtual DOM.
 picture: virtual-dom-is-not-a-silver-bullet.jpeg
 ---
+
 For a long time I was wondering, what the magic was behind the Virtual DOM. I’ve heard a lot about how it boosts rendering performance but I never understood exactly how. So I decided to finally figure it out for myself.
 
 Virtual DOM introduces an abstraction layer between the actual DOM and the application state. It provides some render optimization techniques: while storing the entire DOM tree object in memory, it will compare the new state with the previous snapshot and do some efficient batch updates of UI. It was a real game changer back then, when JavaScript frameworks were pretty slow and complicated by its design. Virtual DOM revolutionized approach to DOM updates by taking all the headaches and doing it in a "smart" way.

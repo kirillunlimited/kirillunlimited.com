@@ -1,45 +1,32 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const constants = require('./utils/constants');
-const markdown = require('./utils/markdown');
-const transforms = require('./utils/transforms');
-const filters = require('./utils/filters');
-const shortcodes = require('./utils/shortcodes');
+const constants = require('./eleventy/constants');
+const markdown = require('./eleventy/markdown');
+const transforms = require('./eleventy/transforms');
+const filters = require('./eleventy/filters');
+const shortcodes = require('./eleventy/shortcodes');
+
+const extract = (module, addHandler, config) => {
+  Object.keys(module).forEach((name) => {
+    config[addHandler](name, module[name]);
+  });
+};
 
 module.exports = function (config) {
-  /* Plugins */
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight);
 
-  /* Markdown */
   config.setLibrary('md', markdown);
 
-  /* Transforms */
-  config.addTransform('htmlmin', transforms.htmlmin);
-  config.addTransform('anchors', transforms.anchors);
+  extract(transforms, 'addTransform', config);
+  extract(filters, 'addFilter', config);
+  extract(shortcodes, 'addShortcode', config);
 
-  /* Filters */
-  config.addFilter('sortByOrder', filters.sortByOrder);
-  config.addFilter('postDate', filters.postDate);
-  config.addFilter('isoPostDate', filters.isoPostDate);
-  config.addNunjucksFilter('isPageInCollection', filters.isPageInCollection);
-  config.addFilter('postPicturePath', filters.postPicturePath)
+  config.addGlobalData('generated', () => new Date().getTime());
 
-  /* Shortcodes */
-  config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
-  config.addNunjucksAsyncShortcode('image', shortcodes.imageShortcode);
-  config.addNunjucksAsyncShortcode('logo', shortcodes.logoShortcode);
-  config.addShortcode('picture', shortcodes.pictureShortcode);
-  config.addShortcode('ogImage', shortcodes.ogImageUrlShortcode);
-
-  /* Global data */
-  config.addGlobalData('generated', () =>  new Date().getTime());
-
-  /* Static assets */
   config.addWatchTarget('./src/assets/img');
   config.addPassthroughCopy({ './src/static': './' });
 
-  /* Reload the page every time any JS/CSS files are changed */
   config.setBrowserSyncConfig({ files: [constants.manifestPath] });
 
   return {
