@@ -12,7 +12,7 @@ const stringifyAttributes = (attributeMap) => {
     .join(' ');
 };
 
-const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, imgClassNames, sizes }) => {
+const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, imgClassNames, sizes, decoding }) => {
   const pictureClassNamesString = pictureClassNames.join(' ');
   const imageClassNamesString = imgClassNames.join(' ');
   const imageMetadata = await Image(src, {
@@ -47,7 +47,7 @@ const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, i
     class: imageClassNamesString,
     width: largestUnoptimizedImg.width,
     height: largestUnoptimizedImg.height,
-    decoding: 'async',
+    decoding,
   });
   const imgHtmlString = `<img ${imgAttributes}>`;
 
