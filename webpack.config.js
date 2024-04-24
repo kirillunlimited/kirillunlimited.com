@@ -31,7 +31,6 @@ module.exports = {
     styles: './src/assets/css/index.css',
     light: './src/assets/css/themes/light.css',
     dark: './src/assets/css/themes/dark.css',
-    og: './src/assets/css/og.css',
   },
   output: {
     filename: `${baseFilename}.js`,

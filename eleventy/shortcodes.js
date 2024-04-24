@@ -62,7 +62,7 @@ const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, i
   return outdent`${picture}`;
 };
 
-const image = async (src, format, widths = ['auto']) => {
+const imagePath = async (src, format, widths = ['auto']) => {
   const imageMetadata = await Image(src, {
     outputDir: `${constants.outputDir}/assets/img`,
     urlPath: '/assets/img',
@@ -70,6 +70,11 @@ const image = async (src, format, widths = ['auto']) => {
     widths,
   });
   return imageMetadata[format][0].url;
+};
+
+const imageUrl = async (src, format, widths) => {
+  const path = await imagePath(src, format, widths);
+  return `${constants.siteUrl}/${path}`;
 };
 
 const logo = async (src, widths = [64, 128]) => {
@@ -82,11 +87,6 @@ const logo = async (src, widths = [64, 128]) => {
     imgClassNames: ['logo__pictureImg'],
     sizes: '64px',
   });
-};
-
-const ogImage = async (apiScreenshotUrl, siteUrl, pageUrl, hash) => {
-  const encodedPath = encodeURIComponent(`${siteUrl}/og${pageUrl.slice(0, -1)}`);
-  return `${apiScreenshotUrl}/${encodedPath}/opengraph/_${hash}_wait:2`;
 };
 
 const picture = async (
@@ -121,9 +121,9 @@ const webpack = async (name) =>
   });
 
 module.exports = {
-  image,
+  imagePath,
+  imageUrl,
   logo,
-  ogImage,
   picture,
   webpack,
 };

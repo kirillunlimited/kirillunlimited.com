@@ -1,4 +1,5 @@
 {% set pageTitle %}{{title}} – {{site.author}}{% endset %}
+{% set picture = (picture or 'default.jpeg') | pagePicturePath %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,15 +17,16 @@
     {# Open Graph #}
     <meta property="og:title" content="{{ pageTitle }}"/>
     <meta property="og:description" content="{{ description }}"/>
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% imageUrl picture, 'jpeg', [1200] %}" />
 
+    {# Twitter #}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta property="twitter:title" content="{{ pageTitle }}">
     <meta property="twitter:description" content="{{ description }}">
-    <meta property="twitter:image" content="{% ogImage site.apiScreenshotUrl, site.url, page.url, generated %}">
+    <meta property="twitter:image" content="{% imageUrl picture, 'jpeg', [1200] %}">
 
     {# Article #}
     {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
@@ -41,7 +43,7 @@
     {# Favicon #}
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="{% image 'src/assets/img/avatar.jpg', 'png', [180] %}">
+    <link rel="apple-touch-icon" href="{% imagePath 'src/assets/img/avatar.jpg', 'png', [180] %}">
 
     {# Theme #}
     <meta name="color-scheme" content="light dark">
