@@ -2,7 +2,6 @@
   display: block;
   position: relative;
   margin: 0 0 1em 0;
-  border-radius: 1em;
   overflow: hidden;
 }
 
@@ -15,7 +14,7 @@
   padding: 0.25em 1em;
   z-index: 1;
   color: #fff;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .picture--left {

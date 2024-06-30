@@ -12,12 +12,16 @@ templateEngineOverride: njk,md
   {%- for post in collections.posts | reverse -%}
     <div class="blog__post">
       <div>
-        <p class="blog__title">{{ post.data.title }}</p>
-        <p class="blog__description">{{ post.data.description }}</p>
+        {% if post.data.picture -%}
+          <a href="{{post.url}}">{% postPreviewPicture post.data.picture | pagePicturePath, post.data.title, loop.index0 > 1 %}</a>
+        {% endif -%}
+        <p class="blog__title blog__text" >
+          <a href="{{post.url}}">{{ post.data.title }}</a>
+        </p>
+        <p class="blog__description blog__text">{{ post.data.description }}</p>
       </div>
-      <footer class="blog__footer">
+      <footer class="blog__footer blog__text">
         <time>{{post.date | postDate}}</time>
-        <div><a href="{{post.url}}" class="blog__link">Read post</a></div>
       </footer>
     </div>
   {%- endfor %}

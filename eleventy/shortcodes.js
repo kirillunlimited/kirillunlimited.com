@@ -12,23 +12,33 @@ const stringifyAttributes = (attributeMap) => {
     .join(' ');
 };
 
-const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, imgClassNames, sizes, decoding }) => {
+const generatePicture = async ({
+  alt,
+  decoding,
+  formats = ['webp', 'jpeg'],
+  imgClassNames,
+  loading,
+  pictureClassNames,
+  sizes,
+  src,
+  widths,
+}) => {
   const pictureClassNamesString = pictureClassNames.join(' ');
   const imageClassNamesString = imgClassNames.join(' ');
   const imageMetadata = await Image(src, {
-    widths,
     formats,
     outputDir: `${constants.outputDir}/assets/img`,
     urlPath: '/assets/img',
+    widths,
   });
 
   const sourceHtmlString = Object.values(imageMetadata)
     .map((images) => {
       const { sourceType } = images[0];
       const sourceAttributes = stringifyAttributes({
-        type: sourceType,
-        srcset: images.map((image) => image.srcset).join(', '),
         sizes: sizes || '100vw',
+        srcset: images.map((image) => image.srcset).join(', '),
+        type: sourceType,
       });
 
       return `<source ${sourceAttributes}>`;
@@ -42,12 +52,13 @@ const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, i
 
   const largestUnoptimizedImg = getLargestImage(formats[0]);
   const imgAttributes = stringifyAttributes({
-    src: largestUnoptimizedImg.url,
     alt,
     class: imageClassNamesString,
-    width: largestUnoptimizedImg.width,
-    height: largestUnoptimizedImg.height,
     decoding,
+    height: largestUnoptimizedImg.height,
+    loading,
+    src: largestUnoptimizedImg.url,
+    width: largestUnoptimizedImg.width,
   });
   const imgHtmlString = `<img ${imgAttributes}>`;
 
@@ -64,9 +75,9 @@ const generatePicture = async ({ src, alt, widths, formats, pictureClassNames, i
 
 const imagePath = async (src, format, widths = ['auto']) => {
   const imageMetadata = await Image(src, {
+    formats: [format],
     outputDir: `${constants.outputDir}/assets/img`,
     urlPath: '/assets/img',
-    formats: [format],
     widths,
   });
   return imageMetadata[format][0].url;
@@ -79,38 +90,58 @@ const imageUrl = async (src, format, widths) => {
 
 const logo = async (src, widths = [64, 128]) => {
   return generatePicture({
-    src,
     alt: 'Logo',
-    widths,
     formats: ['webp', 'jpeg'],
-    pictureClassNames: ['logo__picture'],
     imgClassNames: ['logo__pictureImg'],
+    pictureClassNames: ['logo__picture'],
     sizes: '64px',
+    src,
+    widths,
   });
 };
 
-const picture = async (
-  src,
-  alt,
-  isAi = false,
-  float = undefined,
-  widths = [360, 640, 800, 1200, 1600, 2000],
-  formats = ['webp', 'jpeg']
-) => {
+const pagePicture = async (src, alt, widths = [360, 480, 640, 800, 1200, 1600, 2000]) => {
   let pictureClassNames = ['picture'];
-  let sizes = '(orientation: portrait) 90vw, 80vw';
+  let sizes = ['(orientation: portrait) 90vw', '80vw'];
 
-  if (isAi) {
-    pictureClassNames.push('picture--ai');
-  }
+  return generatePicture({
+    alt,
+    imgClassNames: ['picture__image'],
+    pictureClassNames,
+    sizes: sizes.join(', '),
+    src,
+    widths,
+  });
+};
 
-  if (float) {
-    pictureClassNames.push('picture--${float}');
-    sizes = '(max-width: 1600px) 30vw, 320px';
-    widths = [360, 640, 800];
-  }
+const postPicture = async (src, alt, widths = [360, 480, 640, 800, 1200, 1600, 2000]) => {
+  let pictureClassNames = ['picture', 'picture--ai'];
+  let sizes = ['(orientation: portrait) 90vw', '80vw'];
 
-  return generatePicture({ src, alt, widths, formats, pictureClassNames, imgClassNames: ['picture__image'], sizes });
+  return generatePicture({
+    alt,
+    imgClassNames: ['picture__image'],
+    pictureClassNames,
+    sizes: sizes.join(', '),
+    src,
+    widths,
+  });
+};
+
+const postPreviewPicture = async (src, alt, outsideViewport, widths = [360, 480, 640, 800, 1200]) => {
+  let pictureClassNames = ['picture'];
+  let sizes = ['(orientation: portrait) 90vw', '40vw'];
+
+  return generatePicture({
+    alt,
+    decoding: outsideViewport ? 'async' : undefined,
+    imgClassNames: ['picture__image'],
+    loading: outsideViewport ? 'lazy' : undefined,
+    pictureClassNames,
+    sizes: sizes.join(', '),
+    src,
+    widths,
+  });
 };
 
 const webpack = async (name) =>
@@ -124,6 +155,8 @@ module.exports = {
   imagePath,
   imageUrl,
   logo,
-  picture,
+  pagePicture,
+  postPicture,
+  postPreviewPicture,
   webpack,
 };
