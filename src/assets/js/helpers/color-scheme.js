@@ -7,8 +7,6 @@ const LOCAL_STORAGE_KEY = 'scheme';
 
 const lightStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="light"]');
 const darkStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="dark"]');
-const lightThemeColor = document.querySelector('meta[name=theme-color][data-color-scheme=light]');
-const darkThemeColor = document.querySelector('meta[name=theme-color][data-color-scheme=dark]');
 
 export const initColorScheme = () => {
   const scheme = getSavedColorScheme();
@@ -58,13 +56,8 @@ const switchMedia = (scheme) => {
       break;
   }
 
-  [lightStyles, lightThemeColor].forEach((element) => {
-    element.media = lightMedia;
-  });
-
-  [darkStyles, darkThemeColor].forEach((element) => {
-    element.media = darkMedia;
-  });
+  lightStyles.media = lightMedia;
+  darkStyles.media = darkMedia;
 };
 
 export const getSavedColorScheme = () => localStorage.getItem(LOCAL_STORAGE_KEY) || SCHEMES.AUTO;
