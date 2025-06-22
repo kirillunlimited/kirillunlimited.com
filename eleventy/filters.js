@@ -7,14 +7,11 @@ const isPageInCollection = (collection = [], pageUrl = this.ctx.page.url) =>
 
 const postDate = (dateObj) => DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy');
 
-const pagePicturePath = (name) => `src/assets/img/pages/${name}`;
-
 const sortByOrder = (elements) => elements.sort((a, b) => a.data.order - b.data.order);
 
 module.exports = {
   isoPostDate,
   isPageInCollection,
   postDate,
-  pagePicturePath,
   sortByOrder,
 };

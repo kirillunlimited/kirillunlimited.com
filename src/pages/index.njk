@@ -1,0 +1,238 @@
+---
+permalink: '/'
+speedlify: a62bad82
+title: Kirill Ivanov
+description: Hello, my name is Kirill Ivanov. I am a software engineer.
+script: 'about.js'
+
+about:
+  background: I always loved creating things and was curious about how things worked, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics. But it was the web that I really fell in love with...
+  experience: Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a>, <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a> and <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>.
+  motivation: What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products that provide intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
+
+skills:
+  primary:
+    - JavaScript
+    - HTML
+    - CSS
+    - TypeScript
+    - React
+    - React Native
+    - Vue.js
+    - Redux
+    - Vuex
+    - Node.js
+    - Jest
+    - Git
+  secondary:
+    - Nuxt
+    - Webpack
+    - GraphQL
+    - Axios
+    - Parcel
+    - AWS
+    - Docker
+    - Firebase
+    - Netlify
+    - Eleventy
+    - CSS Modules
+    - SASS
+    - PostCSS
+    - Storybook
+    - PWA
+    - Figma
+    - Miro
+    - Sentry
+    - Datadog
+    - Nunjacks
+  outdated:
+    - Angular
+    - Backbone.js
+    - Knockout.js
+    - PHP
+    - C#
+    - Python
+    - jQuery
+    - LESS
+    - Gulp
+    - Grunt
+    - Webdriver.io
+    - Handlebars
+    - Mocha
+    - Chai
+    - Photoshop
+    - Wordpress
+
+current:
+  location: Berlin, Germany
+  job: Software Engineering at Klarna
+  contact:
+    - title: E-mail
+      part1: kirillunlimited
+      part2: gmail
+      part3: com
+      from: homepage
+    - title: Telegram
+      link: https://t.me/kirillunlimited
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/kirillunlimited
+    - title: Instagram
+      link: https://www.instagram.com/kirillunlimited
+    - title: Facebook
+      link: https://www.facebook.com/kirillunlimited
+    - title: GitHub
+      link: https://github.com/kirillunlimited
+
+contact:
+  content:
+    - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
+  links:
+    - title: E-mail
+      part1: kirillunlimited
+      part2: gmail
+      part3: com
+      from: homepage
+    - title: Telegram
+      link: https://t.me/kirillunlimited
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/kirillunlimited
+    - title: Instagram
+      link: https://www.instagram.com/kirillunlimited
+    - title: Facebook
+      link: https://www.facebook.com/kirillunlimited
+    - title: GitHub
+      link: https://github.com/kirillunlimited
+---
+
+<section class="section">
+  <div>
+    <h2 class="section__title">About</h2>
+  </div>
+  <div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Background</h3>
+      </div>
+      <div class="section__info">
+        {{about.background}}
+      </div>
+    </div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Experience</h3>
+      </div>
+      <div class="section__info">
+        {{about.experience | safe}}
+      </div>
+    </div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Motivation</h3>
+      </div>
+      <div class="section__info">
+        {{about.motivation}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div>
+    <h2 class="section__title">Skills</h2>
+  </div>
+  <div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Primary</h3>
+        <em>What is the part of my main tech stack</em>
+      </div>
+      <div class="section__info">
+        <ul class="columns">
+          {%- for skill in skills.primary %}
+            <li>{{skill}}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Secondary</h3>
+        <em>What I use time to time</em>
+      </div>
+      <div class="section__info">
+        <ul class="columns">
+          {%- for skill in skills.secondary %}
+            <li>{{skill}}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Outdated</h3>
+        <em>What I haven't used in quite a while</em>
+      </div>
+      <div class="section__info">
+        <ul class="columns">
+          {%- for skill in skills.outdated %}
+            <li>{{skill}}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div>
+    <h2 class="section__title">Current</h2>
+  </div>
+  <div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Location</h3>
+      </div>
+      <div class="section__info">
+        {{current.location}}
+      </div>
+    </div>
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Job</h3>
+      </div>
+      <div class="section__info">
+        {{current.job}}
+      </div>
+    </div>
+    {# <div class="section__content">
+      <h3 class="section__subtitle">Hobbies</h3>
+      <div class="section__info">
+        <ul>
+          {%- for hobby in current.hobbies %}
+            <li>{{hobby}}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div> #}
+    <div class="section__content">
+      <div>
+        <h3 class="section__subtitle">Contacts</h3>
+      </div>
+      <div class="section__info">
+        <ul class="columns">
+          {%- for element in current.contact %}
+            <li><a
+              href="{{element.link}}"
+              target="_blank"
+              rel="noopener noreferrer"
+              {% if element.part1 %}data-part1={{element.part1}}{% endif %}
+              {% if element.part2 %}data-part2={{element.part2}}{% endif %}
+              {% if element.part3 %}data-part3={{element.part3}}{% endif %}
+              {% if element.from %}data-from="{{element.from}}"{% endif %}
+            >{{element.title}}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -12,24 +12,16 @@
   margin-bottom: 0;
 }
 
-.main h1 {
-  margin: 0 0 var(--text-margin);
-  font-size: 1.6em;
-  line-height: 1.2;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .main h2 {
   margin: var(--text-margin-big) 0 var(--text-margin);
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .main h3 {
-  margin: var(--text-margin-big) 0 var(--text-margin);
+  margin: 0 0 var(--text-margin);
   font-size: 1em;
   line-height: 1.2;
   font-weight: 700;

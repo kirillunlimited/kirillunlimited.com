@@ -1,5 +1,4 @@
 {% set pageTitle %}{{title}} – {{site.author}}{% endset %}
-{% set picture = (picture or 'default.jpeg') | pagePicturePath %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,18 +18,12 @@
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% imageUrl picture, 'jpeg', [1200] %}" />
 
     {# Twitter #}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta property="twitter:title" content="{{ pageTitle }}">
     <meta property="twitter:description" content="{{ description }}">
-    <meta property="twitter:image" content="{% imageUrl picture, 'jpeg', [1200] %}">
-
-    {# Article #}
-    {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
-    {% if isPost %} <meta property="article:published_time" content={{ page.date | isoPostDate }}> {% endif %}
 
     {# Preload fonts #}
     <link rel="preload" href="{% webpack 'GeistVariableVF.woff2' %}" as="font" type="font/woff2" crossorigin>
