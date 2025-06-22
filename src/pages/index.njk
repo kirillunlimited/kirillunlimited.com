@@ -66,32 +66,9 @@ skills:
 current:
   location: Berlin, Germany
   job: Software Engineering at Klarna
-  contact:
+  contacts:
     - title: E-mail
-      part1: kirillunlimited
-      part2: gmail
-      part3: com
-      from: homepage
-    - title: Telegram
-      link: https://t.me/kirillunlimited
-    - title: LinkedIn
-      link: https://www.linkedin.com/in/kirillunlimited
-    - title: Instagram
-      link: https://www.instagram.com/kirillunlimited
-    - title: Facebook
-      link: https://www.facebook.com/kirillunlimited
-    - title: GitHub
-      link: https://github.com/kirillunlimited
-
-contact:
-  content:
-    - If you have a question, want a quick chat or ever want to grab a virtual cup of coffee with me – you can always find me on social media
-  links:
-    - title: E-mail
-      part1: kirillunlimited
-      part2: gmail
-      part3: com
-      from: homepage
+      link: mailto:kirillunlimited@gmail.com?from=homepage
     - title: Telegram
       link: https://t.me/kirillunlimited
     - title: LinkedIn
@@ -104,135 +81,70 @@ contact:
       link: https://github.com/kirillunlimited
 ---
 
+{% macro section(params) %}
 <section class="section">
   <div>
-    <h2 class="section__title">About</h2>
+    <h2 class="section__title">{{params.title}}</h2>
   </div>
   <div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Background</h3>
+    {%- for block in params.blocks %}
+      <div class="section__content">
+        <div>
+          <h3 class="section__subtitle">{{block.title}}</h3>
+          {% if block.description %}
+            <em>{{block.description}}</em>
+          {% endif %}
+        </div>
+        <div class="section__info">
+          {% if block.text %}
+            {{block.text | safe}}
+          {% elif block.list %}
+            <ul class="columns">
+              {%- for item in block.list %}
+                <li>
+                  {% if item.title and item.link %}
+                    <a
+                      href="{{item.link}}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{{item.title}}</a>
+                  {% else %}
+                    {{item}}
+                  {% endif %}
+                </li>
+              {%- endfor %}
+            </ul>
+          {% endif %}
+        </div>
       </div>
-      <div class="section__info">
-        {{about.background}}
-      </div>
-    </div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Experience</h3>
-      </div>
-      <div class="section__info">
-        {{about.experience | safe}}
-      </div>
-    </div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Motivation</h3>
-      </div>
-      <div class="section__info">
-        {{about.motivation}}
-      </div>
-    </div>
+    {%- endfor %}
   </div>
 </section>
+{% endmacro %}
 
-<section class="section">
-  <div>
-    <h2 class="section__title">Skills</h2>
-  </div>
-  <div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Primary</h3>
-        <em>What is the part of my main tech stack</em>
-      </div>
-      <div class="section__info">
-        <ul class="columns">
-          {%- for skill in skills.primary %}
-            <li>{{skill}}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-    </div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Secondary</h3>
-        <em>What I use time to time</em>
-      </div>
-      <div class="section__info">
-        <ul class="columns">
-          {%- for skill in skills.secondary %}
-            <li>{{skill}}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-    </div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Outdated</h3>
-        <em>What I haven't used in quite a while</em>
-      </div>
-      <div class="section__info">
-        <ul class="columns">
-          {%- for skill in skills.outdated %}
-            <li>{{skill}}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+{{ section({
+  title: 'About',
+  blocks: [
+    {title: 'Background', text: about.background},
+    {title: 'Experience', text: about.experience},
+    {title: 'Motivation', text: about.motivation}
+  ]})
+}}
 
-<section class="section">
-  <div>
-    <h2 class="section__title">Current</h2>
-  </div>
-  <div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Location</h3>
-      </div>
-      <div class="section__info">
-        {{current.location}}
-      </div>
-    </div>
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Job</h3>
-      </div>
-      <div class="section__info">
-        {{current.job}}
-      </div>
-    </div>
-    {# <div class="section__content">
-      <h3 class="section__subtitle">Hobbies</h3>
-      <div class="section__info">
-        <ul>
-          {%- for hobby in current.hobbies %}
-            <li>{{hobby}}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-    </div> #}
-    <div class="section__content">
-      <div>
-        <h3 class="section__subtitle">Contacts</h3>
-      </div>
-      <div class="section__info">
-        <ul class="columns">
-          {%- for element in current.contact %}
-            <li><a
-              href="{{element.link}}"
-              target="_blank"
-              rel="noopener noreferrer"
-              {% if element.part1 %}data-part1={{element.part1}}{% endif %}
-              {% if element.part2 %}data-part2={{element.part2}}{% endif %}
-              {% if element.part3 %}data-part3={{element.part3}}{% endif %}
-              {% if element.from %}data-from="{{element.from}}"{% endif %}
-            >{{element.title}}</a></li>
-          {%- endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+{{ section({
+  title: 'Skills',
+  blocks: [
+    {title: 'Primary', description: 'What is the part of my main tech stack', list: skills.primary},
+    {title: 'Secondary',description: 'What I use time to time', list: skills.secondary},
+    {title: 'Outdated', description: "What I haven't used in quite a while", list: skills.outdated}
+  ]})
+}}
+
+{{ section({
+  title: 'Current',
+  blocks: [
+    {title: 'Location', text: current.location},
+    {title: 'Job', text: current.job},
+    {title: 'Contacts', list: current.contacts}
+  ]})
+}}
