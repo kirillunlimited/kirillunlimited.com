@@ -6,6 +6,10 @@
   padding: 1em 0;
 }
 
+.section:last-child {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
 .section__title {
   position: sticky;
   top: 1rem;
