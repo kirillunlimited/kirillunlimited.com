@@ -87,9 +87,9 @@ current:
 
 {% macro section(params) %}
 <section class="section">
-  <div>
+  <header class="section__header">
     <h2 class="section__title">{{params.title}}</h2>
-  </div>
+  </header>
   <div>
     {%- for block in params.blocks %}
       <div class="section__content">
