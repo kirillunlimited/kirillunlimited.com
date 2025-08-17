@@ -10,7 +10,8 @@
   border-bottom: 1px solid var(--secondary-color);
 }
 
-.section__title {
+.section__title,
+.section__heading {
   position: sticky;
   top: 1rem;
 }

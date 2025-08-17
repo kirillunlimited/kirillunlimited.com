@@ -33,7 +33,6 @@ html {
   --layout-padding-v: 2em;
   --layout-padding-h: 2em;
   --text-margin: 0.8em;
-  --text-margin-big: calc(var(--text-margin) * 2);
 }
 
 @media (orientation: portrait) {
@@ -102,6 +101,8 @@ ul {
 }
 
 em {
+  display: inline-block;
+  margin-top: 0.25em;
   font-style: normal;
   color: var(--secondary-color);
 }

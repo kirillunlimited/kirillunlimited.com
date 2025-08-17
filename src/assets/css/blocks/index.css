@@ -1,6 +1,6 @@
+@import './columns.css';
+@import './footer.css';
 @import './header.css';
 @import './main.css';
-@import './section.css';
-@import './columns.css';
 @import './scheme-select.css';
-@import './footer.css';
+@import './section.css';

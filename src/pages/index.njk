@@ -8,7 +8,7 @@ date: Last Modified
 
 about:
   background: I always loved creating things and was curious about how things worked, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics. But it was the web that I really fell in love with...
-  experience: Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a>, <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a> and <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>.
+  experience: Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://www.klarna.com/" target="_blank" rel="noopener noreferrer">Swedish fintech company</a>, <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>, <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a> and <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a>.
   motivation: What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products that provide intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
 
 skills:
@@ -18,12 +18,14 @@ skills:
     - CSS
     - TypeScript
     - React
-    - React Native
     - Vue.js
+    - React Native
+    - SPA
     - Redux
     - Vuex
     - Node.js
     - Jest
+    - JSX
     - Git
   secondary:
     - Nuxt
@@ -66,7 +68,8 @@ skills:
 
 current:
   location: Berlin, Germany
-  job: Software Engineering at Klarna
+  job: Software Engineer at <a href="https://www.klarna.com" target="_blank" rel="noopener noreferrer">Klarna</a>
+  hobbies: Watching horror movies, playing PlayStation 5, travelling, jogging, snowboarding
   contacts:
     - title: E-mail
       link: __email__
@@ -90,15 +93,17 @@ current:
   <div>
     {%- for block in params.blocks %}
       <div class="section__content">
-        <div>
-          <h3 class="section__subtitle">{{block.title}}</h3>
-          {% if block.description %}
-            <em>{{block.description}}</em>
-          {% endif %}
+        <div> {# Extra wrapper to enable stickiness #}
+          <div class="section__heading">
+            <h3>{{block.title}}</h3>
+            {% if block.description %}
+              <em>{{block.description}}</em>
+            {% endif %}
+          </div>
         </div>
         <div class="section__info">
           {% if block.text %}
-            {{block.text | safe}}
+            <p>{{block.text | safe}}</p>
           {% elif block.list %}
             <ul class="columns">
               {%- for item in block.list %}
@@ -135,8 +140,8 @@ current:
 {{ section({
   title: 'Skills',
   blocks: [
-    {title: 'Primary', description: 'What is the part of my main tech stack', list: skills.primary},
-    {title: 'Secondary',description: 'What I use time to time', list: skills.secondary},
+    {title: 'Primary', description: 'What I am most proficient in', list: skills.primary},
+    {title: 'Secondary',description: 'What I use from time to time', list: skills.secondary},
     {title: 'Outdated', description: "What I haven't used in quite a while", list: skills.outdated}
   ]})
 }}
@@ -146,6 +151,7 @@ current:
   blocks: [
     {title: 'Location', text: current.location},
     {title: 'Job', text: current.job},
+    {title: 'Hobbies', text: current.hobbies},
     {title: 'Contacts', list: current.contacts}
   ]})
 }}

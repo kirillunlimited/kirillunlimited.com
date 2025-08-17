@@ -13,7 +13,7 @@
 }
 
 .main h2 {
-  margin: var(--text-margin-big) 0 var(--text-margin);
+  margin: 0;
   font-size: 1em;
   line-height: 1.2;
   font-weight: 700;
@@ -21,7 +21,7 @@
 }
 
 .main h3 {
-  margin: 0 0 var(--text-margin);
+  margin: 0;
   font-size: 1em;
   line-height: 1.2;
   font-weight: 700;
