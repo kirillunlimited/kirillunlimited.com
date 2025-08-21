@@ -4,6 +4,14 @@
   line-height: 1.4;
 }
 
+.main--404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
 .main *:first-child {
   margin-top: 0;
 }

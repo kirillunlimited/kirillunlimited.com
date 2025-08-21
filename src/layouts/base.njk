@@ -45,7 +45,7 @@
   </head>
   <body>
     {% include 'header.njk' %}
-    <main class="main">
+    <main class="main main--{{page.fileSlug}}">
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
