@@ -1,4 +1,10 @@
-{% set pageTitle %}{{title}} – {{site.author}}{% endset %}
+{% set pageTitle %}
+  {% if title %}
+    {{title}} – {{site.author}}
+  {% else %}
+    {{site.author}}
+  {% endif %}
+{% endset %}
 
 <!DOCTYPE html>
 <html lang="en">
