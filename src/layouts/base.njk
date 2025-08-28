@@ -1,5 +1,10 @@
-{% set pageTitle %}{{title}} – {{site.author}}{% endset %}
-{% set picture = (picture or 'default.jpeg') | pagePicturePath %}
+{% set pageTitle %}
+  {% if title %}
+    {{title}} – {{site.author}}
+  {% else %}
+    {{site.author}}
+  {% endif %}
+{% endset %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,25 +17,18 @@
     <meta name="description" content="{{description}}"/>
     <meta name="keywords" content="Kirill Ivanov, frontend, developer, engineer, javascript"/>
     <meta name="generator" content="Eleventy" >
-    <link rel="alternate" type="application/atom+xml" title="RSS Feed for kirillunlimited.com" href="{{site.url}}/feed.xml" />
 
     {# Open Graph #}
     <meta property="og:title" content="{{ pageTitle }}"/>
     <meta property="og:description" content="{{ description }}"/>
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% imageUrl picture, 'jpeg', [1200] %}" />
 
     {# Twitter #}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
     <meta property="twitter:title" content="{{ pageTitle }}">
     <meta property="twitter:description" content="{{ description }}">
-    <meta property="twitter:image" content="{% imageUrl picture, 'jpeg', [1200] %}">
-
-    {# Article #}
-    {%- set isPost = collections.posts | isPageInCollection(page.url) -%}
-    {% if isPost %} <meta property="article:published_time" content={{ page.date | isoPostDate }}> {% endif %}
 
     {# Preload fonts #}
     <link rel="preload" href="{% webpack 'GeistVariableVF.woff2' %}" as="font" type="font/woff2" crossorigin>
@@ -43,7 +41,7 @@
     {# Favicon #}
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="{% imagePath 'src/assets/img/avatar.jpg', 'png', [180] %}">
+    <link rel="apple-touch-icon" href="{% imagePath 'src/assets/img/avatar.jpg', 'png', [192] %}">
 
     {# Theme #}
     <meta name="color-scheme" content="light dark">
@@ -52,7 +50,7 @@
   </head>
   <body>
     {% include 'header.njk' %}
-    <main class="main">
+    <main class="main main--{{page.fileSlug}}">
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}

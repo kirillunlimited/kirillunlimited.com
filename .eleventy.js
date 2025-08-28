@@ -25,6 +25,9 @@ module.exports = function (config) {
   config.addGlobalData('generated', () => new Date().getTime());
 
   config.addWatchTarget('./src/assets/img');
+  config.addWatchTarget('./src/assets/css');
+  config.addWatchTarget('./src/assets/js');
+
   config.addPassthroughCopy({ './src/static': './' });
 
   config.setBrowserSyncConfig({ files: [constants.manifestPath] });

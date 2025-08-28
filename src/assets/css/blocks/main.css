@@ -4,6 +4,14 @@
   line-height: 1.4;
 }
 
+.main--404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
 .main *:first-child {
   margin-top: 0;
 }
@@ -12,24 +20,16 @@
   margin-bottom: 0;
 }
 
-.main h1 {
-  margin: 0 0 var(--text-margin);
-  font-size: 1.6em;
-  line-height: 1.2;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .main h2 {
-  margin: var(--text-margin-big) 0 var(--text-margin);
-  font-size: 1.2em;
+  margin: 0;
+  font-size: 1em;
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .main h3 {
-  margin: var(--text-margin-big) 0 var(--text-margin);
+  margin: 0;
   font-size: 1em;
   line-height: 1.2;
   font-weight: 700;

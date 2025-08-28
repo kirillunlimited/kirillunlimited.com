@@ -1,0 +1,133 @@
+---
+permalink: '/'
+speedlify: a62bad82
+description: Hello, my name is Kirill Ivanov. I am a software engineer.
+date: Last Modified
+
+about:
+  background: I always loved creating things and was curious about how things worked, so I suppose it is natural that I became an engineer. At university I was into different technologies, such as game dev, 3D modeling and computer linguistics. But it was the web that I really fell in love with...
+  experience: Throughout my career, I was involved in building and maintaining a bunch of solid and complex high-load projects with a lot of interfactivity. The most significant projects I have been involved in are&#58; <a href="https://www.klarna.com/" target="_blank" rel="noopener noreferrer">fintech application</a>, <a href="https://www.ozon.ru/" target="_blank" rel="noopener noreferrer">one of the biggest marketplaces in Russia</a> with <a href="https://seller.ozon.ru/" target="_blank" rel="noopener noreferrer">admin panel for sellers</a>, <a href="https://cityads.com/" target="_blank" rel="noopener noreferrer">CPA marketing platform</a> and <a href="https://art3d.ru/" target="_blank" rel="noopener noreferrer">corporate and promo sites for construction companies</a>.
+  motivation: What excites me most about working in software development is being able to craft things that have purpose and solve real problems. I enjoy building valuable, engaging and performant products that provide intuitive and dynamic user experience. In other words, my passion is to build products I would like to use myself.
+
+skills:
+  primary:
+    - JavaScript
+    - HTML
+    - CSS
+    - TypeScript
+    - React
+    - React Native
+    - Redux
+    - Node.js
+    - Jest
+    - JSX
+  secondary:
+    - Webpack
+    - GraphQL
+    - Docker
+    - Storybook
+    - AWS
+    - Firebase
+    - Figma
+    - Sentry
+    - Datadog
+    - Eleventy
+  outdated:
+    - Vue.js
+    - Nuxt
+    - PostCSS
+    - CSS Modules
+    - SASS
+    - Parcel
+    - Gulp
+    - C#
+    - Python
+    - PHP
+
+current:
+  location: Berlin, Germany
+  job: Software Engineer at <a href="https://www.klarna.com" target="_blank" rel="noopener noreferrer">Klarna</a>
+  hobbies: Horror movies, PlayStation 5, travelling, jogging, snowboarding
+  contacts:
+    - title: Telegram
+      link: https://t.me/kirillunlimited
+    - title: LinkedIn
+      link: https://www.linkedin.com/in/kirillunlimited
+    - title: Instagram
+      link: https://www.instagram.com/kirillunlimited
+    - title: Facebook
+      link: https://www.facebook.com/kirillunlimited
+    - title: GitHub
+      link: https://github.com/kirillunlimited
+---
+
+{% macro section(params) %}
+<section class="section">
+  <header class="section__header">
+    <h2 class="section__title">{{params.title}}</h2>
+  </header>
+  <div>
+    {%- for block in params.blocks %}
+      <div class="section__content">
+        <div> {# Extra wrapper to enable stickiness #}
+          <div class="section__heading">
+            <h3>{{block.title}}</h3>
+            {% if block.description %}
+              <em>{{block.description}}</em>
+            {% endif %}
+          </div>
+        </div>
+        <div class="section__info">
+          {% if block.text %}
+            <p>{{block.text | safe}}</p>
+          {% elif block.list %}
+            <ul class="columns">
+              {%- for item in block.list %}
+                <li>
+                  {% if item.title and item.link %}
+                    <a
+                      href="{{item.link}}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{{item.title}}</a>
+                  {% else %}
+                    {{item}}
+                  {% endif %}
+                </li>
+              {%- endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    {%- endfor %}
+  </div>
+</section>
+{% endmacro %}
+
+{{ section({
+  title: 'About',
+  blocks: [
+    {title: 'Background', text: about.background},
+    {title: 'Experience', text: about.experience},
+    {title: 'Motivation', text: about.motivation}
+  ]})
+}}
+
+{{ section({
+  title: 'Skills',
+  blocks: [
+    {title: 'Primary', description: 'What I am most proficient in', list: skills.primary},
+    {title: 'Secondary',description: 'What I use from time to time', list: skills.secondary},
+    {title: 'Outdated', description: "What I haven't used in quite a while", list: skills.outdated}
+  ]})
+}}
+
+{{ section({
+  title: 'Current',
+  blocks: [
+    {title: 'Location', text: current.location},
+    {title: 'Job', text: current.job},
+    {title: 'Hobbies', text: current.hobbies},
+    {title: 'Contacts', list: current.contacts}
+  ]})
+}}

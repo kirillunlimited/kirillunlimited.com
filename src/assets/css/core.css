@@ -33,7 +33,6 @@ html {
   --layout-padding-v: 2em;
   --layout-padding-h: 2em;
   --text-margin: 0.8em;
-  --text-margin-big: calc(var(--text-margin) * 2);
 }
 
 @media (orientation: portrait) {
@@ -87,6 +86,23 @@ a:hover {
   }
 }
 
+h1 {
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 ul {
   line-height: 1.5;
+  list-style: none;
+  padding: 0;
+}
+
+em {
+  display: inline-block;
+  margin-top: 0.25em;
+  font-style: normal;
+  color: var(--secondary-color);
 }
