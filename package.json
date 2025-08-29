@@ -17,15 +17,17 @@
     "deploy": "npm-run-all build speedlify-webhook",
     "analyze": "NODE_ENV=production & DEBUG=true npm-run-all clean build:*"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "Kirill Ivanov",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-		"@sindresorhus/slugify": "1.1.2",
+    "@sindresorhus/slugify": "1.1.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "cssnano-webpack-plugin": "^1.0.3",

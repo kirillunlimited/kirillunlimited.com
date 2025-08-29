@@ -1,4 +1,3 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const constants = require('./eleventy/constants');
 const markdown = require('./eleventy/markdown');
@@ -13,7 +12,6 @@ const extract = (module, addHandler, config) => {
 };
 
 module.exports = function (config) {
-  config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight);
 
   config.setLibrary('md', markdown);
