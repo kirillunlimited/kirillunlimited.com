@@ -10,7 +10,10 @@ module.exports = function (eleventyConfig) {
       urlPath: '/assets/img',
       widths,
     });
-    return imageMetadata[format][0].url;
+
+    const rawUrl = imageMetadata[format][0].url;
+
+    return eleventyConfig.getFilter('url')(rawUrl);
   };
 
   const webpack = async (name) => {
