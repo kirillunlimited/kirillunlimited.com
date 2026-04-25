@@ -18,7 +18,7 @@ module.exports = function (config) {
 
   extract(transforms, 'addTransform', config);
   extract(filters, 'addFilter', config);
-  extract(shortcodes, 'addShortcode', config);
+  extract(shortcodes(config), 'addShortcode', config);
 
   config.addGlobalData('generated', () => new Date().getTime());
 
