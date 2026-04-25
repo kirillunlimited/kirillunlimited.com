@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: 'yarn'
 
       - name: Enable Corepack
@@ -29,8 +29,8 @@ jobs:
       - name: Install deps
         run: yarn install --frozen-lockfile
 
-      - name: Build site and trigger speedlify webhook
-        run: yarn deploy
+      - name: Build site
+        run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
