@@ -17,37 +17,39 @@
     "deploy": "npm-run-all build speedlify-webhook",
     "analyze": "NODE_ENV=production & DEBUG=true npm-run-all clean build:*"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "Kirill Ivanov",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@babel/core": "^7.18.5",
-    "@babel/preset-env": "^7.18.2",
-		"@sindresorhus/slugify": "1.1.2",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@sindresorhus/slugify": "3.0.0",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.4",
     "cssnano-webpack-plugin": "^1.0.3",
     "html-minifier": "^4.0.0",
-    "linkedom": "^0.16.1",
-    "markdown-it": "^12.3.2",
-    "markdown-it-attrs": "^4.1.4",
-    "mini-css-extract-plugin": "^2.6.1",
+    "linkedom": "^0.18.12",
+    "markdown-it": "^14.1.1",
+    "markdown-it-attrs": "^4.3.1",
+    "mini-css-extract-plugin": "^2.10.2",
     "npm-run-all": "^4.1.5",
     "outdent": "^0.8.0",
     "postcss": "^8.5.10",
-    "postcss-loader": "^7.0.0",
-    "postcss-preset-env": "^7.7.1",
-    "prettier": "^2.7.1",
-    "webpack": "^5.104.1",
-    "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-manifest-plugin": "^4.0.2",
-    "webpack-remove-empty-scripts": "^0.8.1"
+    "postcss-loader": "^8.2.1",
+    "postcss-preset-env": "^11.2.1",
+    "prettier": "^3.8.3",
+    "webpack": "^5.106.2",
+    "webpack-bundle-analyzer": "^5.3.0",
+    "webpack-cli": "^7.0.2",
+    "webpack-manifest-plugin": "^6.0.1",
+    "webpack-remove-empty-scripts": "^1.1.1"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "speedlify-score": "^2.0.2"
+    "speedlify-score": "^4.0.4"
   }
 }
