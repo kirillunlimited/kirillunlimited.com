@@ -37,7 +37,7 @@ jobs:
       - name: Build site
         run: yarn build
         env:
-          ELEVENTY_PATH_PREFIX: /kirillunlimited.com/pr-${{ github.event.number }}/
+          ELEVENTY_PATH_PREFIX: /pr-${{ github.event.number }}/
 
       - name: Deploy (PR preview)
         uses: peaceiris/actions-gh-pages@v4
@@ -50,4 +50,4 @@ jobs:
       - name: Set preview URL
         id: set_url
         run: |
-          echo "preview_url=https://kirillunlimited.github.io/kirillunlimited.com/pr-${{ github.event.number }}/" >> $GITHUB_OUTPUT
+          echo "preview_url=https://kirillunlimited.com/pr-${{ github.event.number }}/" >> $GITHUB_OUTPUT

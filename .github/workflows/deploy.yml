@@ -34,7 +34,7 @@ jobs:
       - name: Build site
         run: yarn deploy
         env:
-          ELEVENTY_PATH_PREFIX: /kirillunlimited.com/
+          ELEVENTY_PATH_PREFIX: /
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
