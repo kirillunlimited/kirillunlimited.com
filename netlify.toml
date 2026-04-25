@@ -1,0 +1,13 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[context.production]
+  ignore = "true"
+  command = "exit 0"
+
+[context.production.environment]
+  ELEVENTY_PATH_PREFIX = "/"
+
+[context.deploy-preview.environment]
+  ELEVENTY_PATH_PREFIX = "/"
