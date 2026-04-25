@@ -2,24 +2,33 @@ const fs = require('fs');
 const Image = require('@11ty/eleventy-img');
 const constants = require('./constants');
 
-const imagePath = async (src, format, widths = ['auto']) => {
-  const imageMetadata = await Image(src, {
-    formats: [format],
-    outputDir: `${constants.outputDir}/assets/img`,
-    urlPath: '/assets/img',
-    widths,
-  });
-  return imageMetadata[format][0].url;
-};
+module.exports = function (eleventyConfig) {
+  const imagePath = async (src, format, widths = ['auto']) => {
+    const imageMetadata = await Image(src, {
+      formats: [format],
+      outputDir: `${constants.outputDir}/assets/img`,
+      urlPath: '/assets/img',
+      widths,
+    });
 
-const webpack = async (name) =>
-  new Promise((resolve) => {
-    fs.readFile(constants.manifestPath, { encoding: 'utf8' }, (err, data) =>
-      resolve(err ? `/assets/${name}` : JSON.parse(data)[name])
-    );
-  });
+    const rawUrl = imageMetadata[format][0].url;
 
-module.exports = {
-  imagePath,
-  webpack,
+    return eleventyConfig.getFilter('url')(rawUrl);
+  };
+
+  const webpack = async (name) => {
+    const manifest = await fs.promises
+      .readFile(constants.manifestPath, 'utf8')
+      .then(JSON.parse)
+      .catch(() => null);
+
+    const assetPath = manifest?.[name] || `/assets/${name}`;
+
+    return eleventyConfig.getFilter('url')(assetPath);
+  };
+
+  return {
+    imagePath,
+    webpack,
+  };
 };
