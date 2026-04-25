@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[context.production.environment]
+  command = "echo 'skip production deploy'"
+
+[context.deploy-preview.environment]
+  ELEVENTY_PATH_PREFIX = "/"
