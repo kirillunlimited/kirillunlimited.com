@@ -35,6 +35,8 @@ jobs:
 
       - name: Build site and trigger speedlify webhook
         run: yarn deploy
+        env:
+          ELEVENTY_PATH_PREFIX: /kirillunlimited.com/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

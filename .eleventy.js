@@ -31,6 +31,7 @@ module.exports = function (config) {
   config.setBrowserSyncConfig({ files: [constants.manifestPath] });
 
   return {
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || '/',
     dir: {
       input: 'src',
       output: constants.outputDir,

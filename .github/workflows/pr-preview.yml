@@ -38,6 +38,8 @@ jobs:
 
       - name: Build site
         run: yarn build
+        env:
+          ELEVENTY_PATH_PREFIX: /kirillunlimited.com/pr-${{ github.event.number }}/
 
       - name: Deploy to gh-pages
         id: deployment

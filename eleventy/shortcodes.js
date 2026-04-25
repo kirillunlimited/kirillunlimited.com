@@ -12,12 +12,16 @@ const imagePath = async (src, format, widths = ['auto']) => {
   return imageMetadata[format][0].url;
 };
 
-const webpack = async (name) =>
-  new Promise((resolve) => {
-    fs.readFile(constants.manifestPath, { encoding: 'utf8' }, (err, data) =>
-      resolve(err ? `/assets/${name}` : JSON.parse(data)[name])
-    );
-  });
+const webpack = async (name) => {
+  const manifest = await fs.promises
+    .readFile(constants.manifestPath, 'utf8')
+    .then(JSON.parse)
+    .catch(() => null);
+
+  const assetPath = manifest?.[name] || `/assets/${name}`;
+
+  return eleventyConfig.getFilter('url')(assetPath);
+};
 
 module.exports = {
   imagePath,
