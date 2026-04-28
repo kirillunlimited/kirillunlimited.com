@@ -13,7 +13,7 @@ jobs:
       - name: Wait for preview deploy
         run: |
           BRANCH=${{ github.head_ref }}
-          URL="https://${BRANCH}.kirillunlimited.pages.dev"
+          URL="https://${BRANCH}.kirillunlimited-com.pages.dev"
           COMMIT_SHA=${{ github.event.pull_request.head.sha }}
 
           echo "Checking $URL for commit $COMMIT_SHA"
