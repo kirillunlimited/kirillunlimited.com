@@ -18,7 +18,7 @@ module.exports = function (config) {
 
   extract(transforms, 'addTransform', config);
   extract(filters, 'addFilter', config);
-  extract(shortcodes(config), 'addShortcode', config);
+  extract(shortcodes, 'addShortcode', config);
 
   config.addGlobalData('generated', () => new Date().getTime());
 
@@ -30,8 +30,9 @@ module.exports = function (config) {
 
   config.setBrowserSyncConfig({ files: [constants.manifestPath] });
 
+  config.addGlobalData('commit', () => process.env.CF_PAGES_COMMIT_SHA || 'dev');
+
   return {
-    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || '/',
     dir: {
       input: 'src',
       output: constants.outputDir,

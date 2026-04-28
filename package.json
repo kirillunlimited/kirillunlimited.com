@@ -10,11 +10,9 @@
     "dev": "cross-env NODE_ENV=development yarn clean && concurrently \"yarn dev:webpack\" \"yarn dev:eleventy\"",
     "dev:webpack": "webpack --watch",
     "dev:eleventy": "eleventy --serve",
-    "speedlify-webhook": "curl -X POST -d {} https://api.netlify.com/build_hooks/643ed54a77f1f2005d379419",
     "build": "cross-env NODE_ENV=production yarn clean && concurrently \"yarn build:assets\" \"yarn build:site\"",
     "build:assets": "webpack --mode production",
     "build:site": "eleventy",
-    "deploy": "yarn build && yarn speedlify-webhook",
     "analyze": "cross-env NODE_ENV=production DEBUG=true yarn clean && concurrently \"yarn build:assets\" \"yarn build:site\""
   },
   "engines": {
