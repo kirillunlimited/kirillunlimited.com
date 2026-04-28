@@ -8,7 +8,7 @@ Source code for [kirillunlimited.com](https://kirillunlimited.com), my personal 
 
 ## Installation
 
-Prerequisites: Node 24+
+Prerequisites: Node 20+
 
 1. Run `yarn install`
 
