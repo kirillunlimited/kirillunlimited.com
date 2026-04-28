@@ -1,0 +1,34 @@
+name: Trigger Speedlify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait until correct commit is deployed
+        run: |
+          COMMIT_SHA=${{ github.sha }}
+          echo "Waiting for commit $COMMIT_SHA..."
+
+          for i in {1..30}; do
+            RESPONSE=$(curl -s "https://kirillunlimited.com/manifest.webmanifest?ver=$(date +%s)")
+
+            if echo "$RESPONSE" | grep "$COMMIT_SHA"; then
+              echo "✅ Correct commit is live!"
+              exit 0
+            fi
+
+            echo "⏳ Not ready yet..."
+            sleep 5
+          done
+
+          echo "❌ Timeout waiting for deploy"
+          exit 1
+
+      - name: Trigger Speedlify
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/643ed54a77f1f2005d379419
