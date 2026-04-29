@@ -30,9 +30,8 @@ export default async function (config) {
   config.addGlobalData('generated', () => Date.now());
 
   config.addPassthroughCopy({ 'src/static': './' });
-  config.addPassthroughCopy('src/assets/css');
   config.addPassthroughCopy('src/assets/js');
-  config.addPassthroughCopy('src/assets/fonts');
+  config.addPassthroughCopy('src/assets/css');
 
   config.addGlobalData('commit', () => process.env.CF_PAGES_COMMIT_SHA || 'dev');
 
