@@ -7,13 +7,8 @@
   },
   "scripts": {
     "clean": "shx rm -rf ./dist",
-    "dev": "cross-env NODE_ENV=development yarn clean && concurrently \"yarn dev:webpack\" \"yarn dev:eleventy\"",
-    "dev:webpack": "webpack --watch",
-    "dev:eleventy": "eleventy --serve",
-    "build": "cross-env NODE_ENV=production yarn clean && concurrently \"yarn build:assets\" \"yarn build:site\"",
-    "build:assets": "webpack --mode production",
-    "build:site": "eleventy",
-    "analyze": "cross-env NODE_ENV=production DEBUG=true yarn clean && concurrently \"yarn build:assets\" \"yarn build:site\""
+    "dev": "eleventy --serve",
+    "build": "yarn clean && cross-env NODE_ENV=production eleventy"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -22,35 +17,29 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@11ty/eleventy-plugin-vite": "^7.1.1",
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.2",
     "@sindresorhus/slugify": "3.0.0",
     "babel-loader": "^10.1.1",
-    "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "css-loader": "^7.1.4",
-    "cssnano-webpack-plugin": "^1.0.3",
     "html-minifier": "^4.0.0",
     "linkedom": "^0.18.12",
     "markdown-it": "^14.1.1",
     "markdown-it-attrs": "^4.3.1",
-    "mini-css-extract-plugin": "^2.10.2",
     "outdent": "^0.8.0",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.12",
     "postcss-loader": "^8.2.1",
     "postcss-preset-env": "^11.2.1",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
-    "webpack": "^5.106.2",
-    "webpack-bundle-analyzer": "^5.3.0",
-    "webpack-cli": "^7.0.2",
-    "webpack-manifest-plugin": "^6.0.1",
-    "webpack-remove-empty-scripts": "^1.1.1"
+    "vite": "^8.0.10"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
     "speedlify-score": "^4.0.4"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.9.1",
+  "type": "module"
 }

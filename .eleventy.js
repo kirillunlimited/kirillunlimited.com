@@ -1,9 +1,9 @@
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const constants = require('./eleventy/constants');
-const markdown = require('./eleventy/markdown');
-const transforms = require('./eleventy/transforms');
-const filters = require('./eleventy/filters');
-const shortcodes = require('./eleventy/shortcodes');
+import vitePlugin from '@11ty/eleventy-plugin-vite';
+import { outputDir, manifestPath } from './eleventy/constants.js';
+import { markdown } from './eleventy/markdown.js';
+import * as transforms from './eleventy/transforms.js';
+import * as filters from './eleventy/filters.js';
+import * as shortcodes from './eleventy/shortcodes.js';
 
 const extract = (module, addHandler, config) => {
   Object.keys(module).forEach((name) => {
@@ -11,8 +11,15 @@ const extract = (module, addHandler, config) => {
   });
 };
 
-module.exports = function (config) {
-  config.addPlugin(syntaxHighlight);
+export default async function (config) {
+  config.addPlugin(vitePlugin, {
+    viteOptions: {
+      server: {
+        mode: 'development',
+        middlewareMode: true,
+      },
+    },
+  });
 
   config.setLibrary('md', markdown);
 
@@ -20,26 +27,23 @@ module.exports = function (config) {
   extract(filters, 'addFilter', config);
   extract(shortcodes, 'addShortcode', config);
 
-  config.addGlobalData('generated', () => new Date().getTime());
+  config.addGlobalData('generated', () => Date.now());
 
-  config.addWatchTarget('./src/assets/img');
-  config.addWatchTarget('./src/assets/css');
-  config.addWatchTarget('./src/assets/js');
-
-  config.addPassthroughCopy({ './src/static': './' });
-
-  config.setBrowserSyncConfig({ files: [constants.manifestPath] });
+  config.addPassthroughCopy({ 'src/static': './' });
+  config.addPassthroughCopy('src/assets/css');
+  config.addPassthroughCopy('src/assets/js');
+  config.addPassthroughCopy('src/assets/fonts');
 
   config.addGlobalData('commit', () => process.env.CF_PAGES_COMMIT_SHA || 'dev');
 
   return {
     dir: {
       input: 'src',
-      output: constants.outputDir,
+      output: outputDir,
       includes: 'includes',
       layouts: 'layouts',
       data: 'data',
-      markdownTemplateEngine: 'njk',
     },
+    markdownTemplateEngine: 'njk',
   };
-};
+}

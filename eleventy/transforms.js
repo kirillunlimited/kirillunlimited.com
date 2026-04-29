@@ -1,9 +1,9 @@
-const htmlMinifier = require('html-minifier');
+import htmlMinifier from 'html-minifier';
 
 const shouldTransformHTML = (outputPath) =>
   outputPath && outputPath.endsWith('.html') && process.env.NODE_ENV === 'production';
 
-const htmlmin = (content, outputPath) =>
+export const htmlmin = (content, outputPath) =>
   shouldTransformHTML(outputPath)
     ? htmlMinifier.minify(content, {
         html5: true,
@@ -16,7 +16,3 @@ const htmlmin = (content, outputPath) =>
         useShortDoctype: true,
       })
     : content;
-
-module.exports = {
-  htmlmin,
-};

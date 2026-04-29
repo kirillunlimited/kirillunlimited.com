@@ -1,7 +1,3 @@
-const { DateTime } = require('luxon');
+import { DateTime } from 'luxon';
 
-const postDate = (dateObj) => DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy');
-
-module.exports = {
-  postDate,
-};
+export const postDate = (dateObj) => DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy');
