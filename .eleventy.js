@@ -1,5 +1,6 @@
 import vitePlugin from '@11ty/eleventy-plugin-vite';
 import { outputDir, manifestPath } from './eleventy/constants.js';
+import { visualizer } from 'rollup-plugin-visualizer';
 import { markdown } from './eleventy/markdown.js';
 import * as transforms from './eleventy/transforms.js';
 import * as filters from './eleventy/filters.js';
@@ -14,6 +15,20 @@ const extract = (module, addHandler, config) => {
 export default async function (config) {
   config.addPlugin(vitePlugin, {
     viteOptions: {
+      build: {
+        rollupOptions: {
+          plugins: [
+            process.env.ANALYZE === 'true' &&
+              visualizer({
+                open: true,
+                filename: 'dist/stats.html',
+                gzipSize: true,
+                brotliSize: true,
+                template: 'treemap',
+              }),
+          ].filter(Boolean),
+        },
+      },
       server: {
         mode: 'development',
         middlewareMode: true,
