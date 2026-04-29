@@ -1,4 +1,4 @@
-export const SCHEMES = {
+const SCHEMES = {
   LIGHT: 'light',
   AUTO: 'auto',
   DARK: 'dark',
@@ -7,11 +7,6 @@ const LOCAL_STORAGE_KEY = 'scheme';
 
 const lightStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="light"]');
 const darkStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="dark"]');
-
-export const initColorScheme = () => {
-  const scheme = getSavedColorScheme();
-  switchMedia(scheme);
-};
 
 export const initColorSchemeControls = () => {
   const colorSchemeControls = document.querySelectorAll('input[name="scheme-select"]');

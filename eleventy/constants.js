@@ -1,7 +1,4 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
-  siteUrl: 'https://kirillunlimited.com',
-  outputDir: 'dist',
-  manifestPath: path.resolve(__dirname, '../dist/assets/manifest.json'),
-};
+export const outputDir = 'dist';
+export const manifestPath = 'dist/assets/manifest.json';

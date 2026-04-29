@@ -1,5 +1,5 @@
-let markdownIt = require('markdown-it');
-let markdownItAttrs = require('markdown-it-attrs');
+import markdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
 let options = { html: true };
 
-module.exports = markdownIt(options).use(markdownItAttrs);
+export const markdown = markdownIt(options).use(markdownItAttrs);
