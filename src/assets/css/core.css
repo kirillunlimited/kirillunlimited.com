@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Geist';
   src:
-    url('../fonts/GeistVariableVF.woff2') format('woff2 supports variations'),
-    url('../fonts/GeistVariableVF.woff2') format('woff2-variations');
+    url('../../fonts/GeistVariableVF.woff2') format('woff2 supports variations'),
+    url('../../fonts/GeistVariableVF.woff2') format('woff2-variations');
   font-weight: 100 1000;
   font-display: fallback;
 }

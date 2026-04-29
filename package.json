@@ -34,6 +34,7 @@
     "postcss-preset-env": "^11.2.1",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
+    "terser": "^5.46.2",
     "vite": "^8.0.10"
   },
   "dependencies": {
