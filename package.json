@@ -11,35 +11,24 @@
     "build": "yarn clean && cross-env NODE_ENV=production eleventy"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-vite": "^7.1.1",
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.2",
     "@sindresorhus/slugify": "3.0.0",
-    "babel-loader": "^10.1.1",
     "cross-env": "^10.1.0",
-    "css-loader": "^7.1.4",
     "html-minifier": "^4.0.0",
-    "linkedom": "^0.18.12",
     "markdown-it": "^14.1.1",
     "markdown-it-attrs": "^4.3.1",
-    "outdent": "^0.8.0",
-    "postcss": "^8.5.12",
-    "postcss-loader": "^8.2.1",
-    "postcss-preset-env": "^11.2.1",
+    "normalize.css": "^8.0.1",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
+    "speedlify-score": "^4.0.4",
     "terser": "^5.46.2",
     "vite": "^8.0.10"
-  },
-  "dependencies": {
-    "normalize.css": "^8.0.1",
-    "speedlify-score": "^4.0.4"
   },
   "packageManager": "yarn@4.9.1",
   "type": "module"
