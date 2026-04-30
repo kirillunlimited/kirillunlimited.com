@@ -4,9 +4,9 @@ import path from 'node:path';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-export async function buildCSS(path) {
+export async function buildCSS(filePath) {
   return await bundle({
-    filename: path,
+    filename: path.resolve(filePath),
     minify: isProd,
     sourceMap: !isProd,
     targets: browserslistToTargets(packageJson.browserslist),

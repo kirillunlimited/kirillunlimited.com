@@ -73,6 +73,16 @@ export default async function (config) {
     return await buildJS(path.resolve(filePath), { inline: true });
   });
 
+  config.addFilter('asset', (filePath, type = null) => {
+    const base = '/assets/';
+
+    const path = type ? `${type}/${filePath}` : filePath;
+
+    const version = process.env.CF_PAGES_COMMIT_SHA || 'dev';
+
+    return `${base}${path}?v=${version}`;
+  });
+
   config.addPassthroughCopy({ 'src/static': '/' });
 
   config.addGlobalData('commit', () => process.env.CF_PAGES_COMMIT_SHA || 'dev');

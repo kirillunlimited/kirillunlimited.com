@@ -35,7 +35,7 @@
 
     {# Styles #}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="{{ 'css/index.css' | asset }}">
     <style media="(prefers-color-scheme: light)" data-color-scheme="light">
       {{ './src/assets/css/themes/light.css' | css | safe }}
     </style>
@@ -62,7 +62,7 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="{{ 'js/app.js' | asset }}"></script>
     <script data-goatcounter="https://kirillunlimitedcom.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </body>
 </html>
