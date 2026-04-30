@@ -10,6 +10,5 @@ export async function buildCSS(path) {
     minify: isProd,
     sourceMap: !isProd,
     targets: browserslistToTargets(packageJson.browserslist),
-    include: Features.MediaQueries | Features.Nesting,
   });
 }

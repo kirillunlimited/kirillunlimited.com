@@ -57,8 +57,7 @@ export default async function (config) {
   });
 
   config.addFilter('js', async (path) => {
-    let { code } = await buildJS(path);
-    return code;
+    return await buildJS(path, { inline: true });
   });
 
   config.addPassthroughCopy({ 'src/static': '/' });
