@@ -5,15 +5,13 @@ import * as filters from './eleventy/filters.js';
 import * as shortcodes from './eleventy/shortcodes.js';
 import { buildCSS } from './build/css.js';
 import { buildJS } from './build/js.js';
+import path from 'node:path';
 
 const extract = (module, addHandler, config) => {
   Object.keys(module).forEach((name) => {
     config[addHandler](name, module[name]);
   });
 };
-
-const styles = ['./src/assets/css/index.css', './src/assets/css/themes/light.css', './src/assets/css/themes/dark.css'];
-const scripts = ['./src/assets/js/init.js', './src/assets/js/app.js'];
 
 export default async function (config) {
   config.setLibrary('md', markdown);
@@ -24,22 +22,35 @@ export default async function (config) {
 
   config.addGlobalData('generated', () => Date.now());
 
+  const cssEntries = {
+    index: './src/assets/css/index.css',
+  };
+
+  const jsEntries = {
+    app: './src/assets/js/app.js',
+  };
+
+  const cssSet = new Set(Object.values(cssEntries).map((p) => path.resolve(p)));
+  const jsSet = new Set(Object.values(jsEntries).map((p) => path.resolve(p)));
+
   config.addTemplateFormats('css');
 
   config.addExtension('css', {
     outputFileExtension: 'css',
-    compile: async (content, path) => {
-      if (!styles.includes(path)) return;
+    compile: async (content, filePath) => {
+      const absPath = path.resolve(filePath);
+
+      if (!cssSet.has(absPath)) return;
 
       return async () => {
-        let { code } = await buildCSS(path);
+        let { code } = await buildCSS(absPath);
         return code;
       };
     },
   });
 
-  config.addFilter('css', async (path) => {
-    let { code } = await buildCSS(path);
+  config.addFilter('css', async (filePath) => {
+    let { code } = await buildCSS(path.resolve(filePath));
     return code;
   });
 
@@ -47,17 +58,19 @@ export default async function (config) {
 
   config.addExtension('js', {
     outputFileExtension: 'js',
-    compile: async (content, path) => {
-      if (!scripts.includes(path)) return;
+    compile: async (content, filePath) => {
+      const absPath = path.resolve(filePath);
+
+      if (!jsSet.has(absPath)) return;
 
       return async () => {
-        return await buildJS(path);
+        return await buildJS(absPath);
       };
     },
   });
 
-  config.addFilter('js', async (path) => {
-    return await buildJS(path, { inline: true });
+  config.addFilter('js', async (filePath) => {
+    return await buildJS(path.resolve(filePath), { inline: true });
   });
 
   config.addPassthroughCopy({ 'src/static': '/' });

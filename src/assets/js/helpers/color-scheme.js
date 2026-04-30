@@ -5,8 +5,8 @@ const SCHEMES = {
 };
 const LOCAL_STORAGE_KEY = 'scheme';
 
-const lightStyles = document.querySelector('[data-color-scheme="light"]');
-const darkStyles = document.querySelector('[data-color-scheme="dark"]');
+const lightStyles = document.querySelector('style[data-color-scheme="light"]');
+const darkStyles = document.querySelector('style[data-color-scheme="dark"]');
 
 export const initColorScheme = () => {
   const scheme = getSavedColorScheme();
