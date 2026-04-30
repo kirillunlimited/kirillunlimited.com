@@ -1,10 +1,10 @@
-import vitePlugin from '@11ty/eleventy-plugin-vite';
 import { outputDir, manifestPath } from './eleventy/constants.js';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { markdown } from './eleventy/markdown.js';
 import * as transforms from './eleventy/transforms.js';
 import * as filters from './eleventy/filters.js';
 import * as shortcodes from './eleventy/shortcodes.js';
+import { buildCSS } from './build/css.js';
+import { buildJS } from './build/js.js';
 
 const extract = (module, addHandler, config) => {
   Object.keys(module).forEach((name) => {
@@ -12,30 +12,10 @@ const extract = (module, addHandler, config) => {
   });
 };
 
-export default async function (config) {
-  config.addPlugin(vitePlugin, {
-    viteOptions: {
-      build: {
-        rollupOptions: {
-          plugins: [
-            process.env.ANALYZE === 'true' &&
-              visualizer({
-                open: true,
-                filename: 'dist/stats.html',
-                gzipSize: true,
-                brotliSize: true,
-                template: 'treemap',
-              }),
-          ].filter(Boolean),
-        },
-      },
-      server: {
-        mode: 'development',
-        middlewareMode: true,
-      },
-    },
-  });
+const styles = ['./src/assets/css/index.css', './src/assets/css/themes/light.css', './src/assets/css/themes/dark.css'];
+const scripts = ['./src/assets/js/init.js', './src/assets/js/app.js'];
 
+export default async function (config) {
   config.setLibrary('md', markdown);
 
   extract(transforms, 'addTransform', config);
@@ -44,9 +24,44 @@ export default async function (config) {
 
   config.addGlobalData('generated', () => Date.now());
 
-  config.addPassthroughCopy({ 'src/static': './' });
-  config.addPassthroughCopy('src/assets/js');
-  config.addPassthroughCopy('src/assets/css');
+  config.addTemplateFormats('css');
+
+  config.addExtension('css', {
+    outputFileExtension: 'css',
+    compile: async (content, path) => {
+      if (!styles.includes(path)) return;
+
+      return async () => {
+        let { code } = await buildCSS(path);
+        return code;
+      };
+    },
+  });
+
+  config.addFilter('css', async (path) => {
+    let { code } = await buildCSS(path);
+    return code;
+  });
+
+  config.addTemplateFormats('js');
+
+  config.addExtension('js', {
+    outputFileExtension: 'js',
+    compile: async (content, path) => {
+      if (!scripts.includes(path)) return;
+
+      return async () => {
+        return await buildJS(path);
+      };
+    },
+  });
+
+  config.addFilter('js', async (path) => {
+    let { code } = await buildJS(path);
+    return code;
+  });
+
+  config.addPassthroughCopy({ 'src/static': '/' });
 
   config.addGlobalData('commit', () => process.env.CF_PAGES_COMMIT_SHA || 'dev');
 

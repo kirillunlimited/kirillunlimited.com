@@ -7,9 +7,8 @@
   },
   "scripts": {
     "clean": "shx rm -rf ./dist",
-    "dev": "eleventy --serve",
-    "build": "yarn clean && cross-env NODE_ENV=production eleventy",
-    "analyze": "yarn clean && cross-env ANALYZE=true NODE_ENV=production eleventy"
+    "dev": "yarn clean && cross-env NODE_ENV=development eleventy --serve",
+    "build": "yarn clean && cross-env NODE_ENV=production eleventy"
   },
   "engines": {
     "node": ">=20"
@@ -18,20 +17,24 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-plugin-vite": "^7.1.1",
     "@sindresorhus/slugify": "3.0.0",
+    "browserslist": "^4.28.2",
+    "browserslist-to-esbuild": "^2.1.1",
     "cross-env": "^10.1.0",
+    "esbuild": "^0.28.0",
     "html-minifier": "^4.0.0",
+    "lightningcss": "^1.32.0",
     "markdown-it": "^14.1.1",
     "markdown-it-attrs": "^4.3.1",
-    "normalize.css": "^8.0.1",
     "prettier": "^3.8.3",
-    "rollup-plugin-visualizer": "^7.0.1",
     "shx": "^0.4.0",
     "speedlify-score": "^4.0.4",
-    "terser": "^5.46.2",
-    "vite": "^8.0.10"
+    "terser": "^5.46.2"
   },
+  "browserslist": [
+    "baseline widely available",
+    "safari 15"
+  ],
   "packageManager": "yarn@4.9.1",
   "type": "module"
 }
