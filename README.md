@@ -2,7 +2,7 @@
 
 ## About
 
-Source code for [kirillunlimited.com](https://kirillunlimited.com), my personal website, built with with [11ty](https://www.11ty.dev/) & [Webpack](https://webpack.js.org/).
+This is the source code for my personal website, which is available at [kirillunlimited.com](https://kirillunlimited.com).
 
 ## Installation
 
@@ -12,8 +12,8 @@ Prerequisites: Node 20+
 
 ## Development
 
-1. Run `yarn start`
-2. Open `http://localhost:8080/`
+1. Run `yarn dev`
+2. Open `http://localhost:3000/`
 
 ## Deployment
 

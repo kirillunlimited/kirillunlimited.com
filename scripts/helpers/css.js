@@ -1,0 +1,29 @@
+import { bundle, transform } from 'lightningcss';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import crypto from 'node:crypto';
+
+export async function buildCssBundle(file, { minify = true } = {}) {
+  const { code } = bundle({
+    filename: path.resolve(file),
+    minify,
+  });
+
+  return code;
+}
+
+export async function buildInlineCss(file, { minify = true } = {}) {
+  const input = await readFile(file);
+
+  const { code } = transform({
+    filename: file,
+    code: input,
+    minify,
+  });
+
+  return code.toString();
+}
+
+export function hash(content) {
+  return crypto.createHash('sha1').update(content).digest('hex').slice(0, 8);
+}
