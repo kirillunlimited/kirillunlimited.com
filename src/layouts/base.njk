@@ -34,9 +34,15 @@
     <link rel="preload" href="{{ '/fonts/GeistVariableVF.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
     {# Styles #}
-    <link rel="stylesheet" href="/assets/css/themes/light.css" media="(prefers-color-scheme: light)" data-color-scheme="light"/>
-    <link rel="stylesheet" href="/assets/css/themes/dark.css" media="(prefers-color-scheme: dark)" data-color-scheme="dark"/>
-    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{{ 'css/index.css' | asset }}">
+    <style media="(prefers-color-scheme: light)" data-color-scheme="light">
+      {{ './src/assets/css/themes/light.css' | css | safe }}
+    </style>
+
+    <style media="(prefers-color-scheme: dark)" data-color-scheme="dark">
+      {{ './src/assets/css/themes/dark.css' | css | safe }}
+    </style>
 
     {# Favicon #}
     <link rel="manifest" href="{{ '/manifest.webmanifest' | url }}">
@@ -46,9 +52,8 @@
     {# Theme #}
     <meta name="color-scheme" content="light dark">
 
-    {# Critical JS #}
     <script>
-      {{ "src/assets/js/init.js" | jsmin | safe }}
+      {{ './src/assets/js/init.js' | js | safe }}
     </script>
   </head>
   <body>
@@ -57,7 +62,7 @@
       {{content | safe}}
     </main>
     {% include 'footer.njk' %}
-    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="{{ 'js/app.js' | asset }}"></script>
     <script data-goatcounter="https://kirillunlimitedcom.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
   </body>
 </html>

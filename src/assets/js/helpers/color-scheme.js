@@ -5,8 +5,13 @@ const SCHEMES = {
 };
 const LOCAL_STORAGE_KEY = 'scheme';
 
-const lightStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="light"]');
-const darkStyles = document.querySelector('link[rel=stylesheet][data-color-scheme="dark"]');
+const lightStyles = document.querySelector('style[data-color-scheme="light"]');
+const darkStyles = document.querySelector('style[data-color-scheme="dark"]');
+
+export const initColorScheme = () => {
+  const scheme = getSavedColorScheme();
+  switchMedia(scheme);
+};
 
 export const initColorSchemeControls = () => {
   const colorSchemeControls = document.querySelectorAll('input[name="scheme-select"]');
