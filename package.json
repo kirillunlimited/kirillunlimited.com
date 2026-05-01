@@ -31,10 +31,6 @@
     "speedlify-score": "^4.0.4",
     "terser": "^5.46.2"
   },
-  "browserslist": [
-    "baseline widely available",
-    "safari 15"
-  ],
   "packageManager": "yarn@4.9.1",
   "type": "module"
 }
