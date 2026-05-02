@@ -7,29 +7,28 @@
   },
   "scripts": {
     "clean": "shx rm -rf ./dist",
-    "dev": "yarn clean && cross-env NODE_ENV=development eleventy --serve",
-    "build": "yarn clean && cross-env NODE_ENV=production eleventy"
+    "dev": "yarn clean && tsx scripts/run.ts --dev",
+    "build": "yarn clean && tsx scripts/run.ts",
+    "typecheck": "tsc"
   },
   "engines": {
     "node": ">=20"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.5",
-    "@11ty/eleventy-img": "^6.0.4",
-    "@sindresorhus/slugify": "3.0.0",
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/node": "^25.6.0",
     "browserslist": "^4.28.2",
     "browserslist-to-esbuild": "^2.1.1",
-    "cross-env": "^10.1.0",
+    "chokidar": "^5.0.0",
     "esbuild": "^0.28.0",
-    "html-minifier": "^4.0.0",
+    "html-minifier-terser": "^7.2.0",
     "lightningcss": "^1.32.0",
-    "markdown-it": "^14.1.1",
-    "markdown-it-attrs": "^4.3.1",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
     "speedlify-score": "^4.0.4",
-    "terser": "^5.46.2"
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
   },
   "packageManager": "yarn@4.9.1",
   "type": "module"
