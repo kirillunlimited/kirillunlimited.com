@@ -7,14 +7,17 @@
   },
   "scripts": {
     "clean": "shx rm -rf ./dist",
-    "dev": "yarn clean && node scripts/run.js --dev",
-    "build": "yarn clean && node scripts/run.js"
+    "dev": "yarn clean && tsx scripts/run.ts --dev",
+    "build": "yarn clean && tsx scripts/run.ts",
+    "typecheck": "tsc"
   },
   "engines": {
     "node": ">=20"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/node": "^25.6.0",
     "browserslist": "^4.28.2",
     "browserslist-to-esbuild": "^2.1.1",
     "chokidar": "^5.0.0",
@@ -23,7 +26,9 @@
     "lightningcss": "^1.32.0",
     "prettier": "^3.8.3",
     "shx": "^0.4.0",
-    "speedlify-score": "^4.0.4"
+    "speedlify-score": "^4.0.4",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
   },
   "packageManager": "yarn@4.9.1",
   "type": "module"

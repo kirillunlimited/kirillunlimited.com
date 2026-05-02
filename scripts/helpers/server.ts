@@ -1,9 +1,19 @@
-import http from 'node:http';
+import http, { type IncomingMessage, type ServerResponse } from 'node:http';
 import path from 'node:path';
 import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
 
-const MIME = {
+type DevServerOptions = {
+  dist: string;
+  onClient?: (res: ServerResponse) => void;
+};
+
+type DevServer = {
+  listen: (port?: number) => void;
+  reload: () => void;
+};
+
+const MIME: Record<string, string> = {
   '.html': 'text/html',
   '.js': 'application/javascript',
   '.css': 'text/css',
@@ -16,10 +26,10 @@ const MIME = {
   '.woff2': 'font/woff2',
 };
 
-export function createDevServer({ dist, onClient }) {
-  const clients = new Set();
+export function createDevServer({ dist, onClient }: DevServerOptions): DevServer {
+  const clients = new Set<ServerResponse>();
 
-  function sendReload() {
+  function sendReload(): void {
     for (const res of clients) {
       res.write('event: reload\n');
       res.write('data: now\n\n');
@@ -33,11 +43,14 @@ export function createDevServer({ dist, onClient }) {
     }
   }, 20000);
 
-  const server = http.createServer(async (req, res) => {
+  const server = http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
+    const urlRaw = req.url ?? '/';
+    const pathname = urlRaw.split('?')[0];
+
     // ---------------------
     // SSE
     // ---------------------
-    if (req.url === '/reload') {
+    if (pathname === '/reload') {
       res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
@@ -57,10 +70,7 @@ export function createDevServer({ dist, onClient }) {
     // ---------------------
     // URL normalize
     // ---------------------
-    let url = req.url.split('?')[0];
-
-    if (url === '/') url = 'index.html';
-    else url = url.slice(1);
+    let url = pathname === '/' ? 'index.html' : pathname.slice(1);
 
     let filePath = path.join(dist, url);
 
@@ -96,10 +106,13 @@ export function createDevServer({ dist, onClient }) {
       }
     }
 
+    // ---------------------
+    // serve file
+    // ---------------------
     const ext = path.extname(filePath);
 
     res.writeHead(200, {
-      'Content-Type': MIME[ext] || 'application/octet-stream',
+      'Content-Type': MIME[ext] ?? 'application/octet-stream',
     });
 
     createReadStream(filePath).pipe(res);

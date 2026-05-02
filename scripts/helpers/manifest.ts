@@ -1,4 +1,20 @@
-export function renderManifest({ commit }) {
+type Icon = {
+  src: string;
+  type: string;
+  sizes: string;
+};
+
+export type WebManifest = {
+  name: string;
+  commit: string;
+  icons: Icon[];
+};
+
+type RenderManifestInput = {
+  commit: string;
+};
+
+export function renderManifest({ commit }: RenderManifestInput): WebManifest {
   return {
     name: 'Kirill Ivanov',
     commit,
