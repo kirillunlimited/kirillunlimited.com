@@ -1,5 +1,7 @@
 import { minify } from 'html-minifier-terser';
-import { META } from './constants.js';
+import { readFile } from 'node:fs/promises';
+
+import { PAGES, META } from './constants.js';
 
 function escapeHtml(str = '') {
   return str.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
@@ -43,21 +45,33 @@ function formatDate(date) {
   }).format(new Date(date));
 }
 
-export function createTemplateMap({ cssFile, jsFile, lightCSS, darkCSS, initJS }) {
+export function createTemplateMap({
+  title,
+  description,
+  mainClass,
+  cssFile,
+  jsFile,
+  lightCSS,
+  darkCSS,
+  initJS,
+  speedlify,
+}) {
   const iso = getLastUpdateDate();
   const formatted = formatDate(iso);
   return {
     '<!-- SEO -->': buildSeoTags({
-      title: META.title,
-      description: META.description,
+      title,
+      description,
       url: META.url,
       locale: META.locale,
     }),
+    '<!-- MAIN_CLASS -->': mainClass || '',
     'styles.css': cssFile,
     'main.js': jsFile,
     '/* LIGHT_CSS */': lightCSS,
     '/* DARK_CSS */': darkCSS,
     '/* INIT_JS */': initJS,
+    '<!-- SPEEDLIFY -->': speedlify ? renderSpeedlify(speedlify) : '',
     '<!-- LAST_UPDATE -->': `<time datetime="${iso}">${formatted}</time>`,
   };
 }
@@ -93,4 +107,28 @@ export async function minifyHtml(html) {
 
     keepClosingSlash: true,
   });
+}
+
+export async function renderPage({ layoutPath, pagePath }) {
+  const [layout, page] = await Promise.all([readFile(layoutPath, 'utf-8'), readFile(pagePath, 'utf-8')]);
+
+  return layout.replace('<!-- CONTENT -->', page);
+}
+
+function renderSpeedlify(hash) {
+  const base = 'https://kirillunlimited-speedlify.netlify.app';
+
+  return `
+    <a
+      href="${base}/kirillunlimited.com/#site-${hash}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="footer__speedlify"
+    >
+      <speedlify-score
+        speedlify-url="${base}"
+        hash="${hash}"
+      ></speedlify-score>
+    </a>
+  `;
 }

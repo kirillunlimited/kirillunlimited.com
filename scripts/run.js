@@ -1,8 +1,8 @@
 import { readFile, writeFile, mkdir, cp } from 'node:fs/promises';
 import chokidar from 'chokidar';
 
-import { PATHS, DIST, META } from './helpers/constants.js';
-import { inject, injectLiveReload, minifyHtml, createTemplateMap } from './helpers/html.js';
+import { PATHS, DIST, META, PAGES } from './helpers/constants.js';
+import { inject, injectLiveReload, minifyHtml, createTemplateMap, renderPage } from './helpers/html.js';
 import { buildJs, getOutputJsFile, buildInlineJs } from './helpers/js.js';
 import { buildCssBundle, buildInlineCss, hash } from './helpers/css.js';
 import { renderManifest } from './helpers/manifest.js';
@@ -50,22 +50,31 @@ async function build() {
   ]);
 
   // HTML
-  let html = await readFile(PATHS.html, 'utf-8');
+  for (const page of PAGES) {
+    let html = await renderPage({
+      layoutPath: PATHS.layout,
+      pagePath: page.input,
+    });
 
-  html = inject(
-    html,
-    createTemplateMap({
-      cssFile,
-      jsFile,
-      lightCSS,
-      darkCSS,
-      initJS,
-    })
-  );
+    html = inject(
+      html,
+      createTemplateMap({
+        title: page.title,
+        description: page.description,
+        mainClass: page.mainClass,
+        cssFile,
+        jsFile,
+        lightCSS,
+        darkCSS,
+        initJS,
+        speedlify: page.speedlify,
+      })
+    );
 
-  html = isDev ? injectLiveReload(html) : await minifyHtml(html);
+    html = isDev ? injectLiveReload(html) : await minifyHtml(html);
 
-  await writeFile(`${DIST}/index.html`, html);
+    await writeFile(`${DIST}/${page.output}`, html);
+  }
 
   // STATIC
   await cp(PATHS.static, DIST, { recursive: true });
