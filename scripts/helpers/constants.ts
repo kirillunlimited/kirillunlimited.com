@@ -40,7 +40,6 @@ type Page = {
   output: `${string}.html`;
   title: string;
   description?: string;
-  mainClass?: string;
   speedlify?: string;
 };
 
@@ -55,7 +54,6 @@ export const PAGES: Page[] = [
   {
     input: `${PATHS.pages}/404.html`,
     output: '404.html',
-    mainClass: 'main--404',
     title: '404 – Page not found',
   },
 ];
