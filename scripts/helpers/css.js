@@ -3,22 +3,24 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-export async function buildCssBundle(file, { minify = true } = {}) {
+export async function buildCssBundle(file, { minify = true, targets } = {}) {
   const { code } = bundle({
     filename: path.resolve(file),
     minify,
+    targets,
   });
 
   return code;
 }
 
-export async function buildInlineCss(file, { minify = true } = {}) {
+export async function buildInlineCss(file, { minify = true, targets } = {}) {
   const input = await readFile(file);
 
   const { code } = transform({
     filename: file,
     code: input,
     minify,
+    targets,
   });
 
   return code.toString();

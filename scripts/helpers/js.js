@@ -7,17 +7,19 @@ export async function buildJs(entry, options = {}) {
     entryPoints: [entry],
     bundle: true,
     format: 'esm',
+    target: options.target,
     ...options,
   });
 }
 
-export async function buildInlineJs(file, { minify = true } = {}) {
+export async function buildInlineJs(file, { minify = true, target } = {}) {
   const result = await esbuild.build({
     entryPoints: [file],
     bundle: true,
     minify,
     write: false,
     format: 'esm',
+    target,
   });
 
   return result.outputFiles[0].text;

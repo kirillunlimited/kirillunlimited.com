@@ -8,6 +8,7 @@ import { buildCssBundle, buildInlineCss, hash } from './helpers/css.js';
 import { renderManifest } from './helpers/manifest.js';
 import { generateSitemap } from './helpers/sitemap.js';
 import { createDevServer } from './helpers/server.js';
+import { getTargets } from './helpers/targets.js';
 
 // ---------------------
 // MODE
@@ -26,6 +27,8 @@ async function build() {
   const ASSETS_DIR = `${DIST}/assets`;
   await mkdir(ASSETS_DIR, { recursive: true });
 
+  const targets = getTargets(isDev ? 'development' : 'production');
+
   // JS
   const jsResult = await buildJs(PATHS.js, {
     minify: !isDev,
@@ -33,6 +36,7 @@ async function build() {
     outdir: ASSETS_DIR,
     entryNames: isDev ? 'main' : '[name]-[hash]',
     metafile: !isDev,
+    target: targets.esbuild,
   });
   const jsFile = isDev ? 'assets/main.js' : getOutputJsFile(jsResult.metafile).replace(`${ASSETS_DIR}/`, 'assets/');
 
@@ -44,9 +48,9 @@ async function build() {
 
   // INLINE
   const [lightCSS, darkCSS, initJS] = await Promise.all([
-    buildInlineCss(PATHS.lightCSS, { minify: !isDev }),
-    buildInlineCss(PATHS.darkCSS, { minify: !isDev }),
-    buildInlineJs(PATHS.initJS, { minify: !isDev }),
+    buildInlineCss(PATHS.lightCSS, { minify: !isDev, targets: targets.lightning }),
+    buildInlineCss(PATHS.darkCSS, { minify: !isDev, targets: targets.lightning }),
+    buildInlineJs(PATHS.initJS, { minify: !isDev, targets: targets.lightning }),
   ]);
 
   // HTML
