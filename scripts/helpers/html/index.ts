@@ -1,5 +1,6 @@
 import { minify } from 'html-minifier-terser';
 import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 
 import { renderSpeedlify } from './speedlify';
 import { buildSeoTags } from './seo';
@@ -7,9 +8,9 @@ import { META } from '../constants';
 import { renderDate } from './date';
 
 type TemplateMapInput = {
+  pagePath: string;
   title: string;
   description?: string;
-  mainClass?: string;
   cssFile: string;
   jsFile: string;
   lightCSS: string;
@@ -20,6 +21,11 @@ type TemplateMapInput = {
 
 type Replacements = Record<string, string>;
 
+const getPageClass = (pagePath: string): string => {
+  const name = path.basename(pagePath, '.html');
+  return `main--${name}`;
+};
+
 const createTemplateMap = (input: TemplateMapInput): Replacements => {
   return {
     '<!-- SEO -->': buildSeoTags({
@@ -28,7 +34,7 @@ const createTemplateMap = (input: TemplateMapInput): Replacements => {
       url: META.url,
       locale: META.locale,
     }),
-    '<!-- MAIN_CLASS -->': input.mainClass || '',
+    '<!-- MAIN_CLASS -->': getPageClass(input.pagePath),
     'styles.css': input.cssFile,
     'main.js': input.jsFile,
     '/* LIGHT_CSS */': input.lightCSS,
@@ -85,7 +91,6 @@ export const renderHTML = async ({
   pagePath,
   title,
   description,
-  mainClass,
   cssFile,
   jsFile,
   lightCSS,
@@ -105,9 +110,9 @@ export const renderHTML = async ({
   html = inject(
     html,
     createTemplateMap({
+      pagePath,
       title,
       description,
-      mainClass,
       cssFile,
       jsFile,
       lightCSS,

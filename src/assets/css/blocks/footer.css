@@ -21,13 +21,9 @@
 
 .footer__speedlify,
 .footer__speedlify:hover {
+  --speedlify-circle: var(--text-color);
   display: block;
   height: 2.4em;
   text-decoration: none;
   box-shadow: none;
-}
-
-.footer__speedlify .speedlify-score {
-  color: var(--text-color);
-  transition: 0.1s ease-in-out color;
 }

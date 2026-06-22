@@ -79,7 +79,6 @@ async function build(): Promise<void> {
       pagePath: page.input,
       title: page.title,
       description: page.description,
-      mainClass: page.mainClass,
       cssFile,
       jsFile,
       lightCSS,
