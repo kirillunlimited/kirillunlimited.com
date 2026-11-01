@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/GeistVariableVF.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: fallback;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --background-color: #fafaf9;
+  --text-color: #1c1f23;
+  --secondary-color: #6b7280;
+  --surface-color: #f0f0ee;
+  --border-color: #e4e4e1;
+  --accent-color: #ff6b35;
+
+  --layout-padding-v: 2rem;
+  --layout-padding-h: 2rem;
+  --layout-max-width: 62rem;
+  --text-margin: 0.8em;
+  --radius: 0.75rem;
+  --hero-ratio: 4 / 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0f1012;
+    --text-color: #e7e9ec;
+    --secondary-color: #9aa0a8;
+    --surface-color: #1a1b1e;
+    --border-color: #26282c;
+    --accent-color: #ff8c5a;
+  }
+}
+
+@media (orientation: portrait) {
+  :root {
+    --layout-padding-v: 1.5rem;
+    --layout-padding-h: 1.25rem;
+    --text-margin: 0.6em;
+    --hero-ratio: 4 / 3;
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Geist', system-ui, sans-serif;
+  /* 16px up to 800px wide, ~24px from 1920px (24px cap at ~2000px); the rem part keeps user font-size settings and zoom working */
+  font-size: clamp(1rem, 0.65rem + 0.7vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent-color) 40%, transparent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+  outline-offset: 0.15em;
+  border-radius: 0.2em;
+  transition: text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
+
+h1 {
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* Centered column shared by the header, hero text, main and footer */
+.header,
+.hero__inner,
+.main,
+.footer {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--layout-padding-v) var(--layout-padding-h);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.header__accent {
+  color: var(--accent-color);
+}
+
+.hero {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: var(--hero-ratio);
+  overflow: hidden;
+  background-color: var(--surface-color);
+  color: #fff;
+}
+
+/* Shadow for text legibility */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgb(0 0 0 / 0.75) 0%, rgb(0 0 0 / 0.25) 55%, rgb(0 0 0 / 0.05) 100%),
+    linear-gradient(to right, rgb(0 0 0 / 0.45) 0%, rgb(0 0 0 / 0) 60%);
+  pointer-events: none;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 40%; /* the crops in static/img/hero-* are cut at this position, see scripts/images.js */
+}
+
+.hero__inner {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__headline {
+  max-width: 16em;
+  font-size: clamp(1.75rem, 0.5rem + 3.6vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
+}
+
+.hero__accent {
+  /* The photo is darkened in both themes, so use the light-on-dark accent */
+  color: #ff8c5a;
+}
+
+.main {
+  flex: 1 0 auto;
+  padding-block: calc(var(--layout-padding-v) * 1.5);
+}
+
+.main :is(p, .list) {
+  max-width: 40em;
+  margin: var(--text-margin) 0;
+}
+
+/* Must stay after the margin rules above: same specificity, so the later one wins */
+.main > :first-child {
+  margin-top: 0;
+}
+
+.main > :last-child {
+  margin-bottom: 0;
+}
+
+.main .list {
+  padding-left: 1.25em;
+  list-style: disc;
+}
+
+.main .list li + li {
+  margin-top: 0.4em;
+}
+
+.main .highlight {
+  padding: 0.75em 1em;
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: color-mix(in srgb, var(--accent-color) 8%, transparent);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 0.75em;
+  margin-top: 1.5em;
+}
+
+/* Dot separator (empty alt text keeps it out of screen readers) */
+.links li:not(:last-child)::after {
+  content: '•' / '';
+  margin-left: 0.75em;
+  color: var(--secondary-color);
+}
+
+.footer {
+  flex-shrink: 0;
+  font-size: 0.85em;
+  color: var(--secondary-color);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}

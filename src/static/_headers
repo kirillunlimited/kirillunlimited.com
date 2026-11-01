@@ -1,14 +1,20 @@
-/assets/*
-  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+/*
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/fonts/*
-  Cache-Control: public, max-age=31536000
-
-/favicon.ico
-  Cache-Control: public, max-age=31536000
-
-/manifest.webmanifest
+/
   Cache-Control: public, max-age=0, must-revalidate
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/fonts/*
+  Cache-Control: public, max-age=31536000
+
+/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/favicon.ico
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
