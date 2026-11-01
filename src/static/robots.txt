@@ -1,4 +1,4 @@
-Sitemap: https://kirillunlimited.com/sitemap.xml
-
 User-agent: *
 Allow: /
+
+Sitemap: https://kirillunlimited.com/sitemap.xml

@@ -6,29 +6,21 @@
     "url": "https://github.com/kirillunlimited/kirillunlimited.com"
   },
   "scripts": {
-    "clean": "shx rm -rf ./dist",
-    "dev": "yarn clean && tsx scripts/run.ts --dev",
-    "build": "yarn clean && tsx scripts/run.ts",
-    "typecheck": "tsc"
+    "build": "node scripts/build.js",
+    "dev": "node --watch-path=src --watch-path=scripts scripts/build.js --serve",
+    "format": "prettier --write \"src/**/*.{html,css}\" \"scripts/*.js\"",
+    "images": "node scripts/images.js"
   },
   "engines": {
     "node": ">=20"
   },
   "author": "Kirill Ivanov",
   "devDependencies": {
-    "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^25.6.0",
-    "browserslist": "^4.28.2",
-    "browserslist-to-esbuild": "^2.1.1",
-    "chokidar": "^5.0.0",
-    "esbuild": "^0.28.0",
-    "html-minifier-terser": "^7.2.0",
-    "lightningcss": "^1.32.0",
-    "prettier": "^3.8.3",
-    "shx": "^0.4.0",
-    "speedlify-score": "^4.0.4",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.3"
+    "@minify-html/node": "^0.18.1",
+    "browserslist": "^4.29.4",
+    "lightningcss": "^1.33.0",
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5"
   },
   "packageManager": "yarn@4.9.1",
   "type": "module"
