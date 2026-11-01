@@ -13,7 +13,7 @@
   --secondary-color: #6b7280;
   --surface-color: #f0f0ee;
   --border-color: #e4e4e1;
-  --accent-color: #ff6b35;
+  --accent-color: #d63200;
 
   --layout-padding-v: 2rem;
   --layout-padding-h: 2rem;
@@ -178,9 +178,12 @@ li {
   text-shadow: 0 2px 24px rgb(0 0 0 / 0.35);
 }
 
+/* Marker under the text: the text stays white on the darkened photo, the accent is the same as on the rest of the page */
 .hero__accent {
-  /* The photo is darkened in both themes, so use the light-on-dark accent */
-  color: #ff8c5a;
+  padding: 0 0.1em;
+  background: linear-gradient(var(--accent-color), var(--accent-color)) 0 100% / 100% 0.3em no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .main {
